@@ -8,44 +8,8 @@ function widd(){
   .attr("width",1.3*y);
 }
 
-/*Reality-Guitar*/
-d3.select("#slider-1").on("input",function(){
-    let i = parseInt(d3.select(this).property("value"));
-    var o = (90 - 1.8*i)/100
-    var p = (0 + 3*i)/100
-    d3.select("#guitar-body")
-    .attr("stroke-opacity",o)
-    .attr("opacity",o);
-  
-    d3.selectAll("#strings_h").transition()
-    .duration(400)
-    .attr("stroke","black");
-  
-    d3.selectAll("#strings_v").transition()
-    .duration(400)
-    .attr("opacity",p);
-  })
 
-
-  /*Idealized graph*/
-  d3.select("#slider-2").on("input",function(){
-    let i = parseInt(d3.select(this).property("value"));
-    console.log(i);
-    var j = parseInt(d3.select("#slider-3").property("value"));
-  console.log(j);
-    if(j==0 || j==10){
-  var data = [[0, 50], [100, 50+i], [200, 50],[300, 50-i], [400, 50]];}
-  else{var data = [[0, 50], [200, 50+i], [400, 50]];}
   
-  var lineGenerator = d3.line()
-      .curve(d3.curveNatural);
-  var pathString = lineGenerator(data);
-  
-  d3.select('#dynamic_strings')
-      .attr('d', pathString)
-    .attr("fill","white")
-    .attr("stroke","black")
-    .attr("stroke-width",1);})
   
 /*Discretization*/
   d3.select("#slider-4").on("input",function(){
@@ -136,7 +100,7 @@ d3.select("#zoom-spring-4").on("mouseout",function(){
 
 
 /*Arbit-m*/
-d3.select("#arbit-slider").on("input",function(event){
+d3.select("#arbit_slider").on("input",function(event){
 let i = parseInt(d3.select(this).property("value"));
    
 if(i==1){d3.select("#arbit-m1").attr("visibility","");}
@@ -232,8 +196,14 @@ d3.select("#cm3").on("mouseout",function(){
 
 
 /*Force on a string*/
-d3.select("#mov-cc").call(d3.drag().on("drag",function(event){
+var a = 0;
+//Circle drag
+d3.select("#mov-cc").call(d3.drag()
+
+
+.on("drag",function(event){
   console.log(event.x);
+  let v = Math.round(event.x/10);
   let t = event.x;
   if(t>1210 & t<1850){
     d3.select(this)
@@ -252,17 +222,65 @@ d3.select("#mov-cc").call(d3.drag().on("drag",function(event){
     .attr("height",13);
   
   d3.select("#gstrech")
-    .attr("x2", (event.x +50))
-    .attr("y2",1349 +(5*event.x/100));}
+    .attr("x2", 150 +(0.2*event.x))
+    .attr("y2", -150+(0.1*event.x ));
   
-  /*d3.select("#dline")
-    .attr("x1",event.x)
-    .attr("x2",event.x);}*/
+  d3.select("#algebraicForce")
+    .text(10+(v-130)+")");
+  
+  }})
 
-}))
+)
+
+/*Text drag event*/
+d3.select("#algebraicForce").call(d3.drag()
+  .on("start",function(event){
+    b = Math.round(event.x/10);
+    
+   })
+  .on("drag",function(event){
+  let v = Math.round(event.x/10);
+  console.log(v);
+  let t = (v+a-50)
+
+  if(v>0 & v<450){
+    
+  d3.select(this)
+    .text( (v) -50 + ")");}
+    //.attr("x",event.x);
+  
+  d3.select("#mov-cc")
+    .attr("cx", (1015.5 + (5*(v))))
+    .attr("height", 30);
+
+  d3.select("#springg")
+    .attr("width", (240 + 1*((v))))
+    .attr("height", 30);
+
+  d3.select("#force")
+    .attr("width", (-40+1.2*(v)))
+    .attr("height", 10);
+
+  d3.select("#stretch")
+    .attr("width", (-40+1.2*(v)))
+    .attr("height", 13);
+
+  d3.select("#gstretch")
+    .attr("x2", 250 +(2*v ))
+    .attr("y2",-50+(1*v ));
+  })
+  .on("end",function(event){
+    c = Math.round(event.x/10);
+    a = a+ (c - b);
+    console.log(a);
+  })
+  
+  
+  )
+ 
 
 /*Coordinates with moving curve*/
-d3.select("#slider-t").on("input",function(){
+d3.select("#sliderCurve").on("input",function(){
   let i = parseInt(d3.select(this).property("value"));
   console.log(i);
 
@@ -313,4 +331,87 @@ d3.select('#variable_strings')
 
   d3.select("#orig")
     .attr("opacity",i/1200);
+
+  d3.selectAll("#verticesTriangle")
+    .attr("opacity",1.2*i/100);
+  })
+
+
+  /*Slider-Total Force*/
+d3.select("#slider-tforce").on("input",function(event){
+  let i = parseInt(d3.select(this).property("value"));
+  /*console.log(i);*/
+
+  if(i>=0){
+    d3.select("#lhs")
+    .text("i + " + (i));
+
+    d3.select("#rhs2")
+    .text("i + " + (i));
+  
+    d3.select("#rhs1")
+    .text("i + " + (i-1));
+  
+    d3.select("#rhs3")
+    .text("i + " + (i+1));
+  }
+
+  if(i<0){
+d3.select("#lhs")
+    .text("i  " + (i));
+
+    d3.select("#rhs2")
+    .text("i  " + (i));
+  
+    d3.select("#rhs1")
+    .text("i  " + (i -1));
+  
+    d3.select("#rhs3")
+    .text("i  " + (i+1));}
+
+
+
+    /*Figure+text*/
+
+    
+d3.select("#m"+ i)
+    .attr("visibility","");
+
+    d3.select("#m"+(i-2))
+    .attr("visibility","hidden");
+
+    d3.select("#m"+(i+2))
+    .attr("visibility","hidden");
+
+    d3.select("#t"+ i)
+    .attr("visibility","");
+
+    d3.select("#t"+(i-2))
+    .attr("visibility","hidden");
+
+    d3.select("#t"+(i+2))
+    .attr("visibility","hidden");
+    
+    
+    console.log( i);
+  })
+
+  d3.select("#ques").on("mouseover",function(){
+    d3.select("#diff")
+      .attr("visibility","");
+  })
+
+  d3.select("#ques").on("mouseout",function(){
+    d3.select("#diff")
+      .attr("visibility","hidden");
+  })
+
+  d3.select("#circle1").on("mouseover",function(){
+    d3.select("#equation1")
+      .attr("visibility","");
+  })
+
+  d3.select("#circle1").on("mouseout",function(){
+    d3.select("#equation1")
+      .attr("visibility","hidden");
   })

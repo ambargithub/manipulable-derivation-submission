@@ -30,21 +30,43 @@
     margin-left: 80px;
 }
 
-/*Real world*/
+/*Reality*/
 #slider-1{
     position: relative;
     left: 200px;
-    width: 250px;
+    top: -450px;
+    width: 450px;
     height: 30px;
 }
 
-#guitar_slider{
+#labels-slider1{
+    top: -950px;
+}
+
+#p2Reality{
+    color: white;
+}
+
+#div_guitar_rope{
     position: relative;
     left: 750px;
     top: 0px;
 }
 
-/*Idealized graph*/
+#guitar{
+    position: relative;
+    left: -100px;
+    top: -50px;
+}
+
+#rope{
+    position: relative;
+    left: 420px;
+    top: -370px;
+}
+
+
+/*String Dynamism*/
 #slider-2{
     position: relative;
     top: -820px;
@@ -77,6 +99,8 @@
     top: -358px;
 }
 
+
+
 #strings_spring{
     position: relative;
     left: 850px;
@@ -97,8 +121,8 @@
 
 #slider-4{
     position: relative;
-    top: -100px;
-    left: 20px;
+    top: -30px;
+    left: 150px;
     width: 400px;
 }
 /*Progress bar*/
@@ -122,11 +146,17 @@
     left: 850px;
     top: -250px;
 }
+#svg_arbit{
+    position: relative;
+    
+    top: 200px;
+}
+#arbit_slider{
 
-#arbit-slider{
-
-    width: 600px;
-    top: -100px;
+    width: 400px;
+    top: 0px;
+    left: -100px;
+    z-index: 15;
 }
 
 
@@ -184,8 +214,8 @@
 
 #graph-force{
     position: relative;
-    left: 0px;
-    top: -750px;
+    left: 270px;
+    top: -400px;
     z-index: -5;
 }
 
@@ -196,6 +226,21 @@
     transform: rotate(30deg);
     z-index: 5;
 };
+#mov-cc{
+    
+    z-index: 5;
+};
+#springg{
+    
+    z-index: -5;
+};
+
+#algebraicForce{
+   
+    z-index: 15;
+    cursor: col-resize;
+};
+
 
 
 /*Moving curve*/
@@ -208,22 +253,79 @@
 #triangle{
     position: relative;
     top: 0px;
-    left: 432px;
+    left: 832px;
     fill: black;
     stroke-width: 4;
     
 }
 
-#triangle1{
+#svg_triangle{
     position: relative;
-    top: 342px;
-    left: 180px;
+    top: 142px;
+    left: 1017px;
     
 }
 
-#slider-t{
-    width: 400px;
-    left: 200px;
-    bottom: -100px;
+#curveCoordinates{
+    position: relative;
+    top: -200px;
+    left: 880px;
+    
+}
 
+#sliderCurve{
+    position: relative;
+    width: 400px;
+    left: 1100px;
+    bottom: 300px;
+
+}
+
+#div_totalforce{
+    position: relative;
+    left: 850px;
+    top: 0px;
+}
+
+#tforce{
+    position: relative;
+    left: 120px;
+    top: -180px;
+}
+
+#slider-tforce{
+    position: relative;
+    left: 230px;
+    top: -1100px;
+    width: 250px;
+}
+
+#pureMath1{
+    position: relative;
+    width: 500px;
+    top: 350px;
+}
+#pureMath2{
+    position: relative;
+    left: 650px;
+    top: -100px;
+    width: 500px;
+}
+#pureMath3{
+    position: relative;
+    left: 1250px;
+    top: -500px;
+    width: 500px;
+}
+
+#help{
+    position: relative;
+    left: 0px;
+    top: -1000px;
+    
+}
+
+#c1{
+   z-index: 5;
+    
 }
