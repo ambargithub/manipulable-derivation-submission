@@ -191,6 +191,7 @@
     position: absolute;
     top: 570px;
     left: 80px;
+    z-index: -5;
 }
 
 #force{
@@ -200,7 +201,7 @@
     transform: rotate(180deg);
 }
 
-#strech{
+#stretch{
     position: absolute;
     top: 640px;
     left: 340px;

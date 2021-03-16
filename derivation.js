@@ -217,7 +217,7 @@ d3.select("#mov-cc").call(d3.drag()
     .attr("width",(event.x*0.25-300))
     .attr("height",10);
 
-  d3.select("#strech")
+  d3.select("#stretch")
     .attr("width",(event.x*0.25-300))
     .attr("height",13);
   
@@ -243,10 +243,10 @@ d3.select("#algebraicForce").call(d3.drag()
   console.log(v);
   let t = (v+a-50)
 
-  if(v>0 & v<450){
+  if(v>50 & v<150){
     
   d3.select(this)
-    .text( (v) -50 + ")");}
+    .text( (v) -50 + ")");
     //.attr("x",event.x);
   
   d3.select("#mov-cc")
@@ -267,7 +267,7 @@ d3.select("#algebraicForce").call(d3.drag()
 
   d3.select("#gstretch")
     .attr("x2", 250 +(2*v ))
-    .attr("y2",-50+(1*v ));
+    .attr("y2",-50+(1*v ));}
   })
   .on("end",function(event){
     c = Math.round(event.x/10);
