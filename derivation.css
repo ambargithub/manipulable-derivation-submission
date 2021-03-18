@@ -28,6 +28,7 @@
 #text_1{
     line-height: 3;
     margin-left: 80px;
+    
 }
 
 /*Reality*/
@@ -77,8 +78,8 @@
 #slider-3{
     position: relative;
     top: -600px;
-    left: -20px;
-    width: 200px;
+    left: -47px;
+    width: 216px;
 }
 
 #strings_slider{
@@ -185,7 +186,9 @@
     left: 44px;
     top: -485px;
 }
-
+#zoom-text{
+    transform: rotate(45deg);   
+}
 /*Force on a string*/
 #springg{
     position: absolute;

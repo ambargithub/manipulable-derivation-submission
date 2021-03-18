@@ -53,5 +53,27 @@ d3.select("#sliderCurve").on("input",function(){
   
     d3.selectAll("#verticesTriangle")
       .attr("opacity",1.2*i/100);
+
+  
+    
+      if(i>0){
+        d3.select("#t_yinitial")
+        .attr("visibility","hidden");
+      }
+      else{
+        d3.select("#t_yinitial")
+        .attr("visibility","");
+      }
+
+      if(i==76){
+      d3.select("#t_yfinal")
+      .attr("visibility","");
+    }
+    else{
+      d3.select("#t_yfinal")
+      .attr("visibility","hidden");
+    }
+    
+      
     })
   

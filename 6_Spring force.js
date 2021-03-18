@@ -29,7 +29,7 @@ d3.select("#mov-cc").call(d3.drag()
     .attr("y2", -150+(0.1*event.x ));
   
   d3.select("#algebraicForce")
-    .text(10+(v-130)+")");
+    .text("("+(v-120)+")");
   
   }})
 
@@ -49,7 +49,7 @@ d3.select("#algebraicForce").call(d3.drag()
   if(v>50 & v<150){
     
   d3.select(this)
-    .text( (v) -50 + ")");
+    .text( "("+ (v -50) + ")");
     //.attr("x",event.x);
   
   d3.select("#mov-cc")
