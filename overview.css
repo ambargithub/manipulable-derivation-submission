@@ -1,0 +1,19 @@
+#guitar{
+    position: relative;
+    left : 450px;
+    top : 10px;
+    width: 600px;
+    
+}
+
+#heading{
+    position: relative;
+    left : 390px; 
+}
+
+#button{
+    position: relative;
+    left : 680px; 
+    width: 150px;
+    height: 50px;
+}

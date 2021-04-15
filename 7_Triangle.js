@@ -59,15 +59,74 @@ d3.select("#sliderCurve").on("input",function(){
       if(i>0){
         d3.select("#t_yinitial")
         .attr("visibility","hidden");
+
+        d3.select("#Fminus1_initial")
+        .attr("visibility","hidden");
+
+      d3.select("#Fminus1_initial_arrow")
+        .attr("visibility","hidden");
+
+      d3.select("#Fplus1_initial")
+        .attr("visibility","hidden");
+
+      d3.select("#Fplus1_initial_arrow")
+        .attr("visibility","hidden");
+
+
       }
       else{
         d3.select("#t_yinitial")
         .attr("visibility","");
+
+        d3.select("#Fminus1_initial")
+        .attr("visibility","");
+
+      d3.select("#Fminus1_initial_arrow")
+        .attr("visibility","");
+
+        d3.select("#Fminus1_final")
+        .attr("visibility","hidden");
+
+      d3.select("#Fminus1_final_arrow")
+        .attr("visibility","hidden");
+
+      d3.select("#Fplus1_initial")
+        .attr("visibility","");
+
+      d3.select("#Fplus1_initial_arrow")
+        .attr("visibility","");
+
+        d3.select("#Fplus1_final")
+        .attr("visibility","hidden");
+
+      d3.select("#Fplus1_final_arrow")
+        .attr("visibility","hidden");
+
+
       }
 
       if(i==76){
       d3.select("#t_yfinal")
       .attr("visibility","");
+
+      d3.select("#p2-moving")
+        .style("color","black");
+
+
+      d3.select("#Fminus1_final")
+        .attr("visibility","");
+
+      d3.select("#Fminus1_final_arrow")
+        .attr("visibility","");
+
+      d3.select("#Fplus1_final")
+        .attr("visibility","");
+
+      d3.select("#Fplus1_final_arrow")
+        .attr("visibility","");
+
+
+
     }
     else{
       d3.select("#t_yfinal")
@@ -77,3 +136,149 @@ d3.select("#sliderCurve").on("input",function(){
       
     })
   
+
+    /*Force notation Fi-1(xi)*/
+    d3.select("#Fminus1_initial_text").on("mouseover",function(event){
+      d3.select(this)
+        .style("color","red");
+
+      d3.select("#Fminus1_initial")
+        .attr("stroke","red");
+
+      d3.select("#Fminus1_initial_arrow")
+        .attr("stroke","red");
+
+      d3.select("#Fminus1_final")
+        .attr("stroke","red");
+
+      d3.select("#Fminus1_final_arrow")
+        .attr("stroke","red");
+    })
+
+    d3.select("#Fminus1_initial_text").on("mouseout",function(event){
+      d3.select(this)
+        .style("color","black");
+
+      d3.select("#Fminus1_initial")
+        .attr("stroke","black");
+
+      d3.select("#Fminus1_initial_arrow")
+        .attr("stroke","black");
+
+      d3.select("#Fminus1_final")
+        .attr("stroke","black");
+
+      d3.select("#Fminus1_final_arrow")
+        .attr("stroke","black");
+
+    })
+
+
+    d3.select("#Fminus1_end_text").on("mouseover",function(event){
+      d3.select(this)
+        .style("color","red");
+
+      d3.select("#Fminus1_initial")
+        .attr("stroke","red");
+
+      d3.select("#Fminus1_initial_arrow")
+        .attr("stroke","red");
+
+      d3.select("#Fminus1_final")
+        .attr("stroke","red");
+
+      d3.select("#Fminus1_final_arrow")
+        .attr("stroke","red");
+    })
+
+    d3.select("#Fminus1_end_text").on("mouseout",function(event){
+      d3.select(this)
+        .style("color","black");
+
+      d3.select("#Fminus1_initial")
+        .attr("stroke","black");
+
+      d3.select("#Fminus1_initial_arrow")
+        .attr("stroke","black");
+
+      d3.select("#Fminus1_final")
+        .attr("stroke","black");
+
+      d3.select("#Fminus1_final_arrow")
+        .attr("stroke","black");
+
+    })
+
+
+
+        /*Force notation Fi+1(xi)*/
+    d3.select("#Fplus1_initial_text").on("mouseover",function(event){
+      d3.select(this)
+        .style("color","red");
+
+      d3.select("#Fplus1_initial")
+        .attr("stroke","red");
+
+      d3.select("#Fplus1_initial_arrow")
+        .attr("stroke","red");
+
+      d3.select("#Fplus1_final")
+        .attr("stroke","red");
+
+      d3.select("#Fplus1_final_arrow")
+        .attr("stroke","red");
+    })
+
+    d3.select("#Fplus1_initial_text").on("mouseout",function(event){
+      d3.select(this)
+        .style("color","black");
+
+      d3.select("#Fplus1_initial")
+        .attr("stroke","black");
+
+      d3.select("#Fplus1_initial_arrow")
+        .attr("stroke","black");
+
+      d3.select("#Fplus1_final")
+        .attr("stroke","black");
+
+      d3.select("#Fplus1_final_arrow")
+        .attr("stroke","black");
+
+    })
+
+
+    d3.select("#Fplus1_end_text").on("mouseover",function(event){
+      d3.select(this)
+        .style("color","red");
+
+      d3.select("#Fplus1_initial")
+        .attr("stroke","red");
+
+      d3.select("#Fplus1_initial_arrow")
+        .attr("stroke","red");
+
+      d3.select("#Fplus1_final")
+        .attr("stroke","red");
+
+      d3.select("#Fplus1_final_arrow")
+        .attr("stroke","red");
+    })
+
+    d3.select("#Fplus1_end_text").on("mouseout",function(event){
+      d3.select(this)
+        .style("color","black");
+
+      d3.select("#Fplus1_initial")
+        .attr("stroke","black");
+
+      d3.select("#Fplus1_initial_arrow")
+        .attr("stroke","black");
+
+      d3.select("#Fplus1_final")
+        .attr("stroke","black");
+
+      d3.select("#Fplus1_final_arrow")
+        .attr("stroke","black");
+
+    })

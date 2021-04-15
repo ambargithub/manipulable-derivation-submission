@@ -83,4 +83,12 @@ d3.select("#zoom-spring-1").on("mouseover",function(){
     .attr("fill","black");
   })
   
+  /*Progress bar*/
+d3.selectAll("#guit").on("click",function(){
+  window.open("1_Idealization.html","_self" ); ;
+})
+
+d3.select("#dyna").on("click",function(){
+  window.open("2_StringDynamism.html","_self" ); ;
+})
   

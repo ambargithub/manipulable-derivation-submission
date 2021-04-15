@@ -26,17 +26,35 @@
 
 /*For all the text*/
 #text_1{
-    line-height: 3;
+    line-height: 2.5;
     margin-left: 80px;
+    font-size: 14px;
     
 }
+
+/*Buttons*/
+#button-n{
+    position: absolute;
+    left: 1300px;
+    top: 60px;
+    z-index: 50;
+}
+#button-p{
+    position: absolute;
+    left: 1200px;
+    top: 60px;
+    z-index: 50;
+}
+
+
+
 
 /*Reality*/
 #slider-1{
     position: relative;
-    left: 200px;
-    top: -450px;
-    width: 450px;
+    left: -670px;
+    top: -595px;
+    width: 300px;
     height: 30px;
 }
 
@@ -67,19 +85,12 @@
 }
 
 
-/*String Dynamism*/
-#slider-2{
-    position: relative;
-    top: -820px;
-    left: -130px;
-    transform: rotate(90deg)
-}
-
 #slider-3{
     position: relative;
     top: -600px;
-    left: -47px;
+    left: 90px;
     width: 216px;
+    z-index: 5;
 }
 
 #strings_slider{
@@ -98,14 +109,35 @@
 #dynamic{
     position: relative;
     top: -358px;
+    z-index: -15;
+}
+
+
+#base{
+    z-index: 15;
+}
+
+
+#c-test{
+    z-index: 15;
 }
 
 
 
+
+
+
+
+
+#discrete_text{
+    position: relative;
+    top: -80px;
+}
+
 #strings_spring{
     position: relative;
     left: 850px;
-    top: -250px;
+    top: -380px;
 }
 #zoom-spring{
     position: relative;
@@ -122,26 +154,14 @@
 
 #slider-4{
     position: relative;
-    top: -30px;
-    left: 150px;
+    top: 0px;
+    left: 15px;
     width: 400px;
-}
-/*Progress bar*/
-
-#rt{
-    position: fixed;
-    top: 650px;
-    left: 250px;
-    height: 50px;
+    z-index: 5;
 }
 
-#svg{
-    position: fixed;
-    top: 620px;
-    
-}
 
-/*Arbitrary m*/
+/*Arbitrary m
 #arbit-m{
     position: relative;
     left: 850px;
@@ -158,10 +178,15 @@
     top: 0px;
     left: -100px;
     z-index: 15;
-}
+}*/
 
 
 /*Zoom*/
+#zoom_text{
+    position: relative;
+    top: -100px;
+}
+
 #zoom-m{
     position: relative;
     left: 850px;
@@ -189,7 +214,38 @@
 #zoom-text{
     transform: rotate(45deg);   
 }
+
+#p1_Zoom{
+    position: relative;
+    
+    top: 230px;
+    z-index: 5;
+}
+
+
+#p2_Zoom{
+    color: transparent;
+    position: relative;
+    top: -50px;
+}
 /*Force on a string*/
+#s-l{
+    position:relative;
+    transform: rotate(38deg);
+    z-index: 5;
+    top:-510px;
+    left: 160px;
+    
+}
+
+#s-r{
+    position:relative;
+    transform: rotate(38deg);
+    z-index: 5;
+    top:-425px;
+    left: 150px;
+    
+}
 #springg{
     position: absolute;
     top: 570px;
@@ -197,23 +253,37 @@
     z-index: -5;
 }
 
-#force{
+#force-l{
     position: absolute;
-    top: 530px;
-    left: 340px;
+    top: 380px;
+    left: 110px;
+    
+}
+
+#stretch-l{
+    position: absolute;
+    top: 540px;
+    left: 110px;
     transform: rotate(180deg);
 }
 
-#stretch{
+#force-r{
     position: absolute;
-    top: 640px;
-    left: 340px;
+    top: 380px;
+    left: 425px;
+    transform: rotate(180deg);
+}
+
+#stretch-r{
+    position: absolute;
+    top: 540px;
+    left: 425px;
 }
 
 #string-force{
     position: relative;
     left: 850px;
-    top: -650px;
+    top: -450px;
 }
 
 #graph-force{
@@ -229,30 +299,58 @@
     right: 868px;
     transform: rotate(30deg);
     z-index: 5;
-};
+}
 #mov-cc{
     
     z-index: 5;
-};
+}
 #springg{
     
     z-index: -5;
-};
+}
 
 #algebraicForce{
    
     z-index: 15;
     cursor: col-resize;
-};
+}
 
+#s-force{
+    
+    z-index: 25;
+}
 
+#m-eq{
+    position: relative;
+    top: -350px;
+    left: 300px;
+    z-index: 5;
+}
+
+#b-rotate{
+    position: relative;
+    top: 460px;
+    left: -680px;  
+}
+
+#p2-force{
+    color: white;
+}
+;
 
 /*Moving curve*/
 #moving-curve{
     position: relative;
-    left: 850px;
-    top: -270px;
+    left: 650px;
+    top: -170px;
+}/*Doesn't work*/
+
+#coord_text{
+    position: relative;
+    top: -50px;
 }
+
+
 
 #triangle{
     position: relative;
@@ -265,30 +363,41 @@
 
 #svg_triangle{
     position: relative;
-    top: 142px;
-    left: 1017px;
+    top: 42px;
+    left: 837px;
     
 }
 
 #curveCoordinates{
     position: relative;
-    top: -200px;
-    left: 880px;
+    top: -300px;
+    left: 700px;
     
 }
 
 #sliderCurve{
     position: relative;
     width: 400px;
-    left: 1100px;
-    bottom: 300px;
+    left: 900px;
+    bottom: 400px;
+    z-index: 5;
 
 }
 
+#p2-moving{
+    color: white;
+}
+
+
+
+
+
+
+/*Total force*/
 #div_totalforce{
     position: relative;
-    left: 850px;
-    top: 0px;
+    left: 750px;
+    top: -250px;
 }
 
 #tforce{
@@ -299,10 +408,46 @@
 
 #slider-tforce{
     position: relative;
-    left: 230px;
-    top: -1100px;
+    left: -670px;
+    top: -1250px;
     width: 250px;
+    z-index: 5;
 }
+
+/*Dropping*/
+
+#svg_col-6{
+    position: relative;
+    top: 150px;
+    left: -50px;
+}
+
+#dropping_text{
+    font-size: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #pureMath1{
     position: relative;
@@ -333,3 +478,132 @@
    z-index: 5;
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Pure Math*/
+
+
+#Force{
+    position:relative;
+    top: 200px;
+}
+
+#F-rect{
+    position:relative;
+    top: 230px;
+    left: 50px;
+    z-index: 5;
+}
+#R-rect{
+    position:relative;
+    top: 300px  ;
+    left: -110px;
+    z-index: 3;
+}
+#Red{
+    position:relative;
+    top: 320px;
+    left: 10px;
+    z-index: 3;
+}
+#R-rect-1{
+    position:relative;
+    top: 525px;
+    left: 60px;
+    z-index: 3;
+}
+#R-rect-2{
+    position:relative;
+    top: 485px;
+    left: -50px;
+    z-index: 2;
+}
+
+#f-rect{
+    position:relative;
+    top: 100px;
+ 
+}
+
+#f-re{
+    z-index: 5;
+ 
+}
+
+#slider-t{
+    transform: rotate(90deg);
+    position: relative;
+    top:370px;
+    left:-370px;
+    width: 600px;
+    z-index: 15;
+}
+
+#puremath_div{
+    position: relative;
+    top: -50px;
+}
+
+
+
+
+/*Progress bar*/
+
+
+#progress{
+    position:relative;
+    top: -470px;
+}
+
+#progress_rect{
+    position:relative;
+    left: -470px;
+}
+
+#rt{
+    position: fixed;
+    top: 500px;
+    left: 300px;
+    height: 50px;
+}
+
+#svg{
+    position: fixed;
+    top: 620px;
+    
+}
+
+#guit{
+    cursor: pointer;
+}
+
+#dyna{
+    cursor: pointer;
+}
+
+#disc{
+    cursor: pointer;
+}
+
+#geo{
+    cursor: pointer;
+}
+
+#alg{
+    cursor: pointer;
+}
+
+
