@@ -154,8 +154,8 @@
 
 #slider-4{
     position: relative;
-    top: 0px;
-    left: 15px;
+    top: -70px;
+    left: -775px;
     width: 400px;
     z-index: 5;
 }

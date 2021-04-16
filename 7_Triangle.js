@@ -282,3 +282,18 @@ d3.select("#sliderCurve").on("input",function(){
         .attr("stroke","black");
 
     })
+
+     /*Progress bar*/
+     d3.selectAll("#guit").on("click",function(){
+      window.open("1_Idealization.html","_self" ); ;
+    })
+    
+    d3.select("#dyna").on("click",function(){
+      window.open("2_StringDynamism.html","_self" ); ;
+    })
+  
+    d3.select("#disc").on("click",function(){
+      window.open("3_Discretization.html","_self" ); })
+
+    d3.select("#geo").on("click",function(){
+        window.open("5_Zoom-m.html","_self" );})

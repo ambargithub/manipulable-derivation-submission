@@ -41,8 +41,14 @@
         
         </div>
             <div id = "strings_slider" class="col-md-6">
+                    
                 <!--Base string-->
                 <svg id="base" width="400" height="610" viewBox="0 0 1257 610" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="label_drag">
+                    <rect x="32" y="1" width="510" height="72" fill="#C4C4C4" fill-opacity="0.26" stroke="black" stroke-width="2"/>
+                    <line x1="292.341" y1="73.6346" x2="643.341" y2="317.635" stroke-width="2" stroke="black" stroke-dasharray="5 5"/>
+                    <text  x = "50"  y = "46" font-size = 2.25em font-weight="bold" fill ="black"  >Drag to interact with the string</text>-->
+                </g>
                     <line x1="2.50098" x2="2.50098" y2="610" stroke="black" stroke-width="5"/>
                     <line x1="1251.94" y1="307.763" x2="0.000244141" y2="307.763" stroke="black" stroke-width="2" stroke-dasharray="3 3"/>
                     <line x1="1254.44" x2="1254.44" y2="610" stroke="black" stroke-width="5"/>
@@ -68,10 +74,17 @@
         <div id ="rt" class="row_f" ><!--Progress Bar-->
             <div class="col-md-12">
                 <svg id="progress_rect" width="2937" height="475" viewBox="0 0 6937 475" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="label_progress_reality">
+                        <rect x="492" y="-100" width="410" height="72" fill="#C4C4C4" fill-opacity="0.26" stroke="black" stroke-width="2"/>
+                        <line x1="898.341" y1="-33.6346" x2="1143.341" y2="117.635" stroke-width="2" stroke="black" stroke-dasharray="5 5"/>
+                        <text  x = "560"  y = "-55" font-size = 2.25em font-weight="bold" fill ="black"  >Click to go back</text>-->
+                    </g>
+    
                     <rect x="0.5" y="0.5" width="6936" height="474" fill="#F6F975" fill-opacity="0.5" stroke="none"/>
                     </svg>      
                 
                 <svg id="progress" width="957" height="373" viewBox="0 0 6102 373" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    
                     <text id="guit" x="60" y="-60" fill="black" font-size="5em" font-weight="bold" font-family="Arial" >Reality</text>
                     <text id="dyna" x="1460" y="-60" fill="black" font-size="5em" font-weight="bold" font-family="Arial" >Idealization</text>
                     <text id="disc" x="2860" y="-60" fill="grey" font-size="5em" font-weight="normal" font-family="Arial" >Discretization</text>

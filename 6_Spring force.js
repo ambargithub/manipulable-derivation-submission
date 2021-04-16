@@ -180,9 +180,10 @@ d3.select(this).attr("fill","#545353")
     })
   
     d3.select("#disc").on("click",function(){
-      window.open("3_Discretization.html","_self" ); ;
-    })
-  
+      window.open("3_Discretization.html","_self" ); })
+
+    d3.select("#geo").on("click",function(){
+        window.open("5_Zoom-m.html","_self" );})
 
 
 

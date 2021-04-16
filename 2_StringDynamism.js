@@ -1,3 +1,45 @@
+d3.select("#c-test").call(d3.drag()
+    
+  .on("start",function(event){
+   d3.select(this)
+    .attr("stroke","red"); 
+
+    d3.select("#label_drag")
+    .attr("visibility","hidden")
+  })
+
+  .on("drag",function(event){
+        let i = event.y;
+        console.log(i);
+        
+  if(i>218 & i<418){
+
+    d3.select(this)
+      .attr("cy",(i));
+
+      var data =[[0, 50], [200, 0.31*(i-150)], [400, 50]];
+        
+
+    var lineGenerator = d3.line().curve(d3.curveNatural);
+
+    var pathString = lineGenerator(data);
+  
+    d3.select('#dynamic_strings')
+    .attr('d', pathString)
+    .attr("fill","white")
+    .attr("stroke","black")
+    .attr("stroke-width",1);
+
+    }})
+    
+    .on("end",function(event){
+      d3.select(this)
+       .attr("stroke","black"); 
+     })
+
+     )
+
+
 d3.select("#slider-3").on("input",function(){
   let j = parseInt(d3.select(this).property("value"));
   
@@ -84,14 +126,25 @@ d3.select("#slider-3").on("input",function(){
 
 /*Progress bar*/
 d3.selectAll("#guit").on("click",function(){
+
+
+
   window.open("1_Idealization.html","_self" ); ;
 })
 
+d3.selectAll("#guit").on("mouseover",function(){
 
+  d3.select("#label_progress_reality")
+.attr("visibility","hidden");
 
+})
 
+d3.selectAll("#guit").on("mouseout",function(){
 
+  d3.select("#label_progress_reality")
+.attr("visibility","");
 
+})
 
 
 
