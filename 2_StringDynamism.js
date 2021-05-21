@@ -1,4 +1,4 @@
-d3.select("#c-test").call(d3.drag()
+d3.select("#circle").call(d3.drag()
     
   .on("start",function(event){
    d3.select(this)
@@ -35,6 +35,7 @@ d3.select("#c-test").call(d3.drag()
     .on("end",function(event){
       d3.select(this)
        .attr("stroke","black"); 
+
      })
 
      )
@@ -46,7 +47,7 @@ d3.select("#slider-3").on("input",function(){
 
   if(j==10){
       
-    d3.select("#c-test")
+    d3.select("#circle")
       .attr("cx",950);
     
       d3.select("#ds-r").attr("visibility","");
@@ -54,7 +55,7 @@ d3.select("#slider-3").on("input",function(){
       d3.select("#ds-c").attr("visibility","hidden");}
 
   else if(j==0){
-    d3.select("#c-test")
+    d3.select("#circle")
     .attr("cx",312.5);
 
     d3.select("#ds-l").attr("visibility","");
@@ -62,7 +63,7 @@ d3.select("#slider-3").on("input",function(){
         d3.select("#ds-c").attr("visibility","hidden");}
   
   else {
-    d3.select("#c-test")
+    d3.select("#circle")
     .attr("cx",625);
   
     d3.select("#ds-c").attr("visibility","");
@@ -71,7 +72,7 @@ d3.select("#slider-3").on("input",function(){
 
  
 
-  d3.select("#c-test").call(d3.drag()
+  d3.select("#circle").call(d3.drag()
     
   .on("start",function(event){
    d3.select(this)
@@ -147,7 +148,39 @@ d3.selectAll("#guit").on("mouseout",function(){
 })
 
 
+d3.select("#guitar-body")
+      .attr("stroke-opacity",0)
+      .attr("opacity",0);
 
+
+d3.select("#slider-1").on("input",function(){
+  let i = parseInt(d3.select(this).property("value"));
+  var o = (0 + 1.8*i)/100
+  
+  d3.select("#guitar-body")
+      .attr("stroke-opacity",o)
+      .attr("opacity",o);
+
+  d3.selectAll("#strings_h").transition()
+      .duration(400)
+      .attr("opacity",o);
+
+  d3.selectAll("#strings_v").transition()
+      .duration(400)
+      .attr("opacity",p);
+
+  d3.select("#bridge")
+      .attr("fill-opacity",(100 - 2*i)/100);
+  
+
+d3.select("#stick")
+      .attr("stroke-opacity",(100 - 2*i)/100);
+
+  if(i==52){
+      d3.select("#p2Reality")
+        .style("color","black");
+  }
+})
 
 
 

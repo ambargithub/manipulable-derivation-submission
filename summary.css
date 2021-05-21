@@ -1,0 +1,178 @@
+
+/*Summary heading*/
+#summary_heading{
+    position: relative;
+    
+    left:120px;
+    z-index: 25;
+}
+
+
+/*Slider*/
+#slider11 .rs-range-color {
+    background-color: #f7fafc;
+}
+#slider11 .rs-path-color {
+    background-color: rgb(245, 86, 86);
+}
+#slider11 .rs-handle {
+    background-color: #1f1d1d;
+}
+#slider11 .rs-bg-color {
+    background-color: white;
+}
+
+
+#slider11{
+    position: relative;
+    top: -600px;
+    left:280px;
+    z-index: 15;
+}
+
+/*Reality -- Idealization*/
+#guitar1{
+    position: relative;
+    left: 50px;
+    top: 90px;
+    transform: rotate(-1deg);
+}
+
+#div_guitar_rope{
+    position: relative;
+    left: 480px;
+    top: -1020px;
+    z-index: 15;
+}
+
+#heading_summary{
+    z-index: 5;
+}
+
+/*Discretization*/
+#discrete11{
+    position: relative;
+    left: 118px;
+    top: -173px;
+    z-index: -5;
+    transform: rotate(0deg);
+}
+/*Geometric structure*/
+#yaxis{
+    position: absolute;
+    left: 130px;
+    top: 20px;
+    z-index: 5;
+    
+}
+
+#xaxis{
+    position: absolute;
+    left: 260px;
+    top: 120px;
+    z-index: 5;
+    transform: rotate(90deg);
+}
+
+#zoom_into11{
+    position: relative;
+    left: 78px;
+    top: -453px;
+    z-index: -5;
+    transform: rotate(0deg);
+}
+
+#s-r_11{
+    position:relative;
+    transform: rotate(0deg);
+    z-index: -1;
+    left: -220px;
+    
+}
+
+#s-l_11{
+    position:relative;
+    transform: rotate(180deg);
+    z-index: -1;
+    top:-580px;
+    left: -220px;
+    
+}
+
+/*Pure Math*/
+#maths1{
+    position:relative;
+    z-index: -1;
+    top:-600px;
+    left: 150px;
+    
+}
+#maths2{
+    position:relative;
+    z-index: -1;
+    top:-680px;
+    left: 50px;
+    
+}
+#maths3{
+    position:relative;
+    z-index: -1;
+    top:-780px;
+    left: 170px;
+    
+}
+
+/*Labels*/
+#labels_summary11{
+    position:relative;
+    z-index: -1;
+    top:-880px;
+    left: -170px;
+    
+}
+
+#rect_reality{
+    position:absolute;
+    z-index: -1;
+    top:-880px;
+    left: -170px;
+    transform: rotate(45deg);
+  
+}
+
+#rect_ideal{
+    position:absolute;
+    z-index: -1;
+    top:-880px;
+    left: -170px;
+    transform: rotate(23deg);
+  
+}
+
+#rect_dis{
+    position:absolute;
+    z-index: -1;
+    top:-880px;
+    left: -170px;
+    transform: rotate(0deg);
+  
+}
+
+#rect_geo{
+    position:absolute;
+    z-index: -1;
+    top:-880px;
+    left: -170px;
+    transform: rotate(-23deg);
+  
+}
+
+#rect_mat{
+    position:absolute;
+    z-index: -1;
+    top:-880px;
+    left: -170px;
+    transform: rotate(-45deg);
+  
+}
+

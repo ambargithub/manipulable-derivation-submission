@@ -1,12 +1,194 @@
+/*Call-back -String dynamism*/ 
+d3.select("#circle").call(d3.drag()
+    
+  .on("start",function(event){
+   d3.select(this)
+    .attr("stroke","red"); 
+
+    d3.select("#label_drag")
+    .attr("visibility","hidden")
+  })
+
+  .on("drag",function(event){
+        let i = event.y;
+        console.log(i);
+
+  /*Straight line conditions*/ 
+  if(302<i & i<334){
+    d3.select("#st_line").attr("visibility","");
+    d3.select("#hori_line").attr("visibility","hidden");
+    d3.select("#slider-4").style("visibility","");
+
+  }  
+  
+  else{
+    d3.select("#st_line").attr("visibility","hidden");
+    d3.select("#hori_line").attr("visibility","hidden");
+    d3.select("#slider-4").style("visibility","hidden");
+
+ 
+  }
+
+
+  /*Slider visibility - both curves */
+
+  if(490<i){
+    d3.select("#slider-4-r").style("visibility","");
+  }  
+
+  else{
+    d3.select("#slider-4-r").style("visibility","hidden");
+
+  }
+
+  if(i<80){
+    d3.select("#slider-4-s").style("visibility","");
+  }  
+
+  else{
+    d3.select("#slider-4-s").style("visibility","hidden");
+
+  }
+
+
+
+
+  if(i>84 & i<570){
+
+    d3.select(this)
+      .attr("cy",(i/1.25 + 45));
+
+      var data = [[5, 160], [137.5, 0.31*(i-321)+160], [275, 160],[412.5, 0.31*(321-i)+160], [545, 160]];
+        
+
+    var lineGenerator = d3.line().curve(d3.curveNatural);
+
+    var pathString = lineGenerator(data);
+  
+    d3.select('#dynamic_strings')
+    .attr('d', pathString)
+    .attr("fill","white")
+    .attr("stroke","black")
+    .attr("stroke-width",8);
+
+
+
+
+
+
+
+
+
+
+
+    }})
+    
+    .on("end",function(event){
+      d3.select(this)
+       .attr("stroke","black"); 
+
+       /*var timer = d3.timer(function(elapsed) {
+        console.log(elapsed);}
+        );*/
+     })
+
+     )
+
+
 /*Discretization*/
 d3.select("#slider-4").on("input",function(){
+
     let i = parseInt(d3.select(this).property("value"));
-    var t = d3.select("#str"+i)
+
+    if(i>0){
+      d3.select("#dynamic").attr("visibility","hidden");
+      d3.select("#circle").attr("visibility","hidden");
+      d3.select("#hori_line").attr("visibility","hidden");
+      d3.select("#slider-4-r").style("visibility","hidden");
+      d3.select("#slider-4-s").style("visibility","hidden");
+      d3.select("#reverse_curve").attr("visibility","hidden");
+
+    }
+    else{d3.select("#dynamic").attr("visibility","");
+    d3.select("#circle").attr("visibility","");
+    d3.select("#hori_line").attr("visibility","hidden");
+}
+
+if(i>4){
+  d3.select("#label_discrete").attr("visibility","");
+
+}
+else{d3.select("#label_discrete").attr("visibility","hidden");
+}
+
+
+    var t = d3.selectAll("#str"+i)
     .attr("visibility","hidden");
-    var u = d3.select("#str"+(i+1))
+    var u = d3.selectAll("#str"+(i+1))
     .attr("visibility","");
     console.log(t);
   })
+
+  d3.select("#slider-4-s").on("input",function(){
+
+    let i = parseInt(d3.select(this).property("value"));
+
+    if(i>0){
+      d3.select("#curve").attr("visibility","");
+      d3.select("#dynamic").attr("visibility","hidden");
+      d3.select("#circle").attr("visibility","hidden");
+      d3.select("#hori_line").attr("visibility","hidden");
+    }
+    else{d3.select("#dynamic").attr("visibility","");
+    d3.select("#curve").attr("visibility","hidden");
+    d3.select("#circle").attr("visibility","");
+    d3.select("#hori_line").attr("visibility","hidden");
+}
+
+if(i>6){
+  d3.select("#label_discrete").attr("visibility","");
+
+}
+else{d3.select("#label_discrete").attr("visibility","hidden");
+}
+
+    var t = d3.selectAll("#str"+i)
+    .attr("visibility","hidden");
+    var u = d3.selectAll("#str"+(i+1))
+    .attr("visibility","");
+    console.log(t);
+  })
+
+  d3.select("#slider-4-r").on("input",function(){
+
+    let i = parseInt(d3.select(this).property("value"));
+
+    if(i>0){
+      d3.select("#reverse_curve").attr("visibility","");
+      d3.select("#dynamic").attr("visibility","hidden");
+      d3.select("#circle").attr("visibility","hidden");
+      d3.select("#hori_line").attr("visibility","hidden");
+    }
+    else{
+    d3.select("#reverse_curve").attr("visibility","hidden");  
+    d3.select("#dynamic").attr("visibility","");
+    d3.select("#circle").attr("visibility","");
+    d3.select("#hori_line").attr("visibility","hidden");
+}
+if(i>6){
+  d3.select("#label_discrete").attr("visibility","");
+
+}
+else{d3.select("#label_discrete").attr("visibility","hidden");
+}
+
+    var t = d3.selectAll("#str"+i)
+    .attr("visibility","hidden");
+    var u = d3.selectAll("#str"+(i+1))
+    .attr("visibility","");
+    console.log(t);
+  })
+
 
 /*Zoomed-SVG*/
 d3.select("#zoom-spring-1").on("mouseover",function(){

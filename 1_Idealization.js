@@ -15,7 +15,7 @@ d3.select("#slider-1").on("input",function(){
         .duration(400)
         .attr("opacity",p);
 
-    d3.select("#rope")
+    d3.select("#bridge")
         .attr("fill-opacity",(100 - 2*i)/100);
     
 

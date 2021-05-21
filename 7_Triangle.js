@@ -3,6 +3,11 @@ d3.select("#sliderCurve").on("input",function(){
     let i = parseInt(d3.select(this).property("value"));
     console.log(i);
   
+  d3.select("#triangle_s-l")
+    .attr("height",(1.3*i)/2);
+  
+  
+  
   var data = [[465, 300-i], [585, 300], [704, 300+i]];
   
   var lineGenerator = d3.line()
@@ -46,7 +51,7 @@ d3.select("#sliderCurve").on("input",function(){
       .attr("y",380+i);
     
     d3.select("#triangle")
-      .attr("opacity",i/300);
+      .attr("opacity",i/150);
   
     d3.select("#orig")
       .attr("opacity",i/1200);
@@ -125,12 +130,18 @@ d3.select("#sliderCurve").on("input",function(){
       d3.select("#Fplus1_final_arrow")
         .attr("visibility","");
 
+        d3.selectAll("#Fminus1_final_text")
+        .attr("visibility","");
 
 
     }
     else{
       d3.select("#t_yfinal")
       .attr("visibility","hidden");
+
+      d3.selectAll("#Fminus1_final_text")
+      .attr("visibility","hidden");
+
     }
     
       
