@@ -14,16 +14,16 @@
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 
 </head>
-<body id="bod">
+<body id="overflow">
 
-    <div onscroll= "widd()" id ="text" class="container-fluid">
+    <div id ="text" class="container-fluid">
         <div class="row_h"> <!--Main Heading-->
             <div class="col-md-12">
-                <h1 id ="main_heading">Idealization</h1>
+                <h1 id ="main_heading">An Ideal Exploration</h1>
                 <input id = "button-n" type="button" onclick="location.href='3_Discretization.html'" value="Next" />
                 <input id = "button-p" type="button" onclick="location.href='1_Idealization.html'" value="Previous" />
+                <p id="sub_heading" style="text-align:center">Exploring the behavior exhibited by the physical phenomena in its simplest form</p>
             </div>
-        </br></br></br></br>           
         </div>
 
 
@@ -32,7 +32,8 @@
             <b><p id = "text_1">  
 
 
-            </br> A guitar and a rope-walk are two amongst numerous examples of strings tied at both ends. Depending on the position of our hands(for a guitar) and body(for a ropewalk) the behavior of the string varies. 
+             A guitar and a suspension bridge are two amongst numerous examples of strings tied at both ends. 
+            Depending on the position of hands(on a guitar) and vehicles(on a bridge), the behavior of the string varies. 
 
             Let us try interacting with the string on our right to see what affects its behavior.  
                 
@@ -82,7 +83,7 @@
                 <svg id="base" width="400" height="610" viewBox="0 0 1257 610" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="label_drag">
                     <rect x="32" y="1" width="510" height="72" fill="#C4C4C4" fill-opacity="0.26" stroke="black" stroke-width="2"/>
-                    <line x1="292.341" y1="73.6346" x2="643.341" y2="317.635" stroke-width="2" stroke="black" stroke-dasharray="5 5"/>
+                    <line id="label_drag_line" x1="292.341" y1="73.6346" x2="643.341" y2="317.635" stroke-width="2" stroke="black" stroke-dasharray="5 5"/>
                     <text  x = "50"  y = "46" font-size = 2.25em font-weight="bold" fill ="black"  >Drag to interact with the string</text>-->
                 </g>
                     <line x1="2.50098" x2="2.50098" y2="610" stroke="black" stroke-width="5"/>
@@ -113,13 +114,18 @@
         <div id ="rt" class="row_f" ><!--Progress Bar-->
             <div class="col-md-12">
                 <svg id="progress_rect" width="2937" height="475" viewBox="0 0 6937 475" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g id="label_progress_reality">
+                   <!-- <g id="label_progress_reality">
                         <rect x="492" y="-100" width="410" height="72" fill="#C4C4C4" fill-opacity="0.26" stroke="black" stroke-width="2"/>
-                        <line x1="898.341" y1="-33.6346" x2="1143.341" y2="117.635" stroke-width="2" stroke="black" stroke-dasharray="5 5"/>
-                        <text  x = "560"  y = "-55" font-size = 2.25em font-weight="bold" fill ="black"  >Click to go back</text>-->
+                        <line x1="898.341" y1="-33.6346" x2="1143.341" y2="27.635" stroke-width="2" stroke="black" stroke-dasharray="5 5"/>
+                        <text  x = "560"  y = "-55" font-size = 2.25em font-weight="bold" fill ="black"  >Click to go back</text>
+                    </g>-->
+                    <g id="label_revisit_reality">
+                        <rect x="1492" y="-100" width="340" height="72" fill="#C4C4C4" fill-opacity="0.26" stroke="black" stroke-width="2"></rect>
+                        <line x1="1298.341" y1="-55.6346" x2="1500.341" y2="-55.635" stroke-width="2" stroke="black" stroke-dasharray="5 5"></line>
+                        <text x="1520" y="-55" font-size="2.25em" font-weight="bold" fill="black">Re-examine reality</text>
                     </g>
-    
-                    <rect x="0.5" y="0.5" width="6936" height="474" fill="#F6F975" fill-opacity="0.5" stroke="none"/>
+
+                    <rect x="0.5" y="0.5" width="4236" height="274" fill="#F6F975" fill-opacity="0.5" stroke="none"/>
                     </svg>      
                 
                 <svg id="progress" width="957" height="373" viewBox="0 0 6102 373" fill="none" xmlns="http://www.w3.org/2000/svg">

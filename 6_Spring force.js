@@ -93,6 +93,7 @@ d3.select("#l1-mov").attr("visibility","hidden")
 )
 
 /*Drag-R*/ ///////////////////////
+/*
 d3.select("#c-r").call(d3.drag()
 .on("start",function(){
   d3.select(this).attr("stroke-width",10);

@@ -37,7 +37,7 @@ if(i==100){
     .attr("stroke-opacity",0.99)
     .attr("opacity",0.99);
 
-    d3.select("#text_reality")
+    d3.selectAll("#text_reality")
     .attr("visibility","");
 
     d3.select("#textholder_left")
@@ -52,7 +52,7 @@ if(  i<100 & i>75){
 d3.select("#textholder_left")
    .attr("visibility","");
 
-d3.select("#text_reality")
+d3.selectAll("#text_reality")
    .attr("visibility","");
 
 
@@ -81,16 +81,16 @@ d3.selectAll("#strings_v").transition()
    .attr("opacity",p);}
 
    else{
-      d3.select("#text_reality")
+      d3.selectAll("#text_reality")
    .attr("visibility","hidden");
 
    }
 
 if(i==75){
-   d3.select("#text_reality")
+   d3.selectAll("#text_reality")
    .attr("visibility","hidden");
 
-   d3.select("#text_ideal")
+   d3.selectAll("#text_ideal")
    .attr("visibility","");
 
     d3.select("#guitar-body")
@@ -114,14 +114,26 @@ if(i==75){
 
 
    if(i<75){
-      d3.select("#text_ideal")
+      d3.selectAll("#text_ideal")
       .attr("visibility","");
    }
    else{
-      d3.select("#text_ideal")
+      d3.selectAll("#text_ideal")
       .attr("visibility","hidden");
    
-   }   
+   }  
+   
+   if(i<100 & i>25){
+      d3.select("#textholder_left")
+   .attr("visibility","");
+
+   }
+
+   else{
+      d3.select("#textholder_left")
+      .attr("visibility","hidden");
+   
+   }
 
 
 
@@ -177,13 +189,12 @@ else{ d3.select("#dx_label")
 /*Discretization*/
 
 if(i<50){
-   d3.select("#text_ideal")
+   d3.selectAll("#text_ideal")
    .attr("visibility","hidden");
-   d3.select("#textholder_left")
-   .attr("visibility","hidden");
+   
 
 
-   d3.select("#text_dis")
+   d3.selectAll("#text_dis")
    .attr("visibility","");
    d3.select("#textholder_center")
    .attr("visibility","");
@@ -197,7 +208,7 @@ if(i<50){
 
 }
 else{
-   d3.select("#text_dis")
+   d3.selectAll("#text_dis")
    .attr("visibility","hidden");
    d3.select("#textholder_center")
    .attr("visibility","hidden");
@@ -300,27 +311,32 @@ if(i<34){
 
 
 if(i<25){
-   d3.select("#text_dis")
+   d3.selectAll("#text_dis")
    .attr("visibility","hidden");
    d3.select("#textholder_center")
    .attr("visibility","hidden");
    
- 
+   d3.selectAll("#text_geo")
+   .attr("visibility","");
+   d3.select("#textholder_right")
+   .attr("visibility","");
+
 }
 
 else{
    d3.select("#textholder_right")
    .attr("visibility","hidden");
+   d3.selectAll("#text_geo")
+   .attr("visibility","hidden");
+
 
 }
 if(i<25 & i>17){
-   d3.select("#text_dis")
+   d3.selectAll("#text_dis")
    .attr("visibility","hidden");
    d3.select("#textholder_center")
    .attr("visibility","hidden");
 
-   d3.select("#text_geo")
-   .attr("visibility","");
    d3.select("#textholder_right")
    .attr("visibility","");
 
@@ -377,19 +393,24 @@ else{
 /*Maths*/
 
 if(i==0){
-   d3.select("#text_mat")
+   d3.selectAll("#text_mat")
    .attr("visibility","");
-   d3.select("#text_geo")
+   d3.selectAll("#text_geo")
    .attr("visibility","hidden");
+
+   d3.select("#exp_arrow")
+   .attr("visibility","");
+
 
 }
 
 else{
-   d3.select("#text_mat")
+   d3.selectAll("#text_mat")
    .attr("visibility","hidden");
 
-   d3.select("#text_geo")
-   .attr("visibility","");
+   d3.select("#exp_arrow")
+   .attr("visibility","hidden");
+
 
 
 }

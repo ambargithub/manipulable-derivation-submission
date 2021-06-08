@@ -49,12 +49,18 @@ d3.select("#slider-3").on("input",function(){
       
     d3.select("#circle")
       .attr("cx",950);
+
+    d3.select("#label_drag_line")
+      .attr("x2",950);
     
       d3.select("#ds-r").attr("visibility","");
       d3.select("#ds-l").attr("visibility","hidden");
       d3.select("#ds-c").attr("visibility","hidden");}
 
   else if(j==0){
+    d3.select("#label_drag_line")
+    .attr("x2",313);
+
     d3.select("#circle")
     .attr("cx",312.5);
 
@@ -65,6 +71,10 @@ d3.select("#slider-3").on("input",function(){
   else {
     d3.select("#circle")
     .attr("cx",625);
+
+    d3.select("#label_drag_line")
+    .attr("x2",643);
+
   
     d3.select("#ds-c").attr("visibility","");
     d3.select("#ds-l").attr("visibility","hidden");
@@ -77,6 +87,10 @@ d3.select("#slider-3").on("input",function(){
   .on("start",function(event){
    d3.select(this)
     .attr("stroke","red"); 
+
+    d3.select("#label_drag")
+    .attr("visibility","hidden");
+
   })
 
   .on("drag",function(event){
@@ -154,6 +168,10 @@ d3.select("#guitar-body")
 
 
 d3.select("#slider-1").on("input",function(){
+
+  d3.select("#label_revisit_reality")
+  .attr("visibility","hidden");
+
   let i = parseInt(d3.select(this).property("value"));
   var o = (0 + 1.8*i)/100
   
@@ -165,9 +183,6 @@ d3.select("#slider-1").on("input",function(){
       .duration(400)
       .attr("opacity",o);
 
-  d3.selectAll("#strings_v").transition()
-      .duration(400)
-      .attr("opacity",p);
 
   d3.select("#bridge")
       .attr("fill-opacity",(100 - 2*i)/100);
@@ -180,6 +195,7 @@ d3.select("#stick")
       d3.select("#p2Reality")
         .style("color","black");
   }
+
 })
 
 

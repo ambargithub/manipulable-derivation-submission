@@ -1,22 +1,36 @@
 
 
 #main_heading{
-    position: relative;
-    left: 550px;
+    text-align: center;
     font-size: 45px;
   
 }
 
+#sub_heading{
+    position: relative;
+    top: -15px;
+  
+}
+
+.row_h{
+    height:165px;
+}
+
 /*Adding scroll to the whole content*/
-#text{
-    overflow-y: scroll;
+#overflow{
+    overflow-y: hidden;
     overflow-x: hidden;
-    height: 700px;
+   
+}
+
+#overflow1{
+    overflow-x: scroll;
+    overflow-x: hidden;
+   
 }
 
 /*For all the rows and columns*/
 .row{
-   
     height: 630px;
 }
 .col-md-6{
@@ -49,7 +63,7 @@
 
 
 
-/*Reality*/
+/*String dynamism*/
 #slider-1{
     position: relative;
     left: -580px;
@@ -120,7 +134,14 @@
 
 
 
+/*Discretization*/
 
+#info_icon{
+    position: relative;
+    top: 165px;
+    left: 55px;
+   
+}
 #discrete{
     position: relative;
     top: -980px;
@@ -224,7 +245,16 @@
     top: -510px;
 }
 #zoom-text{
-    transform: rotate(45deg);   
+    transform: rotate(55deg);   
+}
+
+#zoom_rect{
+    position:relative;
+    
+    fill:blue;
+    opacity:0.3;
+    transform: rotate(-35deg); 
+    
 }
 
 #p1_Zoom{
@@ -279,13 +309,13 @@
 
 #force-l{
     position: absolute;
-    top: 372px;
+    top: 350px;
     left: 100px;   
 }
 
 #stretch-l{
     position: absolute;
-    top: 372px;
+    top: 350px;
     left: 20px;
     transform: rotate(180deg); 
 }
@@ -357,7 +387,7 @@
 }
 
 #p2-force{
-    color: white;
+    color: rgb(5, 5, 5);
 }
 ;
 
@@ -593,9 +623,9 @@
 #slider-t{
     transform: rotate(90deg);
     position: relative;
-    top:370px;
-    left:-370px;
-    width: 600px;
+    top:200px;
+    left:-120px;
+    width: 200px;
     z-index: 15;
 }
 

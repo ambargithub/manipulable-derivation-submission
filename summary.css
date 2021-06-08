@@ -1,9 +1,20 @@
 
 /*Summary heading*/
 #summary_heading{
+    z-index: 25;
+}
+#heading_11{
     position: relative;
-    
-    left:120px;
+    font-size: 45px;
+    left:660px;
+    z-index: 25;
+}
+
+#exp_arrow{
+    position: relative;
+    font-size: 45px;
+    top: 50px;
+    left:40px;
     z-index: 25;
 }
 

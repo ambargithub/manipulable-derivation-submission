@@ -14,14 +14,15 @@
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 
 </head>
-<body id="bod">
+<body id="overflow">
 
-    <div onscroll= "widd()" id ="text" class="container-fluid">
+    <div id ="text" class="container-fluid">
         <div class="row_h"> <!--Main Heading-->
             <div class="col-md-12">
-                <h1 id ="main_heading">Spring Force</h1>
+                <h1 id ="main_heading">Understanding Spring Forces</h1>
                 <input id = "button-n" type="button" onclick="location.href='7_Triangle.html'" value="Next" />
                 <input id = "button-p" type="button" onclick="location.href='5_Zoom-m.html'" value="Previous" />
+                <p id="sub_heading" style="text-align:center">Describing the geometric element's behavior using symbols</p>
 
             </div>
         </br></br></br></br>           
@@ -30,29 +31,28 @@
 
         <div class="row"><!--Force on a string-->
             <div class="col-md-6">
-             <b><p id = "text_1">\(m_{i}\)'s behavior is affected by the force that the stretched springs exert on it. To calculate it,
+             <b><p id = "text_1">\(m_{i}\)'s behavior is affected by the force that the stretched springs exert on it. To capture this behavior using symbols,
                 
-                let's brush up our understanding of spring force. 
+                let's brush up our understanding of spring force. What force would the spring exert on \(m_{i-1}\) if we drag it downwards ?
                 
                  </p>
              
-            </br></br><b id="p2-force"><p id = "text_1">Great ! What force would the spring exert on \(m_{i+1}\) if we drag it towards the right ?
+            <b id="p2-force"><p id = "text_1"> 
             
             
-            <i>Drag \(m_{i+1}\) to find that out ! </i></br></br>
+            <i>Drag \(m_{i-1}\) to find that out ! </i></br></br>
                 
-                We can see that the force is directly proportional to the stretch in the spring. 
+                We can see that the force is directly proportional to the compression in the spring. 
                 
                 
-            </br>\( F\) = \(\ -k \)</a>\(( stretch\ in\ the\ spring)\) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>where k is a property of the spring</i></br>
+            </br>\( F\) = \(\ -k \)</a>\(( compression\ in\ the\ spring)\) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>where k is a property of the spring</i></br>
                 
-                The negative sign shows that the force acting on \(m_{i+1}\) is opposite to the direction of stretch. Since \(m_{i}\) is also connected
-            to the spring, it shall also experience a spring force. This force, however, will act in the direction of the stretch </p></b>
+        </br>  The negative sign shows that the force acting on \(m_{i-1}\) is opposite to the direction of compression. Since \(m_{i}\) is also connected
+            to the spring, it shall also experience a spring force. This force, however, will act in the direction of the compression/stretch. </p></b>
 
             </div>
             
             <div id = "string-force" class="col-md-6">
-                <button id = "b-rotate" type="button">Rotate</button>
                 <svg id="s-force" width="616" height="899" viewBox="-1000 0 3816 1499" fill="none" xmlns="http://www.w3.org/2000/svg">        
                     <ellipse id ="c-c" cx="938.499" cy="709.5" rx="166.6" ry="166.6" transform="rotate(1.46708 238.499 249.5)" fill="black" />
                     <ellipse id ="c-l" cx="168.499" cy="149.5" rx="166.6" ry="166.6" transform="rotate(1.46708 238.499 249.5)" fill="black" stroke="red" stroke-width="0"/>
@@ -67,7 +67,7 @@
 
                 <g visibility="hidden" id="content-labels">    
                     <text x =-280, y=450 font-size = 5em fill ="black">F</text>
-                    <text x =-780, y=450 font-size = 5em fill ="black">Stretch</text></g>
+                    <text x =-820, y=450 font-size = 5em fill ="black">Compression</text></g>
                   </svg>
                   <img id="s-l" width ="110" height = "95" src = "spring_arm-top.png" >                
                   <img id="s-r" width ="110" height = "95" src = "spring_arm-bottom.png" style="position:relative;top:-460px" >                
@@ -86,7 +86,7 @@
                     <text x =130, y=80 font-size = 8em fill ="black" >F = -k . </text>
                     
                     <text x =580, y=80 font-size = 8em fill ="black" id="algebraicForce">(0)</text>
-                    <text x =850, y=60 font-size = 3em fill ="black" >Drag RHS </text>
+                  <!--X  <text x =850, y=60 font-size = 3em fill ="black" >Drag RHS </text>-->
 
                     <rect  id ="equation1" visibility="" x="515" y="-30" width="300" height="172" fill="none" fill-opacity="0.35" stroke="black" stroke-width="3"/>
    
@@ -99,7 +99,7 @@
         <div id ="rt" class="row_f" ><!--Progress Bar-->
             <div class="col-md-12">
                 <svg id="progress_rect" width="2937" height="475" viewBox="0 0 6937 475" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="0.5" y="0.5" width="6936" height="474" fill="#F6F975" fill-opacity="1" stroke="none"/>
+                    <rect x="0.5" y="0.5" width="4236" height="274" fill="#F6F975" fill-opacity="0.5" stroke="none"/>
                     </svg>
       
                 <svg id="progress" width="957" height="373" viewBox="0 0 6102 373" fill="none" xmlns="http://www.w3.org/2000/svg">
