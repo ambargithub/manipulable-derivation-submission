@@ -12,63 +12,103 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+  <!--Bootstrap-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
 <style>
-#overflow_triangle{
-    overflow-y: scroll;
-    overflow-x: hidden;
-   
+
+
+    #triangle_s-l{
+    position:relative;
+    transform: rotate(180deg);
+    z-index: -1;
+    top:30px;
+    left: 986px;
+    
 }
+
+    #moving-curve{
+    position: relative;
+    left: -710px;
+    top: 150px;
+    }
+
+    #rt{
+        position:relative;
+        top: -228px;
+        left: 40px;
+    }
+
+    #progress{
+    position:relative;
+    top: -125px;
+    left: 0px;
+    }
+
+    #progress_rect{
+    position:relative;
+    top: 0px;
+    left: 0px;}
+
+
 </style>
 </head>
-<body id="overflow_triangle">
+<body id="overflow">
 
-    <div id ="text" class="container-fluid">
-        <div class="row_h"> <!--Main Heading-->
-            <div class="col-md-12">
-                <h1 id ="main_heading">Calculating the forces</h1>
-                <input id = "button-n" type="button" onclick="location.href='8_Total Force.html'" value="Next" />
+    <div id ="text" class="container">
+        <div class="d-flex row"> <!--Main Heading-->
+            <div class="d-flex align-items-center justify-content-center col-md-2" >   
                 <input id = "button-p" type="button" onclick="location.href='6_Spring force.html'" value="Previous" />
-                <p id="sub_heading" style="text-align:center">Describing the geometric element's behavior using symbols</p>
-
             </div>
-        </br></br></br></br>           
+
+            <div class="d-flex flex-column align-items-center col-md-8" >
+                <h1 id ="main_heading">Calculating the forces</h1>
+                &nbsp;&nbsp;&nbsp;<p id="sub_heading" style="text-align:center">Describing the geometric element's behavior using symbols</p>
+            </div>
+            
+            <div class="d-flex align-items-center justify-content-center col-md-2" >   
+                <input id = "button-n" type="button" onclick="location.href='8_Total Force.html'" value="Next" />
+            </div>
+           
         </div>
 
 
-        <div class="row"><!--Coordinates with moving curve-->
+
+        <div class="d-flex row"><!--Coordinates with moving curve-->
             
             <div id="coord_text" class="col-md-6">
-            </br></br> <b><p id = "text_1"> Now that we understand spring force, let us calculate the force that both the stretched springs will exert on \(m_{i}\)
+            </br></br></br></br> <b><p id = "text_1"> Now that we understand spring force, let us calculate the force that both the stretched springs will exert on \(m_{i}\)
             </br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Let <a id="Fminus1_initial_text">\( F_{i-1}( x_{i})\)</a> = Force exerted by the \(m_{i-1}\) spring on \(m_{i}\)</br>
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Let <a id="Fplus1_initial_text">\( F_{i+1}( x_{i})\)</a> = Force exerted by the \(m_{i+1}\) spring on \(m_{i}\)</br>
 
             <i>Drag the slider to transition from an unstretched string to a stretched string.</i></br></p>
-            <b id="p2-moving"><p id = "text_1">  As you can see, stretching changes the distance between the \(m_{i-1}\) & \(m_{i}\) from BC to AC. Therefore, amount of stretch</br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =\( AC - BC\)</br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= hypotenuse - dx</br>
+            <span id="p2-moving"><p id = "text_1">  As you can see, stretching changes the vertical distance between \(m_{i-1}\) & \(m_{i}\) from 0 to AB. Therefore, amount of stretch</br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =\( AB\)</br>
+               <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= hypotenuse - dx</br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\(= \ \sqrt{( AB)^{2} +\ ( dx)^{2}} \ -\ dx\ \)</br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\(=\ AB ...........\ Assuming\ dx\ \rightarrow 0\)</br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\(=\ AB ...........\ Assuming\ dx\ \rightarrow 0\)</br>-->
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\(=\ Y_{x_{i-1}} \ -\ Y_{x_{i}}\)</br>
                 Therefore,  <a id="Fminus1_end_text">\( F_{i-1}( x_{i})\)</a> \(=\ k_{1}( Y_{x_{i-1}} \ -\ Y_{x_{i}})\)</br>
                  Similarly,  <a id="Fplus1_end_text"> \( F_{i+1}( x_{i})\) </a> \(=\ k_{1}( Y_{x_{i+1}} \ -\ Y_{x_{i}})\)</br>
 
-            </p></b></b>
+            </p></span></b>
 
             </div>
             
             <div id = "moving-curve" class="col-md-6">
 
                 <img id="triangle_s-l" width ="70" height = "0" src = "spring_arm-top.png" fill-opacity="0.5" >                
-                <img id="triangle_s-r" width ="0" height = "0" src = "spring_arm-bottom.png" style="position:relative;top:-60px" >                
+                <img id="triangle_s-r" width ="30" height = "0" src = "spring_arm-bottom.png" style="position:relative;top:-60px" >                
                
                 <svg id ="svg_triangle"  width="250" height="99" viewBox="-10 0 290 99"  xmlns="http://www.w3.org/2000/svg">
-                    <polygon id ="triangle" points ="145.5,68.5 145.5,8 246.2,68.5" opacity = "0.0" style="fill:rgb(18, 18, 241)" /> 
-                    <text id = "verticesTriangle" x = 155, y="82.5", fill="black" opacity = "0.0">B</text> 
+                    <!--<polygon id ="triangle" points ="145.5,68.5 145.5,8 246.2,68.5" opacity = "0.0" style="fill:rgb(18, 18, 241)" /> 
+                    <text id = "verticesTriangle" x = 245, y="66.5", fill="black" opacity = "0.0">C</text>--> 
+                    <text id = "verticesTriangle" x = 125, y="82.5", fill="black" opacity = "0.0">B</text>
                     <text id = "verticesTriangle" x = 125, y="5", fill="black" opacity = "0.0">A</text>
-                    <text id = "verticesTriangle" x = 245, y="66.5", fill="black" opacity = "0.0">C</text>
                   </svg>
                     
-                  <svg id="curveCoordinates"  width="780" height="610" viewBox="0 0 1224 610" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg id="curveCoordinates"  width="750" height="610" viewBox="0 0 1224 610" fill="none" xmlns="http://www.w3.org/2000/svg">
                    
                     <circle id="c1" r="7" cx="465" cy="300" fill="black"/>
                     <circle id="c2" r="7" cx="585" cy="300" fill="black"/>
@@ -365,8 +405,8 @@
                     <ellipse rx="8.28343" ry="8.81577" transform="matrix(-0.727465 -0.686145 0.5136 -0.85803 937.729 506.797)" fill="#545353" fill-opacity="0.1"/>
                     <ellipse rx="8" ry="9" transform="matrix(1 0 0 -1 582 302)" fill="#545353" fill-opacity="0.1"/>
                     <ellipse rx="8" ry="9.5" transform="matrix(1 0 0 -1 1196 304.5)" fill="#545353" fill-opacity="0.1"/>
-                    <text x="300" y="620" fill="black" font-size = "1.5em">Unstretched</text>
-                    <text x="980" y="620" fill="black" font-size = "1.5em">Stretched</text>
+                    <text x="280" y="620" fill="black" font-size = "1.5em">Unstretched</text>
+                    <text x="870" y="620" fill="black" font-size = "1.5em">Stretched</text>
 
                 </svg>
               
@@ -376,14 +416,14 @@
             </div>
         </div>
 
-        <div id ="rt" class="row_f" ><!--Progress Bar-->
+        <div id ="rt" class="d-flex justify-content-center flex-row" ><!--Progress Bar-->
             <div class="col-md-12">
-                <svg id="progress_rect" width="2937" height="475" viewBox="0 0 6937 475" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="0.5" y="0.5" width="4236" height="274" fill="#F6F975" fill-opacity="0.5" stroke="none"/>
+                <svg id="progress_rect" width="1037" height="105" viewBox="0 0 6937 475" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.5" y="0.5" width="6436" height="594" fill="#F6F975" fill-opacity="0.5" stroke="none"/>
                     </svg>
 
                 
-                <svg id="progress" width="957" height="373" viewBox="0 0 6102 373" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg id="progress" width="957" height="173" viewBox="0 0 6102 373" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <text id="guit" x="60" y="-60" fill="black" font-size="5em" font-weight="bold" font-family="Arial" >Reality</text>
                     <text id="dyna" x="1460" y="-60" fill="black" font-size="5em" font-weight="bold" font-family="Arial" >Idealization</text>
                     <text id="disc" x="2860" y="-60" fill="black" font-size="5em" font-weight="bold" font-family="Arial" >Discretization</text>

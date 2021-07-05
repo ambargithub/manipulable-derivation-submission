@@ -13,73 +13,81 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-   <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+  
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
   <!--CSS values-->
-  <style>
+<style>
      
-#slider-1{
-    position: relative;
-    left: 70px;
-    top: -155px;
-    width: 300px;
-    height: 30px;
-}
-
 #p2Reality{
     color: white;
 }
 
-#guitar{
-    position: relative;
-    top: -100px;
-    left: 815px;
-    
-}
+#rt{
+    position:relative;
+    top: 10px;
+    left: 40px;
+    }
 
-#bridge{
-    position: relative;
-   top: -180px;
-    left: 800px;
-}
-  </style>
+    #progress{
+    position:relative;
+    top: -125px;
+    left: 0px;
+    }
+
+    #progress_rect{
+    position:relative;
+    top: 0px;
+    left: 0px;
+    }
+
+</style>
 
 </head>
 <body id="overflow" >
-    <div  class="container-fluid">
-        <div class="row_h"> <!--Main Heading-->
-            <div class="col-md-12">
-                <h1 id ="main_heading">Abstract description of Reality</h1>
-                <input id = "button-n" type="button" onclick="location.href='2_StringDynamism.html'" value="Next" />
+    <div  class="container">
+        <div class="d-flex row" > <!--Main Heading-->
+            <div class="d-flex align-items-center justify-content-center col-md-2" >   
                 <input id = "button-p" type="button" onclick="location.href='0.5_overview.htm'" value="Previous" />
-                <p id="sub_heading" style="text-align:center">Capturing the general structure of the set of phenomena we would like to predict</p>
+
+            </div>
+
+            <div class="d-flex flex-column align-items-center col-md-8" >
+                <h1 id ="main_heading">Abstract description of Reality</h1>
+                &nbsp;&nbsp;&nbsp;<p id="sub_heading" style="text-align:center">Capturing the general structure of the set of phenomena we would like to predict</p>
+            </div>
+            
+            <div class="d-flex align-items-center justify-content-center col-md-2" >   
+                <input id = "button-n" type="button" onclick="location.href='2_StringDynamism.html'" value="Next" />
 
             </div>
         </div>
 
 
-        <div class="row"> <!--Reality-->
+        <div class="d-flex row"> <!--Reality-->
             <div class="col-md-6">
-            </br><b><p id = "text_1">
+            </br></br></br></br><b><p id = "text_1">
                 Playing a guitar and walking on a suspension bridge might seem like two very different activities. 
                 But what is it that makes a guitar and a bridge similar ?
                 
             </br></br><i>
                 Drag the slider to discover the similarity !!</i></p></b>
 
+             <!--Guitar + bridge slider-->
+            <input id="slider-1" type="range" value="0" step = "2" min="0" max ="52" style="width:300px">                
+
+
             </br><b id="p2Reality"><p id = "text_1" >
 
                 Even though differing in scale, a guitar and a suspension bridge are both perfect examples of strings tied at both
                 ends. Which is the behavior we wish to derive currently.  </p></b>
             
-            <!--Guitar + bridge slider-->
-            <input id="slider-1" type="range" value="0" step = "2" min="0" max ="52">                
 
             </div>
             <div id = "div_guitar_rope" class="col-md-6">
                 <!--Guitar + Ropewalk SVG-->
-                <svg id ="guitar" width="400" height="255" viewBox="0 0 1702 795" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg id ="guitar_1" width="400" height="255" viewBox="0 0 1702 795" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g id = "guitar-body" clip-path="url(#clip0)">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3558 221.164C11.3558 221.164 64.2705 67.5185 137.537 33.3845C210.844 -0.749499 324.814 7.78391 385.87 50.4514C446.965 93.119 457.605 136.04 498.308 131.773C539.052 127.506 638.555 84.6277 670.835 80.3187C707.267 75.4606 773.199 90.2465 777.269 115.847C781.34 141.448 739.508 136.758 698.804 162.359C658.1 187.959 631.22 225.473 646.534 249.172C665.717 278.828 1318.14 285.165 1318.14 285.165H1383.27L1436.18 246.764L1480.96 272.365L1578.69 285.165L1599.04 327.833L1574.62 336.366V379.034H1497.24L1436.18 383.301L1387.34 370.5L670.835 361.967C670.835 361.967 588.945 362.009 597.367 412.492C604.944 458.159 666.765 490.012 666.765 502.812C666.765 515.612 573.147 528.412 573.147 528.412C573.147 528.412 495.81 477.211 467.317 481.478C438.825 485.745 255.618 600.947 223.055 592.414C190.492 583.88 52.0594 528.412 23.5669 425.968C-4.92568 323.566 11.3558 229.697 11.3558 221.164Z" fill="#930200" stroke="black" stroke-width="1.58025"/>
                     <path opacity="0.81622" fill-rule="evenodd" clip-rule="evenodd" d="M31.8286 147.785C31.8286 147.785 72.3308 165.992 83.897 167.724C95.4633 169.456 142.615 191.297 195.49 169.456C258.641 143.349 293.38 38.2431 293.38 38.2431L277.622 13.1918C277.622 13.1918 236.918 11.2907 226.158 13.0227C215.398 14.797 123.593 27.3437 95.4633 56.7885C67.3738 86.2756 30.1762 146.053 31.8286 147.785Z" fill="url(#paint0_linear)"/>
@@ -126,13 +134,13 @@
 
             </div>
         </div>
-        <div id ="rt" class="fixed-bottom"><!--Progress Bar-->
+        <div id ="rt" class="d-flex justify-content-center flex-row"><!--Progress Bar-->
             <div class="col-md-12">
-                <svg id="progress_rect" width="2937" height="475" viewBox="0 0 6937 475" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="0.5" y="0.5" width="4236" height="274" fill="#F6F975" fill-opacity="0.5" stroke="none"/>
+                <svg id="progress_rect" width="1037" height="105" viewBox="0 0 6937 475" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.5" y="0.5" width="6436" height="594" fill="#F6F975" fill-opacity="0.5" stroke="none"/>
                     </svg>
       
-                <svg id="progress" width="957" height="373" viewBox="0 0 6102 373" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg id="progress" width="957" height="173" viewBox="0 0 6102 373" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <text  x="60" y="-60" fill="black" font-size="5em" font-weight="bold" font-family="Arial" >Reality</text>
                     <text  x="1460" y="-60" fill="grey" font-size="5em" font-weight="normal" font-family="Arial" >Idealization</text>
                     <text  x="2860" y="-60" fill="grey" font-size="5em" font-weight="normal" font-family="Arial" >Discretization</text>

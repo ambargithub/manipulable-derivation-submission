@@ -13,22 +13,112 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 
+<!--Bootstrap-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+<style>
+    #strings_spring{
+        position:relative;
+        top:-400px;
+        left:580px;
+    }
+    #base1{
+        position:relative;
+        top:0px;
+        z-index: 25;
+    }
+    #dynamic_dis{
+        position:relative;
+        top:-315px;
+        left:-5px;
+    }
+    #discrete{
+        position:relative;
+        top:-558px;
+        left:-5px;
+    }
+    #slider-4{
+        position: relative;
+        top: 24px;
+        left: 0px;
+        width: 400px;
+        z-index: 5;
+    }
+    #slider-4-s{
+        position: relative;
+        top: 0px;
+        left: 0px;
+        width: 400px;
+        z-index: 4.5;
+    }
+    #slider-4-r{
+        position: relative;
+        top: -24px;
+        left: 0px;
+        width: 400px;
+        z-index: 4;
+    }
+
+    #rt{
+        position:relative;
+        top: -798px;
+        left: 40px;
+    }
+
+    #progress{
+        position:relative;
+        top: -125px;
+        left: 0px;
+    }
+
+    #progress_rect{
+        position:relative;
+        top: 0px;
+        left: 0px;
+    }
+
+    #info_icon{
+    position: relative;
+    top: 165px;
+    left: 55px;
+   
+    }
+
+    #zoom-spring{
+    position: relative;
+    left: 100px;
+    top: 50px;  
+    }
+
+    #spring{
+    position: relative;
+    left: 150px;
+    top: 100px;  
+    right: 100px;  
+    }
+
+</style>
 </head>
 <body id="overflow">
 
-    <div id ="text" class="container-fluid">
-        <div class="row_h"> <!--Main Heading-->
-            <div class="col-md-12">
-                <h1 id ="main_heading">Elements in the string</h1>
-                <input id = "button-n" type="button" onclick="location.href='5_Zoom-m.html'" value="Next" />
+    <div id ="text" class="container">
+        <div class="d-flex row" > <!--Main Heading-->
+            <div class="d-flex align-items-center justify-content-center col-md-2" >   
                 <input id = "button-p" type="button" onclick="location.href='2_StringDynamism.html'" value="Previous" />
-                <p id="sub_heading" style="text-align:center">Describing the ideal reality using small elements</p>
             </div>
-        </br></br></br></br>           
+
+            <div class="d-flex flex-column align-items-center col-md-8" >
+                <h1 id ="main_heading">Elements in the string</h1>
+                &nbsp;&nbsp;&nbsp;<p id="sub_heading" style="text-align:center">Describing the ideal reality using small elements</p>
+            </div>
+            
+            <div class="d-flex align-items-center justify-content-center col-md-2" >   
+                <input id = "button-n" type="button" onclick="location.href='5_Zoom-m.html'" value="Next" />
+            </div>
         </div>
 
 
-        <div class="row"><!--Discretization-->
+        <div class="d-flex row"><!--Discretization-->
             <div id="discrete_text" class="col-md-6">
                 <!--
             <a href="#" data-trigger ="hover" placement= "bottom" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover"><image id="info_icon" visibility ="" height="15" width="15" src="info.png"/></a>  
@@ -39,15 +129,20 @@
                 
               </br>  We assume that our string is composed of numerous small mass points which are connected to each other by springs. We call this step discretization. 
                 
-             The horizontal distance b/w any two mass points is dx, which tends to zero('tends to' roughly means 'is close to'). 
+             The horizontal distance b/w any two mass points is dx, which tends to zero('tends to' roughly means 'is close to'). </p>
 
             </br></br><i>Drag the slider to convert this continuous string into a discrete one.</i> </br>
                 
         <!--</br>   <i>Hover over any portion of the string to observe the mass points closely.</i> </p></b>-->
 
+            <input id="slider-4" type="range" value="0" step = "1" min="0" max ="16">
+            <input id="slider-4-s" type="range" value="0" step = "1" min="0" max ="16">
+            <input id="slider-4-r" type="range" value="0" step = "1" min="0" max ="16">
+
             </div>
+            
             <div id = "strings_spring" class="col-md-6">
-                    <svg visibility="" id="base1" width="542" height="610" viewBox="0 0 1257 610" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg visibility="" id="base1" width="542" height="310" viewBox="0 0 1257 610" fill="none" xmlns="http://www.w3.org/2000/svg">
 
                         <line x1="2.50098" x2="2.50098" y2="610" stroke="black" stroke-width="8"/>
                         <line id="hori_line" x1="1251.94" y1="307.763" x2="0.000244141" y2="307.763" stroke="black" stroke-width="12" />
@@ -62,11 +157,11 @@
                       
 
                   </svg>
-                  <svg visibility="" id="dynamic" width="1600" height="500">
+                  <svg visibility="" id="dynamic_dis" width="550" height="250">
                     <path id ="dynamic_strings" />
                   </svg>
 
-                  <svg visibility ="" id="discrete" width="557" height="604" viewBox="0 0 1257 604" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg visibility ="" id="discrete" width="557" height="300" viewBox="0 0 1257 604" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g id="curve" visibility="hidden">    
                     <path d="M89.8232 227.067C89.016 225.705 86.5784 224.478 83.8288 226.036C80.7113 227.802 80.5318 230.538 80.6618 232.05C80.8271 233.974 82.3634 236.875 85.5758 234.698C88.3095 232.846 87.0823 230.322 85.9061 229.387" stroke="black" stroke-width="1.12889" stroke-linecap="round" stroke-linejoin="bevel"/>
                         <path d="M86.417 229.958C85.6098 228.597 83.1721 227.37 80.4226 228.927C77.305 230.694 77.1256 233.429 77.2556 234.942C77.4208 236.865 78.9571 239.767 82.1695 237.59C84.9032 235.738 83.6761 233.213 82.4998 232.279" stroke="black" stroke-width="1.12889" stroke-linecap="round" stroke-linejoin="bevel"/>
@@ -771,23 +866,17 @@
                                                                             </g>
                         </svg>
                         
-                    
-
-                  <input id="slider-4" type="range" value="0" step = "1" min="0" max ="16">
-                  <input id="slider-4-s" type="range" value="0" step = "1" min="0" max ="16">
-                  <input id="slider-4-r" type="range" value="0" step = "1" min="0" max ="16">
-
           
             </div>
         </div>
 
-        <div id ="rt" class="row_f" ><!--Progress Bar-->
+        <div id ="rt" class="d-flex justify-content-center flex-row" ><!--Progress Bar-->
             <div class="col-md-12">
-                <svg id="progress_rect" width="2937" height="475" viewBox="0 0 6937 475" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="0.5" y="0.5" width="4236" height="274" fill="#F6F975" fill-opacity="0.5" stroke="none"/>
+                <svg id="progress_rect" width="1037" height="105" viewBox="0 0 6937 475" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.5" y="0.5" width="6436" height="594" fill="#F6F975" fill-opacity="0.5" stroke="none"/>
                     </svg>
       
-                <svg id="progress" width="957" height="373" viewBox="0 0 6102 373" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg id="progress" width="957" height="173" viewBox="0 0 6102 373" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <text id="guit" x="60" y="-60" fill="black" font-size="5em" font-weight="bold" font-family="Arial" >Reality</text>
                     <text id="dyna" x="1460" y="-60" fill="black" font-size="5em" font-weight="bold" font-family="Arial" >Idealization</text>
                     <text id="disc" x="2860" y="-60" fill="black" font-size="5em" font-weight="bold" font-family="Arial" >Discretization</text>

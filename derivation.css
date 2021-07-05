@@ -1,5 +1,5 @@
 
-
+/*
 #main_heading{
     text-align: center;
     font-size: 45px;
@@ -10,11 +10,7 @@
     position: relative;
     top: -15px;
   
-}
-
-.row_h{
-    height:165px;
-}
+}*/
 
 /*Adding scroll to the whole content*/
 #overflow{
@@ -29,24 +25,23 @@
    
 }
 
-/*For all the rows and columns*/
+/*For all the rows and columns
 .row{
     height: 630px;
 }
 .col-md-6{
     width: 600px;
     height: 100px;
-}
+}*/
 
 /*For all the text*/
 #text_1{
     line-height: 2.5;
-    margin-left: 80px;
     font-size: 14px;
     
 }
 
-/*Buttons*/
+/*Buttons
 #button-n{
     position: absolute;
     left: 1300px;
@@ -58,24 +53,22 @@
     left: 1200px;
     top: 60px;
     z-index: 50;
-}
-
-
+}*/
 
 
 /*String dynamism*/
 #slider-1{
     position: relative;
-    left: -580px;
-    top: -540px;
+    left: 0px;
+    top: 0px;
     width: 100px;
     height: 30px;
     z-index: 15;
 }
 #guitar{
     position: relative;
-    left: -70px;
-    top: 490px;
+    left: 550px;
+    top: -240px;
 }
 
 
@@ -86,17 +79,17 @@
 /*String dynamism*/
 #slider-3{
     position: relative;
-    top: -580px;
-    left: -20px;
+    top: -1090px;
+    left: 710px;
     width: 216px;
     z-index: 15;
 }
-
+/*
 #strings_slider{
     position: relative;
     left: 850px;
     top: -550px;
-}
+}*/
 
 #dynamic_strings{
     position: relative;
@@ -107,22 +100,16 @@
 
 #dynamic{
     position: relative;
-    top: -331px;
+    top: -1053px;
+    left: 620px;
     z-index: -15;
 }
 
 
 #base{
     position: relative;
-    top: 28px;
-    left:0px;
-    z-index: 15;
-}
-
-#base1{
-    position: relative;
-    top: 138px;
-    left:4px;
+    top: -700px;
+    left:620px;
     z-index: 15;
 }
 
@@ -134,142 +121,10 @@
 
 
 
-/*Discretization*/
-
-#info_icon{
-    position: relative;
-    top: 165px;
-    left: 55px;
-   
-}
-#discrete{
-    position: relative;
-    top: -980px;
-}
 
 
-#discrete_text{
-    position: relative;
-    top: -80px;
-}
-
-#strings_spring{
-    position: relative;
-    left: 850px;
-    top: -380px;
-}
-#zoom-spring{
-    position: relative;
-    left: 100px;
-    top: 50px;  
-}
-
-#spring{
-    position: relative;
-    left: 150px;
-    top: 100px;  
-    right: 100px;  
-}
-
-#slider-4{
-    position: relative;
-    top: -1150px;
-    left: -775px;
-    width: 400px;
-    z-index: 5;
-}
-#slider-4-s{
-    position: relative;
-    top: -1172px;
-    left: -775px;
-    width: 400px;
-    z-index: 4.5;
-}
-#slider-4-r{
-    position: relative;
-    top: -1194px;
-    left: -775px;
-    width: 400px;
-    z-index: 4;
-}
 
 
-/*Arbitrary m
-#arbit-m{
-    position: relative;
-    left: 850px;
-    top: -250px;
-}
-#svg_arbit{
-    position: relative;
-    
-    top: 200px;
-}
-#arbit_slider{
-
-    width: 400px;
-    top: 0px;
-    left: -100px;
-    z-index: 15;
-}*/
-
-
-/*Zoom*/
-#zoom_text{
-    position: relative;
-    top: -100px;
-}
-
-#zoom-m{
-    position: relative;
-    left: 850px;
-    top: -250px;
-}
-
-#zoom-m1{
-    z-index: 0;
-    
-}
-
-#zoom_into{
-    position: relative;
-    left: 200px;
-    top: -505px;
-    
-    z-index: 5;
-}
-
-#coordinate-1{
-    position: relative;
-    left: -24px;
-    top: -510px;
-}
-#zoom-text{
-    transform: rotate(55deg);   
-}
-
-#zoom_rect{
-    position:relative;
-    
-    fill:blue;
-    opacity:0.3;
-    transform: rotate(-35deg); 
-    
-}
-
-#p1_Zoom{
-    position: relative;
-    
-    top: 230px;
-    z-index: 5;
-}
-
-
-#p2_Zoom{
-    color: transparent;
-    position: relative;
-    top: -50px;
-}
 /*Force on a string*/
 
 #c-r{
@@ -335,9 +190,9 @@
 
 #string-force{
     position: relative;
-    left: 850px;
-    top: -450px;
-}
+    left: 600px;
+    top: -750px;
+    }
 
 #graph-force{
     position: relative;
@@ -385,7 +240,7 @@
     top: 460px;
     left: -680px;  
 }
-
+/*
 #p2-force{
     color: rgb(5, 5, 5);
 }
@@ -393,11 +248,6 @@
 
 /*Moving curve*/
 
-#moving-curve{
-    position: relative;
-    left: 650px;
-    top: -170px;
-}/*Doesn't work*/
 
 #coord_text{
     position: relative;
@@ -449,78 +299,6 @@
     left: 1000px;
     
 }
-
-#triangle_s-l{
-    position:relative;
-    transform: rotate(180deg);
-    z-index: -1;
-    top:6px;
-    left: 995px;
-    
-}
-
-
-
-
-/*Total force*/
-#div_totalforce{
-    position: relative;
-    left: 750px;
-    top: -250px;
-}
-
-#tforce{
-    position: relative;
-    left: 120px;
-    top: -180px;
-}
-
-#slider-tforce{
-    position: relative;
-    left: -670px;
-    top: -1250px;
-    width: 250px;
-    z-index: 5;
-}
-
-/*Dropping*/
-
-#svg_col-6{
-    position: relative;
-    top: -30px;
-    left: -100px;
-}
-
-#dropping_text{
-    font-size: 18px;
-}
-
-#zoom_into_drop{
-    position: relative;
-    left: 200px;
-    top: 230px;
-    
-    z-index: 5;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -620,37 +398,27 @@
  
 }
 
-#slider-t{
-    transform: rotate(90deg);
-    position: relative;
-    top:200px;
-    left:-120px;
-    width: 200px;
-    z-index: 15;
-}
-
-#puremath_div{
-    position: relative;
-    top: -50px;
-}
 
 
 
 
-/*Progress bar*/
+
+
+/*Progress bar
 
 
 #progress{
     position:relative;
-    top: -470px;
+    top: -1170px;
 }
 
 #progress_rect{
     position:relative;
-    left: -470px;
-}
+    top: -1050px;
+}*/
 
-#rt{
+
+/*#rt{
     position: fixed;
     top: 500px;
     left: 300px;
@@ -660,9 +428,8 @@
 #svg{
     position: fixed;
     top: 620px;
-    
 }
-
+*/
 #guit{
     cursor: pointer;
 }

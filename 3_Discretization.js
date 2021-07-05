@@ -101,7 +101,7 @@ d3.select("#slider-4").on("input",function(){
     let i = parseInt(d3.select(this).property("value"));
 
     if(i>0){
-      d3.select("#dynamic").attr("visibility","hidden");
+      d3.select("#dynamic_dis").attr("visibility","hidden");
       d3.select("#circle").attr("visibility","hidden");
       d3.select("#hori_line").attr("visibility","hidden");
       d3.select("#slider-4-r").style("visibility","hidden");
@@ -109,7 +109,7 @@ d3.select("#slider-4").on("input",function(){
       d3.select("#reverse_curve").attr("visibility","hidden");
 
     }
-    else{d3.select("#dynamic").attr("visibility","");
+    else{d3.select("#dynamic_dis").attr("visibility","");
     d3.select("#circle").attr("visibility","");
     d3.select("#hori_line").attr("visibility","hidden");
 }
@@ -135,11 +135,11 @@ else{d3.select("#label_discrete").attr("visibility","hidden");
 
     if(i>0){
       d3.select("#curve").attr("visibility","");
-      d3.select("#dynamic").attr("visibility","hidden");
+      d3.select("#dynamic_dis").attr("visibility","hidden");
       d3.select("#circle").attr("visibility","hidden");
       d3.select("#hori_line").attr("visibility","hidden");
     }
-    else{d3.select("#dynamic").attr("visibility","");
+    else{d3.select("#dynamic_dis").attr("visibility","");
     d3.select("#curve").attr("visibility","hidden");
     d3.select("#circle").attr("visibility","");
     d3.select("#hori_line").attr("visibility","hidden");
@@ -165,13 +165,13 @@ else{d3.select("#label_discrete").attr("visibility","hidden");
 
     if(i>0){
       d3.select("#reverse_curve").attr("visibility","");
-      d3.select("#dynamic").attr("visibility","hidden");
+      d3.select("#dynamic_dis").attr("visibility","hidden");
       d3.select("#circle").attr("visibility","hidden");
       d3.select("#hori_line").attr("visibility","hidden");
     }
     else{
     d3.select("#reverse_curve").attr("visibility","hidden");  
-    d3.select("#dynamic").attr("visibility","");
+    d3.select("#dynamic_dis").attr("visibility","");
     d3.select("#circle").attr("visibility","");
     d3.select("#hori_line").attr("visibility","hidden");
 }

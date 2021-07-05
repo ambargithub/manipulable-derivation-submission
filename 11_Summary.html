@@ -20,6 +20,9 @@
 <link href="https://cdn.jsdelivr.net/npm/round-slider@1.6.1/dist/roundslider.min.css" rel="stylesheet" />                                   
 <script src="https://cdn.jsdelivr.net/npm/round-slider@1.6.1/dist/roundslider.min.js"></script>
 
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
   <!--CSS values-->
   <style>
   </style>
@@ -27,11 +30,18 @@
 </head>
 <body id="overflow">
 
-    <div  id ="text" class="container-fluid">
-        <div id ="heading_summary" class="row_h"> <!--Main Heading-->
-            <div id="summary_heading" class="col-md-12">
+    <div  id ="text" class="container">
+        <div id ="heading_summary" class="d-flex row"> <!--Main Heading-->
+          <div id="summary_heading" class="d-flex align-items-center justify-content-center col-md-2">
+            <input id = "button-p" type="button" onclick="location.href='10_PureMath.html'" value="Previous" />
+        </div>
+
+            <div id="summary_heading" class="d-flex align-items-center justify-content-center col-md-10">
                 <h1 id ="heading_11">Summary</h1>
-                <input id = "button-p" type="button" onclick="location.href='10_PureMath.html'" value="Previous" />
+            </div>
+        </div>
+        <div class ="d-flex row"> 
+            <div class ="col-md-12">     
                 <svg visibility="hidden" id="exp_arrow" width="1445" height="158" viewBox="0 0 1025 238" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <line x1="1022.5" y1="140.994" x2="1023.59" y2="237.993" stroke="#ADAAAA" />
                   <path d="M1.00002 192C191.435 49.3762 662.443 -150.297 1023 192M1023 192V149.613M1023 192H976.752" stroke="black" stroke-width="3"/>
@@ -48,19 +58,15 @@
                     <tspan class="em" x="1200" dy="1.0cm">Lorem ipsum Lorem ipsum Lorem ipsum </tspan>
                     <tspan class="em" x="1200" dy="1.0cm">Lorem ipsum Lorem ipsum Lorem ipsum  </tspan>
                   </text>
-                  </svg>
-                  
-            </div>
-                  
+                </svg>
+            </div>      
         </div>
 
 
-        <div class="row"> <!--Summary-->
+        <div class="d-flex row"> <!--Summary-->
             <div id="slider11" class="col-md-6">
-              <svg width="73" height="220" viewBox="0 0 73 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-                </svg>
-                
-
+                  <svg width="73" height="220" viewBox="0 0 73 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  </svg>
             </div>
 
             <div id = "div_guitar_rope" class="col-md-6">
@@ -825,7 +831,7 @@
                     
                         </svg>
                         <img id="s-l_11" width ="80" height = "60" src = "spring_arm-top.png" style="opacity: 0.0" >                
-                        <img id="s-r_11" width ="80" height = "60" src = "spring_arm-bottom.png" style="position:relative;top:-520px;opacity: 0.0" >                
+                        <img id="s-r_11" width ="80" height = "60" src = "spring_arm-bottom.png" style="position:relative;top:-600px;opacity: 0.0" >                
       
                         <img  id="yaxis" width ="15" height = "250" src = "Force arrow.png" style="opacity: 0.0">
                         <img  id="xaxis" width ="15" height = "300" src = "Force arrow.png" style="opacity:0.0">
@@ -833,10 +839,14 @@
                         <img  id="maths1" width ="315" height = "100" src = "Spring forces.png" style="opacity:0.0">
                         <img  id="maths2" width ="455" height = "80" src = "s_forces.png" style="opacity:0.0">
                         <img  id="maths3" width ="215" height = "100" src = "fequation.png" style="opacity:0.0">
-              </div>
-              <div>
-                        <svg id ="labels_summary11" width="1652" height="410" viewBox="1100 0 2852 1710" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <rect width="6252" height="1460" fill="#DEDEE0"/> 
+            </div>
+        </div>    
+        
+        <div class="d-flex row">
+
+            <div class ="col-md-12">
+                        <svg id ="labels_summary11" width="1552" height="410" viewBox="1400 0 2852 1710" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="5952" height="1460" fill="#DEDEE0"/> 
 
                           <rect visibility="hidden" id="textholder_left" x = "152" y = "120" width="999" height="890" rx="100" fill="#F6FFC1"/>
                           <text visibility="hidden" id="text_reality" x="182" y="250" font-size="6em" fill="black">Reality</text>
@@ -935,15 +945,14 @@
 
                         </svg>
                           
-                </div>
-
-                
-
             </div>
+
         </div>
 
 
     </div>
+
+
 
     <script src="11_Summary.js"></script>
 <!--

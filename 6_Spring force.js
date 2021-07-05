@@ -1,48 +1,4 @@
-/*Rotation
-d3.select("#b-rotate").on("click",function(){
-  d3.select("#s-force").transition(1000)
-    .attr("transform","rotate(-38)");
 
-  d3.select("#lc-l").transition(1000)
-    .attr("transform","rotate(38)")
-    .attr("visibility","");
-  
-  d3.select("#lc-r").transition(1000)
-    .attr("transform","rotate(38)")
-    .attr("visibility","");
-
-  d3.select("#lc-c").transition(1000)
-    .attr("transform","rotate(38)")
-    .attr("visibility","");
-
-
-    d3.select("#s-l").transition(1000)
-    .style("transform","rotate(0deg)")
-    .style("transform","translate(-15px,68px)");
-
-    d3.select("#s-r").transition(1000)
-    .style("transform","rotate(0deg)")
-    .style("transform","translate(35px,-15px)");
-
-  d3.select("#l1")
-  .attr("transform","rotate(38)")
-  .attr("visibility","");
-
-  d3.select("#content-masses").transition(1000)
-  .attr("transform","rotate(38)")
-  .attr("visibility","");
-
-  d3.select("#content-labels").transition(1000)
-  .attr("transform","rotate(38)")
-  .attr("visibility","hidden");
-
-  d3.select("#content-labels_before-r")
-    .attr("visibility","hidden");
-
-  d3.select("#p2-force")
-    .style("color","black");
-})
-*/
 /*Drag-L*/ 
 d3.select("#c-l").call(d3.drag()
 .on("start",function(){
@@ -56,7 +12,7 @@ d3.select("#content-labels").attr("visibility","")
 
 let i =event.y;
 let b1 = Math.round(event.y/100)
-
+console.log(i)
 
 if(i>139 & i<706){
 d3.select(this)
@@ -64,7 +20,8 @@ d3.select(this)
 
 d3.select("#s-l")
   .attr("width",110)
-  .attr("height",(95-(0.15*(i-132))));
+  .attr("height",(95-(0.15*(i-132))))
+  .style("top",(-553-((139-i)/12) ) + "px");
 
 d3.select("#force-l")
     .attr("width",10)

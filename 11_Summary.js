@@ -271,6 +271,7 @@ if(i<34 & i>24){
 
    d3.select("#s-l_11")
    .attr("height",(60 +(i-33)*7))
+   .style("top",(-480+((33-i)*2.5) ) + "px");
 
    d3.select("#cm11")
    .attr("cy",(249.5 +(33-i)*137))
@@ -345,6 +346,7 @@ if(i<25 & i>17){
 
    d3.select("#s-l_11")
    .style("opacity",0)
+   
 
    d3.select("#s-r_11")
    .style("opacity",0)

@@ -13,24 +13,95 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 
+<!--Bootstrap-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<style>
+    #p1_Zoom{
+    position: relative;
+    top: 200px;
+    z-index: 5;
+    }
+
+    #p2_Zoom{
+    color: transparent;
+    position: relative;
+    top: -100px;
+    }
+    
+    #zoom-m{
+    position: relative;
+    left: 50px;
+    top: -30px;
+    }
+
+    #rt{
+    position:fixed;
+    top: 630px;
+    left: 250px;
+    }
+
+    #progress{
+    position:relative;
+    top: -125px;
+    left: 0px;
+    }
+
+    #progress_rect{
+    position:relative;
+    top: 0px;
+    left: 0px;}
+
+    #zoom-m1{
+    z-index: 0; 
+    }
+
+    #zoom_into{
+    position: relative;
+    left: 200px;
+    top: -505px;
+    z-index: 5;
+    }
+
+    #coordinate-1{
+    position: relative;
+    left: -24px;
+    top: -510px;
+    }
+    #zoom-text{
+    transform: rotate(55deg);   
+    }
+
+    #zoom_rect{
+    position:relative;
+    fill:blue;
+    opacity:0.3;
+    transform: rotate(-35deg); 
+    }
+
+</style>
 </head>
 <body id="overflow">
 
-    <div id ="text" class="container-fluid">
-        <div class="row_h"> <!--Main Heading-->
-            <div class="col-md-12">
-                <h1 id ="main_heading">Locating string coordinates</h1>
-                <input id = "button-n" type="button" onclick="location.href='6_Spring force.html'" value="Next" />
-                <input id = "button-p" type="button" onclick="location.href='3_Discretization.html'" value="Previous" />
-                <p id="sub_heading" style="text-align:center">Describing simple elements using coordinates</p>
-
-            </div>
-        </br></br></br></br>           
+    <div id ="text" class="container">
+        <div class="d-flex row" > <!--Main Heading-->
+                <div class="d-flex align-items-center justify-content-center col-md-2" >   
+                    <input id = "button-p" type="button" onclick="location.href='3_Discretization.html'" value="Previous" />
+                </div>
+    
+                <div class="d-flex flex-column align-items-center col-md-8" >
+                    <h1 id ="main_heading">Locating string coordinates</h1>
+                    &nbsp;&nbsp;&nbsp;<p id="sub_heading" style="text-align:center">Describing simple elements using coordinates</p>
+                </div>
+                
+                <div class="d-flex align-items-center justify-content-center col-md-2" >   
+                    <input id = "button-n" type="button" onclick="location.href='6_Spring force.html'" value="Next" />
+                </div>
         </div>
+    
 
 
-        <div class="row"><!--Zooming in -->
-            <div id ="zoom_text" class="col-md-6">
+        <div class="d-flex row"><!--Zooming in -->
+            <div class="col-md-6">
              <b id="p1_Zoom"><p id = "text_1">
                <i> Scroll over the highlighted portion to sharpen your focus on individual elements of the string !!</i></br></br></p></b>
                 
@@ -45,7 +116,6 @@
             </br></br>You would have noticed that once we simplified the model down to the elemental mass points, we also began defining their coordinates. 
             This process, of placing the most simple model element in a coordinate grid, starts the description of a geometric model. This crucial step allows us to gradually move to symbols, and arrive at the final symbol-based model
             </p></b>   
-                
 
             </div>
             <div id = "zoom-m" class="col-md-6">
@@ -378,13 +448,13 @@
             </div>
         </div>
 
-        <div id ="rt" class="row_f" ><!--Progress Bar-->
+        <div id ="rt" class="d-flex justify-content-center flex-row" ><!--Progress Bar-->
             <div class="col-md-12">
-                <svg id="progress_rect" width="2937" height="475" viewBox="0 0 6937 475" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="0.5" y="0.5" width="4236" height="274" fill="#F6F975" fill-opacity="0.5" stroke="none"/>
+                <svg id="progress_rect" width="1037" height="105" viewBox="0 0 6937 475" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.5" y="0.5" width="6436" height="594" fill="#F6F975" fill-opacity="0.5" stroke="none"/>
                     </svg>
       
-                <svg id="progress" width="957" height="373" viewBox="0 0 6102 373" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg id="progress" width="957" height="173" viewBox="0 0 6102 373" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <text id="guit" x="60" y="-60" fill="black" font-size="5em" font-weight="bold" font-family="Arial" >Reality</text>
                     <text id="dyna" x="1460" y="-60" fill="black" font-size="5em" font-weight="bold" font-family="Arial" >Idealization</text>
                     <text id="disc" x="2860" y="-60" fill="black" font-size="5em" font-weight="bold" font-family="Arial" >Discretization</text>
