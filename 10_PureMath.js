@@ -32,7 +32,7 @@ d3.select("#r-eq1")
     .attr("visibility","hidden");
   }
 
-  if(i>=3){
+  if(i>=2){
     
 
       d3.select("#R-rect")
@@ -44,7 +44,7 @@ d3.select("#r-eq1")
   .attr("visibility","hidden");
 } 
 
-if(i>=4){
+if(i>=3){
     
 
   d3.select("#Red")
@@ -57,15 +57,6 @@ d3.select("#Red")
 } 
   })
 
-d3.select("#F-rect").on("mouseover",function(){
-  d3.select("#f-rect")
-    .attr("visibility","");
-})
-
-d3.select("#F-rect").on("mouseout",function(){
-  d3.select("#f-rect")
-    .attr("visibility","hidden");
-})
 
 d3.select("#RR-rect").on("mouseover",function(){
   d3.select("#r-eq")

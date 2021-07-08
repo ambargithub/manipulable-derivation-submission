@@ -17,13 +17,18 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
 <style>
-    div{
-        width:100%;
-    }
+    #slider-1{
+    position: relative;
+    left: 40px;
+    top: 150px;
+    width: 100px;
+    height: 30px;
+    z-index: 15;
+}
     
     #rt{
     position:relative;
-    top: -1030px;
+    top: -1070px;
     left: 40px;
     }
 
@@ -77,6 +82,10 @@
                 Let us try interacting with the string on our right to see what affects its behavior.  
                 
                 </br> </br></br> <i>Drag the horizontal slider to choose where you wish to pull the string.</i></br>
+
+                <!--Call back slider-->
+                <input id="slider-1" type="range" value="0" step = "2" min="0" max ="52">                
+
             </div>
 
             <div class="col-md-6">
@@ -135,8 +144,6 @@
                         <path id ="dynamic_strings" />
                 </svg>
                     
-                <!--Call back slider-->
-                <input id="slider-1" type="range" value="0" step = "2" min="0" max ="52">                
                 <!--String dynamism slider-->
                 <input id="slider-3" type="range" value="5" step = "5" min="0" max ="10">        
 

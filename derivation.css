@@ -358,38 +358,38 @@
 
 #F-rect{
     position:relative;
-    top: 230px;
+    top: -335px;
     left: 50px;
     z-index: 5;
 }
 #R-rect{
     position:relative;
-    top: 300px  ;
-    left: -110px;
+    top: -255px  ;
+    left: -70px;
     z-index: 3;
 }
 #Red{
     position:relative;
-    top: 320px;
+    top: -225px;
     left: 10px;
     z-index: 3;
 }
 #R-rect-1{
     position:relative;
-    top: 525px;
+    top: 380px;
     left: 60px;
     z-index: 3;
 }
 #R-rect-2{
     position:relative;
-    top: 485px;
-    left: -50px;
+    top: 340px;
+    left: 20px;
     z-index: 2;
 }
 
 #f-rect{
     position:relative;
-    top: 100px;
+    top: -30px;
  
 }
 

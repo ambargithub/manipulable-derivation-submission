@@ -32,9 +32,31 @@
       top: 5px;
     }
 
+    #text_col{
+      position: relative;
+      left: -50px;
+    }
+
+    #calc_col{
+      position: relative;
+      left: 50px;
+    }
+
+    #r-eq{
+      position: relative;
+      top: -150px;
+
+    }
+
+    #r-eq1{
+      position: relative;
+      top: -150px;
+
+    }
+
     #rt{
         position:relative;
-        top: -220px;
+        top: -120px;
         left: 40px;
     }
 
@@ -68,73 +90,38 @@
             <input id = "button-n" type="button" onclick="location.href='10.1_PureMath.html'" value="Next" />
         </div>
 
-      </div>
-
-
-        <div id ="row_PureMath_text" class="d-flex row"> <!--Main Heading-->
-          <div class="col-md-12">
-  
-              <p style="text-align:center">The current algebraic description includes a force component and Y terms with indices, </br>
+    </div>
+        
+      <div id="puremath_div" class="d-flex row">
+          <div id="text_col" class="col-md-4">
+            </br></br></br></br>
+              <p style="text-align:left">The current algebraic description includes a force component and Y terms with indices, 
                 which makes it difficult to draw inferences, and also generate numbers using the model.   </p>
                
-                <p style="text-align:center">To streamline this model, these terms can be replaced systematically. 
+                <p style="text-align:left">To streamline this model, these terms can be replaced systematically. </br></br>
                     <i>Drag the slider to see the steps of this simplification.</i></p>
-  
 
+                
           </div>
-                
-      </div>
-  
-
-        
-        <div id="puremath_div" class="d-flex row">
-            <div class="col-md-4">
-              <svg id="f-rect" visibility="hidden" width="241" height="232" viewBox="0 0 341 232" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <rect id ="f-re" width="341" height="232" fill="#80F2DE" fill-opacity="0.25"/>
-                <rect x="35" y="20" width="35" height="48" fill="url(#pattern0)"/>
-                <rect x="103" y="20" width="51" height="48" fill="url(#pattern1)"/>
-                <rect x="103" y="87" width="51" height="48" fill="url(#pattern2)"/>
-                <rect x="188" y="87" width="96" height="101" fill="url(#pattern3)"/>
-                <rect x="187" y="20" width="49" height="48" fill="url(#pattern4)"/>
-                <defs>
-                <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
-                <use xlink:href="#image0" transform="scale(0.0285714 0.0208333)"/>
-                </pattern>
-                <pattern id="pattern1" patternContentUnits="objectBoundingBox" width="1" height="1">
-                <use xlink:href="#image1" transform="scale(0.0196078 0.0208333)"/>
-                </pattern>
-                <pattern id="pattern2" patternContentUnits="objectBoundingBox" width="1" height="1">
-                <use xlink:href="#image1" transform="scale(0.0196078 0.0208333)"/>
-                </pattern>
-                <pattern id="pattern3" patternContentUnits="objectBoundingBox" width="1" height="1">
-                <use xlink:href="#image2" transform="scale(0.0104167 0.00990099)"/>
-                </pattern>
-                <pattern id="pattern4" patternContentUnits="objectBoundingBox" width="1" height="1">
-                <use xlink:href="#image3" transform="scale(0.0204082 0.0208333)"/>
-                </pattern>
-                <image id="image0" width="35" height="48" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAwCAYAAACbm8NsAAAC7UlEQVRYCe2XTUtyQRTHXbZo16aFBCW2K7KEwBBsG+0KxMDSbxDSUsQW4Udo28qN7mwTtIhWLcJIC6IXRXvRzJdKkdD0H+fCHSyduVef5z70wD0wzL1nzp35zX+OM6MBv8gMv4gFOgxvNXRldGV4CvD8es7oyvAU4Pn/n5xpt9u8SfT0U3yz2USr1erZruTkKvP09ITV1VWsr6+z4vF4sLGx0VUohvxyvba2Bp/PpzR2VzsXJh6PY2VlBV6vF8vLyzAYDH2V7e3trsGUHFyYzg9JJRnGaDTi8PAQt7e3SKfTyGazUikUCri7u8PS0pIUG4lEOrtQ9awK5uDggME4HA6USiVu53t7e1JsMpnkxvAaVMGEw2EGQ7khsv39fYyMjKBSqYjCerapgtnZ2WEwoVCoZ0ey8/j4GJOTk6jVarJLda0Kxu12M5hYLCbs/OPjA29vb8IYXqMiDM2Q8kROYEpSrUwR5vn5GePj4xLM6Ogo6F0rU4S5vr5mqthstoFyQS28Ikw0GmUwtLNqaYowwWCQwQQCAWmZKI+ovL+/4/X1FeVyGS8vL8jlcuj3POucnBCGOna5XAxmamoKMzMzsFgsrMzOzmJubg5WqxULCwtIpVKd/ff1LIShmdvtdglmaGgI8sA0OAFRTT4CmZ6exubm5sAnNlELYUj2sbExCWZiYgKUzHQUUKEziWo6t/L5PM7Pz6X2vqT4ESyEubi4YEtES1Cv1398/ndfhTCdZxJdJ7Q2IYzf72fKbG1tac3Cz5nPz084nU4GQ1cDrY2rzP39Pebn5xnM2dmZ1ix8ZR4eHjA8PCzB0JlEvxitjavM7u4uU2VxcRHFYlFrlm5lSJHLy0vpn4F8bTCZTDg6OpL2lsfHxz/a8kUz+qYM3VVoYBniZ03LZjabkclkRH0O3PYNptFo4PT0FFdXV9JuenJygkQigZubG9AGSLssvVer1YEHFH34DUYU+C/adBieyroyujI8BXh+PWd4ynwBySa6WH3EnloAAAAASUVORK5CYII="/>
-                <image id="image1" width="51" height="48" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAwCAYAAAC8NUKEAAABAElEQVRoBe2UPQqFQBCD9zoWgoWnEfw5lFbe0FpsLOaxnXXiZh8SYcAmMybfOCk+9KQPeQmb+VeaJmMyggS8ZoKQoREmA8UmEJmMIGRohMlAsQlEJiMIGRphMlBsApHJCEKGRpgMFJtARJM5jiPeKtYvZea6rmiaJvq+pyv3Oc+T8kObads2Ukp05T7VzWzbFvu+07Wua10z1E4UEFNrVuB7qJY284zvvu94q559kXeKTD7NwzDEsix05T7Vr1nXdfRZzqc996luZpqmmOeZrnEc65pB9rqkhvpnSn4Y0ttmkNQUGpNRpIzMMBkkNYXGZBQpIzNMBklNoTEZRcrIjB8gIxp/rKERGQAAAABJRU5ErkJggg=="/>
-                <image id="image2" width="96" height="101" xlink:href="data:image/png;base64,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"/>
-                <image id="image3" width="49" height="48" xlink:href="data:image/png;base64,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"/>
-                </defs>
-                </svg>
-                
-            </div>
-            <div class="col-md-4">
+          <div class="col-md-4">
                     
                     <input id="slider-t" type="range" value="1" step = "1 " min="1" max ="4"   > 
                     <p> We know that </p> </br>  
                     <p id="p1" >\(Total\ force\ =\ k_{1} \ ( Y_{( x\ +\ dx) \ } -2Y_{( x)} +\ Y_{( x\ -\ dx)})  \)  </p>  </br>  
                     <p id="p2" >\(\ \ \ \ \  \ \ \ \ \ \ \ \ F\ =\ k_{1} \ ( Y_{( x\ +\ dx) \ } -2Y_{( x)} +\ Y_{( x\ -\ dx)})  \)  </p> </br>  
-                    <p id="p3" >\(\ \ \ \ \ \  m\ \frac{d^{2} y}{dt^{2}} \ =\ k_{1} \ ( Y_{( x\ +\ dx) \ } -2Y_{( x)} +\ Y_{( x\ -\ dx)})  \)  </p></br>   
-                    <p id="p4" >\(\ \ \ \ \  \ \  m\ \frac{d^{2} y}{dt^{2}} =k_{1} \ .\frac{d^{2} y}{dx^{2}} .( dx)^{2} \   \)  </p>   </br>  
-                    <!--<p id="p5" >\(\ \ \ \ \  \ \  m\ \frac{d^{2} y}{dt^{2}} =\left[ k_{1} \ ( dx)^{2} \ \right] .\frac{d^{2} y}{dx^{2}}  \   \)  </p>   </br>  
+                    <p id="p3" >\(\ \ \ \ \  \ \ \ \ \ \ \ \ F\ =k_{1} \ .\frac{d^{2} y}{dx^{2}} .( dx)^{2} \   \)  </p>   </br> 
+                    <p id="p4" >\(\ \ \ \ \  \ \ \ \ \ \ \ \ F =k.\frac{d^{2} y}{dx^{2}} \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ where\ k\ =\  k_{1} \ ( dx)^{2} \   \)  </p>  </br>   
+                    <!--
+                                          <p id="p3" >\(\ \ \ \ \ \  m\ \frac{d^{2} y}{dt^{2}} \ =\ k_{1} \ ( Y_{( x\ +\ dx) \ } -2Y_{( x)} +\ Y_{( x\ -\ dx)})  \)  </p></br>   
+
+                                        <p id="p4" >\(\ \ \ \ \  \ \  m\ \frac{d^{2} y}{dt^{2}} =k_{1} \ .\frac{d^{2} y}{dx^{2}} .( dx)^{2} \   \)  </p>   </br>    
+                    <p id="p5" >\(\ \ \ \ \  \ \  m\ \frac{d^{2} y}{dt^{2}} =\left[ k_{1} \ ( dx)^{2} \ \right] .\frac{d^{2} y}{dx^{2}}  \   \)  </p>   </br>  
                     <p id="p6" >\(\ \ \ \ \  \ \  m\ \frac{d^{2} y}{dt^{2}} =k.\frac{d^{2} y}{dx^{2}} \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ where\ k\ =\  k_{1} \ ( dx)^{2} \   \)  </p>   </br>  
                     <p id="p7" >\(\ \ \ \ \  \ \  \ \frac{d^{2} y}{dt^{2}} =\frac{k}{m} .\frac{d^{2} y}{dx^{2}} \   \)  </p>   </br>  
                     <p id="p8" >\(\ \ \ \ \  \ \ \ \frac{d^{2} y}{dt^{2}} =v^{2}\frac{d^{2} y}{dx^{2}} \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ where\ v\ =\ \sqrt{\frac{k}{m}}   \)  </p>   </br>  
                     <p id="p9" >\(\ \ \ \ \  \ \  \ \ \frac{\partial ^{2} y}{\partial t^{2}} -\ v^{2}\frac{\partial ^{2} y}{\partial x^{2}} \ =\ 0\    \)  </p>   
                     -->
-                    <svg id ="F-rect" visibility="hidden" width="30" height="48" viewBox="0 0 50 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg id ="" visibility="hidden" width="30" height="48" viewBox="0 0 50 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <rect width="50" height="48" fill="#80F2DE" fill-opacity="0.25"/>
                   </svg>
                 <svg id ="R-rect" visibility="hidden" width="430" height="38" viewBox="0 0 50 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -144,13 +131,13 @@
                       <rect id ="Redd" width="100" height="48" fill="#F94B4B" fill-opacity="0.25"/>
                   </svg>
 
-            </div>
-            <div class="col-md-4">  
+          </div>
+          <div id ="calc_col" class="col-md-4">  
                     </br></br>
-                    <svg id ="R-rect-1" visibility="hidden" width="330" height="38" viewBox="0 0 50 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg id ="R-rect-1" visibility="hidden" width="330" height="40" viewBox="0 0 50 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <rect width="400" height="48" fill="#F5F94B" fill-opacity="0.25"/>
                     </svg>
-                    <svg id ="R-rect-2" visibility="hidden" width="230" height="38" viewBox="0 0 50 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg id ="R-rect-2" visibility="hidden" width="160" height="38" viewBox="0 0 50 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="400" height="48" fill="#F94B4B" fill-opacity="0.25"/>
                     </svg>
                   
@@ -174,7 +161,7 @@
                     \(\ \ \ \ \ \ \ \ \ \ \ \ \ \  Therefore \)</br></br>
                       \(\ \ \ \ \ \ \ \ \ \ \  \ \ \ \ \ \ \ \ \ \ \ \frac{d^{2} y}{dx^{2}}{\displaystyle .( dx)^{2} =\ } Y_{( x+dx)} -2Y_{( x)} \ +Y_{( x-dx)}\)
                     </p>
-            </div>
+          </div>
         
         </div>
 

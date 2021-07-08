@@ -54,7 +54,7 @@
       .attr("visibility","hidden");
       
       
-      console.log( i);
+      console.log(i);
     })
   
      /*Progress bar*/

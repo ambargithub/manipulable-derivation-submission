@@ -57,14 +57,32 @@ d3.select("#Red_disabled")
 if(i==5){
   d3.select("#r-eq").style("visibility","");
   d3.select("#R-rect").attr("visibility","");
+  d3.select("#final_eq_rect").attr("visibility","")
 }
 else{
   d3.select("#r-eq").style("visibility","hidden");
   d3.select("#R-rect").attr("visibility","hidden");
+  d3.select("#final_eq_rect").attr("visibility","hidden")
 }
   })
 
+  d3.select("#F-rect").on("mouseover",function(){
+    d3.select("#f-rect")
+      .attr("visibility","");
 
+    d3.select("#text_secondlaw")
+      .style("visibility","");
+  })
+  
+  d3.select("#F-rect").on("mouseout",function(){
+    d3.select("#f-rect")
+      .attr("visibility","hidden");
+
+    d3.select("#text_secondlaw")
+      .style("visibility","hidden");
+  
+  })
+  
 
 
 
