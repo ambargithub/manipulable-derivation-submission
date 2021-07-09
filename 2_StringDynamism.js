@@ -1,3 +1,4 @@
+/*INITIAL DRAG WITHOUT INVOKING THE SLIDER */
 d3.select("#circle").call(d3.drag()
     
   .on("start",function(event){
@@ -17,7 +18,7 @@ d3.select("#circle").call(d3.drag()
     d3.select(this)
       .attr("cy",(i));
 
-      var data =[[0, 50], [200, 0.31*(i-150)], [400, 50]];
+       data =[[0, 50], [200, 0.31*(i-150)], [400, 50]];
         
 
     var lineGenerator = d3.line().curve(d3.curveNatural);
@@ -40,100 +41,120 @@ d3.select("#circle").call(d3.drag()
 
      )
 
-
+/*DRAG WHEN THE SLIDER IS INVOKED */
 d3.select("#slider-3").on("input",function(){
-  let j = parseInt(d3.select(this).property("value"));
-  
+          let j = parseInt(d3.select(this).property("value"));
+          
 
-  if(j==10){
-      
-    d3.select("#circle")
-      .attr("cx",950);
+          if(j==10){
+            data = [[0, 50], [200, 50], [400, 50]];
 
-    d3.select("#label_drag_line")
-      .attr("x2",950);
+            d3.select("#circle")
+              .attr("cx",950)
+              .attr("cy",308);
+            d3.select("#label_drag_line")
+              .attr("x2",950);
+            
+              d3.select("#ds-r").attr("visibility","");
+              d3.select("#ds-l").attr("visibility","hidden");
+              d3.select("#ds-c").attr("visibility","hidden");}
+
+          else if(j==0){
+            d3.select("#circle")
+            .attr("cy",308);
+
+            data = [[0, 50], [200, 50], [400, 50]];
+            
+            d3.select("#label_drag_line")
+            .attr("x2",313);
+
+            d3.select("#circle")
+            .attr("cx",312.5);
+
+            d3.select("#ds-l").attr("visibility","");
+                d3.select("#ds-r").attr("visibility","hidden");
+                d3.select("#ds-c").attr("visibility","hidden");}
+          
+          else {
+            data = [[0, 50], [200, 50], [400, 50]];
+
+            d3.select("#circle")
+            .attr("cx",625)
+            .attr("cy",308);
+
+            d3.select("#label_drag_line")
+            .attr("x2",643);
+
+          
+            d3.select("#ds-c").attr("visibility","");
+            d3.select("#ds-l").attr("visibility","hidden");
+            d3.select("#ds-r").attr("visibility","hidden");}
+
+            var lineGenerator = d3.line().curve(d3.curveNatural);
+
+            var pathString = lineGenerator(data);
+          
+            d3.select('#dynamic_strings')
+            .attr('d', pathString)
+            .attr("fill","white")
+            .attr("stroke","black")
+            .attr("stroke-width",1);
+
+          /*CALLING DRAG */  
+          d3.select("#circle").call(d3.drag()
+            
+                      .on("start",function(event){
+                      d3.select(this)
+                        .attr("stroke","red"); 
+
+                        d3.select("#label_drag")
+                        .attr("visibility","hidden");
+
+                      })
+
+                      .on("drag",function(event){
+                            let i = event.y;
+                            console.log(i);
+                      /**Drag behavior is governed by both the position of the slider(j) and the amount of drag(i) */      
+                      if(i>218 & i<418){
+
+                        d3.select(this)
+                          .attr("cy",(i));
+
+                          if(j==5){ data = [[0, 50], [200, 0.31*(i-150)], [400, 50]];
+                          
+                            }
+                        
+                        
+                          else if(j==0){ data = [[0, 50], [100, 0.31*(i-321)+50], [200, 50],[300, 0.31*(321-i)+50], [400, 50]];
+                          }
+
+                        
+                          else{ data = [[0, 50], [100, 0.31*(321-i)+50], [200, 50],[300, 0.31*(i-321)+50], [400, 50]];
+                          
+                          }
+                      
+                            
+                            
+
+                        var lineGenerator = d3.line().curve(d3.curveNatural);
+
+                        var pathString = lineGenerator(data);
+                      
+                        d3.select('#dynamic_strings')
+                        .attr('d', pathString)
+                        .attr("fill","white")
+                        .attr("stroke","black")
+                        .attr("stroke-width",1);
+
+                        }})
+                        
+                        .on("end",function(event){
+                          d3.select(this)
+                          .attr("stroke","black"); 
+                        })
+
     
-      d3.select("#ds-r").attr("visibility","");
-      d3.select("#ds-l").attr("visibility","hidden");
-      d3.select("#ds-c").attr("visibility","hidden");}
-
-  else if(j==0){
-    d3.select("#label_drag_line")
-    .attr("x2",313);
-
-    d3.select("#circle")
-    .attr("cx",312.5);
-
-    d3.select("#ds-l").attr("visibility","");
-        d3.select("#ds-r").attr("visibility","hidden");
-        d3.select("#ds-c").attr("visibility","hidden");}
-  
-  else {
-    d3.select("#circle")
-    .attr("cx",625);
-
-    d3.select("#label_drag_line")
-    .attr("x2",643);
-
-  
-    d3.select("#ds-c").attr("visibility","");
-    d3.select("#ds-l").attr("visibility","hidden");
-    d3.select("#ds-r").attr("visibility","hidden");}
-
- 
-
-  d3.select("#circle").call(d3.drag()
-    
-  .on("start",function(event){
-   d3.select(this)
-    .attr("stroke","red"); 
-
-    d3.select("#label_drag")
-    .attr("visibility","hidden");
-
-  })
-
-  .on("drag",function(event){
-        let i = event.y;
-        console.log(i);
-        
-  if(i>218 & i<418){
-
-    d3.select(this)
-      .attr("cy",(i));
-
-      if(j==5){var data = [[0, 50], [200, 0.31*(i-150)], [400, 50]];
-      
-        }
-    
-    
-      else if(j==0){var data = [[0, 50], [100, 0.31*(i-321)+50], [200, 50],[300, 0.31*(321-i)+50], [400, 50]];
-      }
-
-    
-      else{var data = [[0, 50], [100, 0.31*(321-i)+50], [200, 50],[300, 0.31*(i-321)+50], [400, 50]];
-      
-       }
-  
-        
-        
-
-    var lineGenerator = d3.line().curve(d3.curveNatural);
-
-    var pathString = lineGenerator(data);
-  
-    d3.select('#dynamic_strings')
-    .attr('d', pathString)
-    .attr("fill","white")
-    .attr("stroke","black")
-    .attr("stroke-width",1);
-
-    }})
-    
-    .on("end",function(event){
-      d3.select(this)
-       .attr("stroke","black"); 
-     })
     
     )})
 
