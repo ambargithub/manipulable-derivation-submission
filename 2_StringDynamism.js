@@ -27,7 +27,7 @@ d3.select("#circle").call(d3.drag()
   
     d3.select('#dynamic_strings')
     .attr('d', pathString)
-    .attr("fill","white")
+    .attr("fill","transparent")
     .attr("stroke","black")
     .attr("stroke-width",1);
 
@@ -96,7 +96,7 @@ d3.select("#slider-3").on("input",function(){
           
             d3.select('#dynamic_strings')
             .attr('d', pathString)
-            .attr("fill","white")
+            .attr("fill","transparent")
             .attr("stroke","black")
             .attr("stroke-width",1);
 
@@ -143,7 +143,7 @@ d3.select("#slider-3").on("input",function(){
                       
                         d3.select('#dynamic_strings')
                         .attr('d', pathString)
-                        .attr("fill","white")
+                        .attr("fill","transparent")
                         .attr("stroke","black")
                         .attr("stroke-width",1);
 

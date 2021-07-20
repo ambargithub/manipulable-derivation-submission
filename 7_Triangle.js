@@ -5,7 +5,7 @@ d3.select("#sliderCurve").on("input",function(){
   
   d3.select("#triangle_s-l")
     .attr("height",(1.3*i)/2)
-    .style("top",(55-((i)/3) ) + "px");
+    .style("top",(-205-((i)/1.5) ) + "px");
   
   
   

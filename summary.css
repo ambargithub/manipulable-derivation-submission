@@ -23,35 +23,35 @@
     background-color: #f7fafc;
 }
 #slider11 .rs-path-color {
-    background-color: rgb(245, 86, 86);
+    background-color: rgb(174, 188, 250);
 }
 #slider11 .rs-handle {
-    background-color: #1f1d1d;
+    background-color: #004B7E;
 }
 #slider11 .rs-bg-color {
-    background-color: white;
+    background-color: #E3DFDD;
 }
 
 
 #slider11{
     position: relative;
-    top: -665px;
-    left:78px;
+    top: -515px;
+    left:298px;
     z-index: 15;
 }
 
 #div_guitar_rope{
     position: relative;
     left: -280px;
-    top: -120px;
+    top: -20px;
     z-index: 15;
 }
 
 #labels_summary11{
     position:relative;
     z-index: -1;
-    top:-880px;
-    left: -250px;
+    top:-690px;
+    left: -35px;
     
 }
 

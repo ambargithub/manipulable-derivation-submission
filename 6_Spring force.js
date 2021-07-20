@@ -21,7 +21,7 @@ d3.select(this)
 d3.select("#s-l")
   .attr("width",110)
   .attr("height",(95-(0.15*(i-132))))
-  .style("top",(-553-((139-i)/12) ) + "px");
+  .style("top",(-824-((139-i)/6.8) ) + "px");
 
 d3.select("#force-l")
     .attr("width",10)
@@ -48,54 +48,6 @@ d3.select("#l1-mov").attr("visibility","hidden")
 
 })
 )
-
-/*Drag-R*/ ///////////////////////
-/*
-d3.select("#c-r").call(d3.drag()
-.on("start",function(){
-  d3.select(this).attr("stroke-width",10);
-})
-.on("drag",function(event){
-
-let i =event.y;
-
-
-let cryposition = d3.select(this).attr("cy")
-
-
-if(i<1248 & i>666){
-  d3.select(this)
-
-    .attr("cy",(35+i));
-  
-  d3.select("#s-r")
-    .attr("width",110)
-    .attr("height",95 -(0.15*(1278-i)))
-    .style("top",(-460-((1278-i)/7) ) + "px");
-
-  d3.select("#force-r")
-    .attr("width",0)
-    .attr("height",0)
-    .style("top",0);
-
-  d3.select("#stretch-r")
-    .attr("width",0)
-    .attr("height",0);
-
-  d3.select("#content-labels")
-    .attr("visibility","")
-
-
-}
-
-
-
-})
-.on("end",function(){
-  d3.select(this).attr("stroke-width",0)
-})
-)
-
 
 /*Text drag event*/ ////////////
 d3.select("#algebraicForce").call(d3.drag()

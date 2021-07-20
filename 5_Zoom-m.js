@@ -1,8 +1,8 @@
 /*Zoom-m*/
 
-d3.select("#zoom_into").call(d3.zoom().on("zoom",function(){
+d3.select("#zoom_rect").call(d3.zoom().on("zoom",function(){
 
-    d3.select(this).transition(1000)
+    d3.select("#zoom_into").transition(1000)
     .attr("width",156)
     .attr("height",256)
     .attr("opacity",1);
@@ -62,7 +62,7 @@ d3.select("#zoom_into").call(d3.zoom().on("zoom",function(){
       .attr("visibility","hidden");
   })
   d3.select("#p2_Zoom").style("color","black"); 
-  d3.select("#p1_Zoom").style("color","white"); 
+  d3.select("#p1_Zoom").style("color","#85C1D8"); 
   }))
   
 

@@ -1,22 +1,12 @@
-
-/*
-#main_heading{
-    text-align: center;
-    font-size: 45px;
-  
+.container{
+    height: 100%;
+    width: 100%;
 }
 
-#sub_heading{
-    position: relative;
-    top: -15px;
-  
-}*/
-
-/*Adding scroll to the whole content*/
 #overflow{
     overflow-y: hidden;
     overflow-x: hidden;
-   
+    background-color:#E3DFDD;
 }
 
 #overflow1{
@@ -25,14 +15,64 @@
    
 }
 
-/*For all the rows and columns
-.row{
-    height: 630px;
+.text-container{
+    background-color: #85C1D8;
+    border-bottom-left-radius: 3%;
+    padding: 3%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 552px;
 }
-.col-md-6{
-    width: 600px;
-    height: 100px;
-}*/
+
+.visual-container{
+    background-color: rgb(255, 255, 255);
+    border-bottom-right-radius: 3%;
+    height: 552px;
+}
+
+.slider-container{
+    background-color: rgb(255, 255, 255);
+    border-radius: 3%;
+    padding: 3%;
+}
+
+#progress{
+    position:relative;
+    top: 0px;
+    left: 0px;
+    }
+
+    input[type=range] {
+    height: 34px;
+    -webkit-appearance: none;
+    margin: 10px 0;
+    width: 100%;
+    }
+    input[type=range]:focus {
+    outline: none;
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 1px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #002200;
+    background: #011213;
+    border-radius: 0px;
+    border: 0px solid #18D501;
+    }
+    input[type=range]::-webkit-slider-thumb {
+    box-shadow: 0px 0px 0px #00AA00;
+    border: 0px solid #83E584;
+    height: 23px;
+    width: 23px;
+    border-radius: 23px;
+    background: #02386b;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -10px;
+    }
+    input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #205928;}
 
 /*For all the text*/
 #text_1{
@@ -41,77 +81,54 @@
     
 }
 
-/*Buttons
-#button-n{
-    position: absolute;
-    left: 1300px;
-    top: 60px;
-    z-index: 50;
-}
-#button-p{
-    position: absolute;
-    left: 1200px;
-    top: 60px;
-    z-index: 50;
-}*/
 
 
 /*String dynamism*/
-#slider-1{
+#base{
+    position: relative;
+    top: 0px;
+    left:0px;
+    z-index: 15;
+    background-color: transparent;
+}
+#dynamic{
+    position: relative;
+    top: -648px;
+    left: 0px;
+    z-index: 14;
+    background-color: transparent;
+}
+#dynamic_strings{
     position: relative;
     left: 0px;
     top: 0px;
-    width: 100px;
-    height: 30px;
-    z-index: 15;
+    width: 100px; 
+    background-color: transparent;
+    
 }
 #guitar{
     position: relative;
-    left: 550px;
-    top: -240px;
+    left: 0px;
+    top: -444px;
+    background-color: transparent;
 }
 
 
 #labels-slider1{
-    top: -950px;
+    position: relative;
+    top: 0px;
 }
 
-/*String dynamism*/
+
 #slider-3{
     position: relative;
-    top: -1090px;
-    left: 710px;
+    top: 00px;
+    left: 00px;
     width: 216px;
     z-index: 15;
 }
-/*
-#strings_slider{
-    position: relative;
-    left: 850px;
-    top: -550px;
-}*/
-
-#dynamic_strings{
-    position: relative;
-    left: 850px;
-    top: -550px;
-    width: 100px; 
-}
-
-#dynamic{
-    position: relative;
-    top: -1053px;
-    left: 620px;
-    z-index: -15;
-}
 
 
-#base{
-    position: relative;
-    top: -700px;
-    left:620px;
-    z-index: 15;
-}
 
 
 #circle{
@@ -125,7 +142,7 @@
 
 
 
-/*Force on a string*/
+/*Force on a string
 
 #c-r{
     position:relative;
@@ -240,13 +257,8 @@
     top: 460px;
     left: -680px;  
 }
-/*
-#p2-force{
-    color: rgb(5, 5, 5);
-}
-;
 
-/*Moving curve*/
+/*Moving curve
 
 
 #coord_text{
@@ -348,7 +360,7 @@
 
 
 
-/*Pure Math*/
+/*Pure Math*
 
 
 #Force{
@@ -356,18 +368,7 @@
     top: 200px;
 }
 
-#F-rect{
-    position:relative;
-    top: -335px;
-    left: 50px;
-    z-index: 5;
-}
-#R-rect{
-    position:relative;
-    top: -255px  ;
-    left: -70px;
-    z-index: 3;
-}
+
 #Red{
     position:relative;
     top: -225px;
@@ -404,32 +405,7 @@
 
 
 
-/*Progress bar
-
-
-#progress{
-    position:relative;
-    top: -1170px;
-}
-
-#progress_rect{
-    position:relative;
-    top: -1050px;
-}*/
-
-
-/*#rt{
-    position: fixed;
-    top: 500px;
-    left: 300px;
-    height: 50px;
-}
-
-#svg{
-    position: fixed;
-    top: 620px;
-}
-*/
+/*Progress bar*/
 #guit{
     cursor: pointer;
 }
