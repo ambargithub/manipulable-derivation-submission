@@ -6,8 +6,8 @@ $("#slider11").roundSlider({
     width: 5,
     startAngle: 225,
     handleSize: "+14",
-    handleShape: "round",
-    handleSize: "25,25",
+    handleShape: "square",
+    handleSize: "34,12",
     value: 100,
     sliderType: "min-range",
     showTooltip: false,
@@ -40,20 +40,28 @@ if(i==100){
     d3.selectAll("#text_reality")
     .attr("visibility","");
 
-    d3.select("#textholder_left")
-   .attr("visibility","hidden");
-
  
+}
+
+if (i<100){
+   d3.select("#text_first")
+      .style("visibility","hidden")
+}
+
+else{
+   d3.select("#text_first")
+   .style("visibility","visible")
+
 }
 
 
 if(  i<100 & i>75){ 
    
-d3.select("#textholder_left")
-   .attr("visibility","");
+d3.select("#labels_drag_summary")
+   .attr("visibility","hidden");
 
-d3.selectAll("#text_reality")
-   .attr("visibility","");
+d3.select("#text_reality")
+   .style("visibility","visible");
 
 
 d3.select("#guitar-body")
@@ -81,17 +89,14 @@ d3.selectAll("#strings_v").transition()
    .attr("opacity",p);}
 
    else{
-      d3.selectAll("#text_reality")
-   .attr("visibility","hidden");
+      d3.select("#text_reality")
+         .style("visibility","hidden");
 
    }
 
 if(i==75){
-   d3.selectAll("#text_reality")
-   .attr("visibility","hidden");
 
-   d3.selectAll("#text_ideal")
-   .attr("visibility","");
+   
 
     d3.select("#guitar-body")
     .attr("stroke-opacity",0)
@@ -111,37 +116,25 @@ if(i==75){
 
 
 /*Idealization */
+if(i<75 & i>49){
+   d3.select("#text_ideal")
+   .style("visibility","visible");
 
+}
 
-   if(i<75){
-      d3.selectAll("#text_ideal")
-      .attr("visibility","");
-   }
-   else{
-      d3.selectAll("#text_ideal")
-      .attr("visibility","hidden");
-   
-   }  
-   
-   if(i<100 & i>25){
-      d3.select("#textholder_left")
-   .attr("visibility","");
+else{
+   d3.select("#text_ideal")
+   .style("visibility","hidden");
 
-   }
-
-   else{
-      d3.select("#textholder_left")
-      .attr("visibility","hidden");
-   
-   }
-
+}
 
 
 if(i<75 & i>66){
    
 
    d3.select("#strings_h2")
-   .attr("stroke-width",(1.3 + (75-i)*2));}
+   .attr("stroke-width",(1.3 + (75-i)*2))
+   .attr("stroke","green");}
 
 if(i==66){
    d3.select("#strings_h2")
@@ -187,6 +180,17 @@ else{ d3.select("#dx_label")
 }
 
 /*Discretization*/
+if(i<50 & i>25){
+   d3.select("#text_dis")
+   .style("visibility","visible");
+
+}
+
+else{
+   d3.select("#text_dis")
+   .style("visibility","hidden");
+
+}
 
 if(i<50){
    d3.selectAll("#text_ideal")
@@ -312,23 +316,14 @@ if(i<34){
 
 
 if(i<25){
-   d3.selectAll("#text_dis")
-   .attr("visibility","hidden");
-   d3.select("#textholder_center")
-   .attr("visibility","hidden");
-   
-   d3.selectAll("#text_geo")
-   .attr("visibility","");
-   d3.select("#textholder_right")
-   .attr("visibility","");
-
+   d3.select("#text_geo")
+   .style("visibility","visible");
 }
 
 else{
-   d3.select("#textholder_right")
-   .attr("visibility","hidden");
-   d3.selectAll("#text_geo")
-   .attr("visibility","hidden");
+   d3.select("#text_geo")
+   .style("visibility","hidden");
+
 
 
 }

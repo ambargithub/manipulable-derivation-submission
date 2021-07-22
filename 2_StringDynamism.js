@@ -3,7 +3,7 @@ d3.select("#circle").call(d3.drag()
     
   .on("start",function(event){
    d3.select(this)
-    .attr("stroke","red"); 
+    .attr("stroke","black"); 
 
     d3.select("#label_drag")
     .attr("visibility","hidden")
@@ -28,8 +28,8 @@ d3.select("#circle").call(d3.drag()
     d3.select('#dynamic_strings')
     .attr('d', pathString)
     .attr("fill","transparent")
-    .attr("stroke","black")
-    .attr("stroke-width",1);
+    .attr("stroke","#24B12A")
+    .attr("stroke-width",2);
 
     }})
     
@@ -97,15 +97,15 @@ d3.select("#slider-3").on("input",function(){
             d3.select('#dynamic_strings')
             .attr('d', pathString)
             .attr("fill","transparent")
-            .attr("stroke","black")
-            .attr("stroke-width",1);
+            .attr("stroke","#24B12A")
+            .attr("stroke-width",2);
 
           /*CALLING DRAG */  
           d3.select("#circle").call(d3.drag()
             
                       .on("start",function(event){
                       d3.select(this)
-                        .attr("stroke","red"); 
+                        .attr("stroke","black"); 
 
                         d3.select("#label_drag")
                         .attr("visibility","hidden");
@@ -144,8 +144,8 @@ d3.select("#slider-3").on("input",function(){
                         d3.select('#dynamic_strings')
                         .attr('d', pathString)
                         .attr("fill","transparent")
-                        .attr("stroke","black")
-                        .attr("stroke-width",1);
+                        .attr("stroke","#24B12A")
+                        .attr("stroke-width",2);
 
                         }})
                         
@@ -161,7 +161,7 @@ d3.select("#slider-3").on("input",function(){
 
 
 /*Progress bar*/
-d3.selectAll("#guit").on("click",function(){
+d3.selectAll("#Image_8").on("click",function(){
 
 
 
@@ -219,7 +219,26 @@ d3.select("#stick")
 
 })
 
+d3.selectAll("#Image_8").on("click",function(){
+  window.open("1_Idealization.html","_self" ); ;
+})
 
+d3.select("#Group_8593").on("click",function(){
+  window.open("2_StringDynamism.html","_self" ); ;
+})
+d3.select("#Group_8586").on("click",function(){
+  window.open("2_StringDynamism.html","_self" ); ;
+})
+
+d3.select("#Group_8587").on("click",function(){
+window.open("3_Discretization.html","_self" ); ;
+})
+
+d3.select("#Group_8588").on("click",function(){
+    window.open("5_Zoom-m.html","_self" );})
+
+d3.select("#Group_8589").on("click",function(){
+    window.open("10.1_PureMath.html","_self" );})
 
 /*String dynamism
 d3.select("#slider-2").on("input",function(){

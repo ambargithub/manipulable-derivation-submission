@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://d3js.org/d3.v6.min.js"></script>
   <link rel = "stylesheet" href="derivation.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js" integrity="sha512-b/htz6gIyFi3dwSoZ0Uv3cuv3Ony7EeKkacgrcVg8CMzu90n777qveu0PBcbZUA7TzyENGtU+qZRuFAkfqgyoQ==" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.6/processing.min.js" integrity="sha512-qs0N4ld6hTj4OctCxV59EzJ6dVXQZIuP0BARqBOlY9bxquJzwwcLuBeEyvC8WqkuKK7zfb0rgZ2PW3IvAXocJw==" crossorigin="anonymous"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -195,22 +196,23 @@
         <div class="d-flex row"><!--Coordinates with moving curve-->
             <div class="d-flex flex-column col-md-4 text-container">
                 <div class="d-flex flex-column">
-                    <h3 id ="main_heading">Calculating the forces</h3>
-                    <p id="sub_heading" style="text-align:center">Describing the geometric element's behavior using symbols</p>
-                    <b><p id = "text_1"> Now that we understand spring force, let us calculate the force that both the stretched springs will exert on \(m_{i}\)
-                    </br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Let <a id="Fminus1_initial_text">\( F_{i-1}( x_{i})\)</a> = Force exerted by the \(m_{i-1}\) spring on \(m_{i}\)</br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Let <a id="Fplus1_initial_text">\( F_{i+1}( x_{i})\)</a> = Force exerted by the \(m_{i+1}\) spring on \(m_{i}\)</br>
+                    <h3 id ="main_heading">Streching the springs</h3>
+                    <p id="sub_heading">Describing the mass element's behavior using symbols</p>
+                    <b><p id = "text_1"> Now that we understand spring force, 
+                      let us describe using symbols the force that both the stretched springs will exert on \(m_{i}\). Let:
+                    </br>  <a id="">\( F_{i-1}( x_{i})\)</a> = Force exerted by the \(m_{i-1}\) spring on \(m_{i}\)</br>
+                    <a id="">\( F_{i+1}( x_{i})\)</a> = Force exerted by the \(m_{i+1}\) spring on \(m_{i}\)</br>
                     </p>
                 </div>
-                <div class="d-flex flex-column align-items-center slider-container slider-triangle">
+                <div class="d-flex flex-column align-items-center slider-container slider-triangle slider-font">
                     <input id="sliderCurve" type="range" value="0" step = "1" min="0" max ="76"  >
                     Drag the slider to transition from an unstretched string to a stretched string.
                 </div>
                 <div class="d-flex flex-column">
-                    <span id="p2-moving"><p id = "text_1">  As you can see, stretching changes the vertical distance between \(m_{i-1}\) & \(m_{i}\) from 0 to AB. Therefore, amount of stretch</br>
+                </br><span id="p2-moving"><p id = "text_1">  As you can see, stretching changes the vertical distance between \(m_{i-1}\) & \(m_{i}\) from 0 to AB. Therefore, amount of stretch</br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =\( AB\)</br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\(=\ Y_{x_{i-1}} \ -\ Y_{x_{i}}\)</br>
-                    Therefore,  <a id="Fminus1_end_text">\( F_{i-1}( x_{i})\)</a> \(=\ k_{1}( Y_{x_{i-1}} \ -\ Y_{x_{i}})\)</br>
+                  </br>Therefore,  <a id="Fminus1_end_text">\( F_{i-1}( x_{i})\)</a> \(=\ k_{1}( Y_{x_{i-1}} \ -\ Y_{x_{i}})\)</br>
                     Similarly,  <a id="Fplus1_end_text"> \( F_{i+1}( x_{i})\) </a> \(=\ k_{1}( Y_{x_{i+1}} \ -\ Y_{x_{i}})\)</br>
                     </p></span></b>
                 </div>
@@ -220,28 +222,28 @@
                 <div class="d-flex">   
                     <svg id="curveCoordinates"  width="750" height="410" viewBox="0 0 1224 610" fill="none" xmlns="http://www.w3.org/2000/svg">
                     
-                        <circle id="c1" r="7" cx="465" cy="300" fill="black"/>
-                        <circle id="c2" r="7" cx="585" cy="300" fill="black"/>
-                        <circle id="c3" r="7" cx="704" cy="300" fill="black"/>
+                        <circle id="c1" r="7" cx="465" cy="300" fill="#1D9B22"/>
+                        <circle id="c2" r="7" cx="585" cy="300" fill="#1D9B22"/>
+                        <circle id="c3" r="7" cx="704" cy="300" fill="#1D9B22"/>
                         <path id ="variable_strings"/>
-                        <text id="t1" x="453" y="280" fill="black">mi-1</text>
-                        <text id="t2" x="573" y="280" fill="black">mi</text>
-                        <text id="t3" x="692" y="280" fill="black">mi+1</text>
+                        <text id="t1" x="453" y="280" fill="#004B7E">mi-1</text>
+                        <text id="t2" x="573" y="280" fill="#004B7E">mi</text>
+                        <text id="t3" x="692" y="280" fill="#004B7E">mi+1</text>
                         
                         <!--Yxi-1 arrow-->
-                        <path id="t_yinitial" visibility="" d="M 426 315  L 434.8207 303  L 444 315" stroke="black" stroke-width="1"/> 
-                        <path id="t_yfinal" visibility="hidden" d="M 426 230  L 434.8207 218  L 444 230" stroke="black" stroke-width="1"/>
-                        <line id="l1" x1="434.5" y1="489" x2="434.5" y2="304" stroke="black" stroke-dasharray="0"/>
+                        <path id="t_yinitial" visibility="" d="M 426 315  L 434.8207 303  L 444 315" stroke="#004B7E" stroke-width="1"/> 
+                        <path id="t_yfinal" visibility="hidden" d="M 426 230  L 434.8207 218  L 444 230" stroke="#004B7E" stroke-width="1"/>
+                        <line id="l1" x1="434.5" y1="489" x2="434.5" y2="304" stroke="#004B7E" stroke-dasharray="0"/>
 
 
                         <!--Fi-1(xi) arrow
                         <path id="Fminus1_initial_arrow" visibility="" d="M 510 260  L 500 250  L 510 240" stroke="black" stroke-width="1.5"/> 
                         <line id="Fminus1_initial" x1="500" y1="250" x2="580" y2="250" stroke="black" stroke-dasharray="0" stroke-width="1.5"/>-->
                         
-                        <path id="Fminus1_final_arrow" visibility="hidden" d="M 610 240  L 620 225  L 630 240" stroke="black" stroke-width="1.5"/> 
-                        <line id="Fminus1_final" visibility="hidden" x1="620" y1="225" x2="620" y2="280" stroke="black" stroke-dasharray="0" stroke-width="1.5"/>
-                        <text id = "Fminus1_final_text" visibility="hidden" x = 635, y="262.5", fill="black" opacity = "1.0" font-size =1.8em>F</text> 
-                        <text id = "Fminus1_final_text" visibility="hidden" x = 650, y="268.5", fill="black" opacity = "1.0">(i-1)xi</text> 
+                        <path id="Fminus1_final_arrow" visibility="hidden" d="M 610 240  L 620 225  L 630 240" stroke="#004B7E" stroke-width="1.5"/> 
+                        <line id="Fminus1_final" visibility="hidden" x1="620" y1="225" x2="620" y2="280" stroke="#004B7E" stroke-dasharray="0" stroke-width="1.5"/>
+                        <text id = "Fminus1_final_text" visibility="hidden" x = 635, y="262.5", fill="#004B7E" opacity = "1.0" font-size =1.8em>F</text> 
+                        <text id = "Fminus1_final_text" visibility="hidden" x = 650, y="268.5", fill="#004B7E" opacity = "1.0">(i-1)xi</text> 
 
                         <!--Fi+1(xi) arrow
                         <path id="Fplus1_initial_arrow" visibility="" d="M 670 260  L 680 250  L 670 240" stroke="black" stroke-width="1.5"/> 
@@ -250,30 +252,30 @@
                         <path id="Fplus1_final_arrow" visibility="hidden" d="M 650 268  L 660 285  L 640 287" stroke="black" stroke-width="1.5"/> 
                         <line id="Fplus1_final" visibility="hidden" x1="600" y1="255" x2="660" y2="285" stroke="black" stroke-dasharray="0" stroke-width="1.5"/>-->
 
-                        <text  x="378" y="376" fill="black" font-size =1.3em>Y</text>
-                        <text  x="392" y="380" fill="black" font-size =1.3em>x</text>
-                        <text  x="404" y="385" fill="black">(i-1)</text>
+                        <text  x="378" y="376" fill="#004B7E" font-size =1.3em>Y</text>
+                        <text  x="392" y="380" fill="#004B7E" font-size =1.3em>x</text>
+                        <text  x="404" y="385" fill="#004B7E">(i-1)</text>
                         
 
-                        <path visibility="" d="M 577 318  L 586.8207 306  L 596 318" stroke="black" stroke-width="1"/>
-                        <text id="t12" x="543" y="376" fill="black" font-size =1.3em>Y</text>
-                        <text id="t12" x="557" y="380" fill="black" font-size =1.3em>x</text>
-                        <text id="t12" x="567" y="385" fill="black" >(i)</text>
+                        <path visibility="" d="M 577 318  L 586.8207 306  L 596 318" stroke="#004B7E" stroke-width="1"/>
+                        <text id="t12" x="543" y="376" fill="#004B7E" font-size =1.3em>Y</text>
+                        <text id="t12" x="557" y="380" fill="#004B7E" font-size =1.3em>x</text>
+                        <text id="t12" x="567" y="385" fill="#004B7E" >(i)</text>
 
-                        <text id="t13" x="712" y="380" fill="black">Yx(i+1)</text>
+                        <text id="t13" x="712" y="380" fill="#004B7E">Yx(i+1)</text>
                 
                 
-                        <path d="M270.403 136.575C269.616 135.8 268.35 135.81 267.575 136.597L254.945 149.421C254.17 150.208 254.179 151.475 254.966 152.25C255.753 153.025 257.019 153.015 257.795 152.228L269.022 140.828L280.421 152.055C281.208 152.83 282.475 152.821 283.25 152.034C284.025 151.247 284.015 149.981 283.228 149.205L270.403 136.575ZM274 531.032L271 137.985L267 138.015L270 531.062L274 531.032Z" fill="black"/>
-                        <path d="M1222.48 493.414C1223.26 492.633 1223.26 491.367 1222.48 490.586L1209.75 477.858C1208.97 477.077 1207.7 477.077 1206.92 477.858C1206.14 478.639 1206.14 479.905 1206.92 480.686L1218.24 492L1206.92 503.314C1206.14 504.095 1206.14 505.361 1206.92 506.142C1207.7 506.923 1208.97 506.923 1209.75 506.142L1222.48 493.414ZM102 494H1221.06V490H102V494Z" fill="black"/>
+                        <path d="M270.403 136.575C269.616 135.8 268.35 135.81 267.575 136.597L254.945 149.421C254.17 150.208 254.179 151.475 254.966 152.25C255.753 153.025 257.019 153.015 257.795 152.228L269.022 140.828L280.421 152.055C281.208 152.83 282.475 152.821 283.25 152.034C284.025 151.247 284.015 149.981 283.228 149.205L270.403 136.575ZM274 531.032L271 137.985L267 138.015L270 531.062L274 531.032Z" fill="#004B7E"/>
+                        <path d="M1222.48 493.414C1223.26 492.633 1223.26 491.367 1222.48 490.586L1209.75 477.858C1208.97 477.077 1207.7 477.077 1206.92 477.858C1206.14 478.639 1206.14 479.905 1206.92 480.686L1218.24 492L1206.92 503.314C1206.14 504.095 1206.14 505.361 1206.92 506.142C1207.7 506.923 1208.97 506.923 1209.75 506.142L1222.48 493.414ZM102 494H1221.06V490H102V494Z" fill="#004B7E"/>
                     
                         <line id="orig" x1="465" y1="302" x2="704" y2="302" stroke="black" stroke-width = "3" />
 
-                        <line id="l1" x1="464.5" y1="489" x2="464.5" y2="314" stroke="#041CF5" stroke-dasharray="2 2"/>
-                        <line id="l2" x1="586.5" y1="485" x2="586.5" y2="310" stroke="black" stroke-dasharray="0"/>
-                        <line id="l3" x1="702.5" y1="487" x2="702.5" y2="312" stroke="#041CF5" stroke-dasharray="2 2"/>
+                        <line id="l1" x1="464.5" y1="489" x2="464.5" y2="314" stroke="#004B7E" stroke-dasharray="2 2"/>
+                        <line id="l2" x1="586.5" y1="485" x2="586.5" y2="310" stroke="#004B7E" stroke-dasharray="0"/>
+                        <line id="l3" x1="702.5" y1="487" x2="702.5" y2="312" stroke="#004B7E" stroke-dasharray="2 2"/>
 
-                        <text x="515" y="420" fill="black" font-size = "1em">dx</text>
-                        <text x="640" y="420" fill="black" font-size = "1em">dx</text>
+                        <text x="515" y="420" fill="#004B7E" font-size = "1em">dx</text>
+                        <text x="640" y="420" fill="#004B7E" font-size = "1em">dx</text>
 
                 <!-- 
                         <g id ="f1">    
@@ -285,11 +287,13 @@
                         <path d="M703 310L696 322" stroke="black"/>
                         <path d="M703 310L710.5 322.102" stroke="black"/>
                 -->
-                        <path d="M467 426.756H583M467 426.756L472.596 416M467 426.756L472.596 437M583 426.756L576.895 416M583 426.756L576.895 437" stroke="black"/>
-                        <path d="M587 427.5H701M587 427.5L592.5 417M587 427.5L592.5 437.5M701 427.5L695 417M701 427.5L695 437.5" stroke="black"/>
-                        <line x1="2.5" x2="2.5" y2="610" stroke="black" stroke-opacity="0.1" stroke-width="5"/>
-                        <line x1="1190" y1="303" x2="0.00172514" y2="305" stroke="black" stroke-opacity="0.1" stroke-width="2" stroke-dasharray="3 3"/>
-                        <line x1="1198.5" y1="42.0003" x2="1198.44" y2="603" stroke="black" stroke-opacity="0.1" stroke-width="5"/>
+                        <path d="M467 426.756H583M467 426.756L472.596 416M467 426.756L472.596 437M583 426.756L576.895 416M583 426.756L576.895 437" stroke="#004B7E"/>
+                        <path d="M587 427.5H701M587 427.5L592.5 417M587 427.5L592.5 437.5M701 427.5L695 417M701 427.5L695 437.5" stroke="#004B7E"/>
+                        <line x1="2.5" x2="2.5" y2="610" stroke="#004B7E" stroke-opacity="0.1" stroke-width="5"/>
+                        <line x1="1190" y1="303" x2="0.00172514" y2="305" stroke="#004B7E" stroke-opacity="0.1" stroke-width="2" stroke-dasharray="3 3"/>
+                        <line x1="1198.5" y1="42.0003" x2="1198.44" y2="603" stroke="#004B7E" stroke-opacity="0.1" stroke-width="5"/>
+
+
                         <path d="M21.073 280.365C20.0721 279.143 17.55 278.325 15.2153 280.329C12.5682 282.601 12.8726 285.352 13.2579 286.835C13.7481 288.722 15.7067 291.355 18.3725 288.659C20.6411 286.364 19.0408 284.056 17.7644 283.32" stroke="black" stroke-opacity="0.1" stroke-width="1.12889" stroke-linecap="round" stroke-linejoin="bevel"/>
                         <path d="M18.3474 283.805C17.3465 282.583 14.8244 281.765 12.4898 283.769C9.84257 286.041 10.1471 288.793 10.5324 290.276C11.0225 292.162 12.9811 294.795 15.6469 292.099C17.9155 289.805 16.3152 287.496 15.0388 286.761" stroke="black" stroke-opacity="0.1" stroke-width="1.12889" stroke-linecap="round" stroke-linejoin="bevel"/>
                         <path d="M15.6782 287.403C14.6773 286.182 12.1552 285.363 9.82058 287.367C7.17337 289.639 7.47786 292.391 7.86319 293.874C8.35334 295.76 10.3119 298.394 12.9777 295.697C15.2463 293.403 13.646 291.094 12.3696 290.359C11.0866 289.619 8.24732 289.313 6.11796 291.771C3.25413 295.077 6.67109 298.597 6.06341 299.639" stroke="black" stroke-opacity="0.1" stroke-width="1.12889" stroke-linecap="round" stroke-linejoin="bevel"/>
@@ -516,8 +520,8 @@
                         <ellipse rx="8" ry="9" transform="matrix(1 0 0 -1 582 302)" fill="#545353" fill-opacity="0.1"/>
                         <ellipse rx="8" ry="9.5" transform="matrix(1 0 0 -1 1196 304.5)" fill="#545353" fill-opacity="0.1"/>
 
-                        <text id = "verticesTriangle" x = 460, y="314.5", fill="darkgreen" font-weight="bold" opacity = "0.0">B</text>
-                        <text id = "verticesTriangle" x = 475, y="225", fill="darkgreen" font-weight="bold" opacity = "0.0">A</text>
+                        <text id = "verticesTriangle" x = 460, y="314.5", fill="#004B7E" font-weight="bold" opacity = "0.0">B</text>
+                        <text id = "verticesTriangle" x = 460, y="245", fill="#004B7E" font-weight="bold" opacity = "0.0">A</text>
 
                       <!---- <text x="280" y="620" fill="black" font-size = "1.5em">Unstretched</text>
                         <text x="870" y="620" fill="black" font-size = "1.5em">Stretched</text>-->

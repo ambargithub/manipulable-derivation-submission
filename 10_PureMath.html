@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://d3js.org/d3.v6.min.js"></script>
   <link rel = "stylesheet" href="derivation.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js" integrity="sha512-b/htz6gIyFi3dwSoZ0Uv3cuv3Ony7EeKkacgrcVg8CMzu90n777qveu0PBcbZUA7TzyENGtU+qZRuFAkfqgyoQ==" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.6/processing.min.js" integrity="sha512-qs0N4ld6hTj4OctCxV59EzJ6dVXQZIuP0BARqBOlY9bxquJzwwcLuBeEyvC8WqkuKK7zfb0rgZ2PW3IvAXocJw==" crossorigin="anonymous"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -19,7 +20,7 @@
   #R-rect{
     position:relative;
     top:-210px;
-    left:-45px;
+    left:-75px;
   }
   #Red{
     position:relative;
@@ -36,6 +37,14 @@
     top:-90px;
     left:-115px;
   }
+  #slider-t{
+    transform: rotate(90deg);
+    position: relative;
+    top:250px;
+    left:-30px;
+    width: 220px;
+    z-index: 15;
+}
 </style>
 </head>
 <body id="overflow">
@@ -203,26 +212,29 @@
           <div class="d-flex flex-column col-md-4 text-container">
             <div class="d-flex flex-column">
                 <h3 id ="main_heading">Streamlining</h3>
-                <p id="sub_heading" style="text-align:center">Simplifying the symbolic description</p>
-                <p style="text-align:left">The current algebraic description includes a force component and Y terms with indices, 
-                    which makes it difficult to draw inferences, and also generate numbers using the model.   </p>
-                <p style="text-align:left">To streamline this model, these terms can be replaced systematically. </br></br>
-                <div class="d-flex flex-column align-items-center slider-container slider-puremath">
-                        <input id="slider-t" type="range" value="1" step = "1 " min="1" max ="4" style="width:200px"   >
-                        Drag the slider to see the steps of this simplification. 
-                </div>
-
+                <p id="sub_heading">Simplifying the symbolic description</p>
+                <p id="text_1">The current algebraic description includes a force component and Y terms with indices, 
+                    which makes it difficult to draw inferences, and also generate numbers using the model.
+                  </br></br>To streamline this model, these terms can be replaced systematically.</p> </br>
+                <div class="d-flex flex-column align-items-center slider-container slider-puremath slider-font">
+                  Drag the slider to see the steps of this simplification. 
+                </div>      
                         
             </div>
                 
           </div>
-          <div class="d-flex flex-column col-md-4 align-items-center visual-container">
+          <div class="d-flex flex-column col-md-1 align-items-center visual-container">
+          <div class="d-flex ">
+            <input id="slider-t" type="range" value="1" step = "1 " min="1" max ="4" style="width:200px"   >
+          </div>
+          </div>
+          <div class="d-flex flex-column col-md-3 align-items-center visual-container">
               
                       <div class="d-flex flex-column">
                       </br></br></br></br>
-                              <p> We know that </p> </br>  
-                              <p id="p1" >\(Total\ force\ =\ k_{1} \ ( Y_{( x\ +\ dx) \ } -2Y_{( x)} +\ Y_{( x\ -\ dx)})  \)  </p>  </br>  
-                              <p id="p2" >\(\ \ \ \ \  \ \ \ \ \ \ \ \ F\ =\ k_{1} \ ( Y_{( x\ +\ dx) \ } -2Y_{( x)} +\ Y_{( x\ -\ dx)})  \)  </p> </br>  
+                              <p> We know that total force </p> </br>  
+                              <p id="p1" >\(\ \ \ \ \ \ F\ =\ k_{1} \ ( Y_{( x\ +\ dx) \ } -2Y_{( x)} +\ Y_{( x\ -\ dx)})  \)  </p>  </br>  
+                              <p id="p2" >\(\ \ \ \ \ \ F\ =\ k_{1} \ ( Y_{( x\ +\ dx) \ } -2Y_{( x)} +\ Y_{( x\ -\ dx)})  \)  </p> </br>  
                               <p id="p3" >\(\ \ \ \ \  \ \ \ \ \ \ \ \ F\ =k_{1} \ .\frac{d^{2} y}{dx^{2}} .( dx)^{2} \   \)  </p>   </br> 
                               <p id="p4" >\(\ \ \ \ \  \ \ \ \ \ \ \ \ F =k.\frac{d^{2} y}{dx^{2}} \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ where\ k\ =\  k_{1} \ ( dx)^{2} \   \)  </p>  </br>   
                       </div>

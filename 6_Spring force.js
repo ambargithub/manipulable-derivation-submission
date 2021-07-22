@@ -7,6 +7,7 @@ d3.select("#l1").attr("visibility","")
 d3.select("#lc-l").attr("visibility","")
 d3.select("#l1-mov").attr("visibility","")
 d3.select("#content-labels").attr("visibility","")
+d3.select("#labels_drag_springforce").attr("visibility","hidden")
 })
 .on("drag",function(event){
 
@@ -93,19 +94,26 @@ d3.select("#algebraicForce").call(d3.drag()
 
 
     /*Progress bar*/
-    d3.selectAll("#guit").on("click",function(){
+    d3.selectAll("#Image_8").on("click",function(){
       window.open("1_Idealization.html","_self" ); ;
     })
     
-    d3.select("#dyna").on("click",function(){
+    d3.select("#Group_8593").on("click",function(){
       window.open("2_StringDynamism.html","_self" ); ;
     })
-  
-    d3.select("#disc").on("click",function(){
-      window.open("3_Discretization.html","_self" ); })
-
-    d3.select("#geo").on("click",function(){
+    d3.select("#Group_8586").on("click",function(){
+      window.open("2_StringDynamism.html","_self" ); ;
+    })
+    
+    d3.select("#Group_8587").on("click",function(){
+    window.open("3_Discretization.html","_self" ); ;
+    })
+    
+    d3.select("#Group_8588").on("click",function(){
         window.open("5_Zoom-m.html","_self" );})
+    
+    d3.select("#Group_8589").on("click",function(){
+        window.open("10.1_PureMath.html","_self" );})
 
 
 

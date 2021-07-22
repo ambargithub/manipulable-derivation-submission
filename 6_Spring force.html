@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://d3js.org/d3.v6.min.js"></script>
   <link rel = "stylesheet" href="derivation.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js" integrity="sha512-b/htz6gIyFi3dwSoZ0Uv3cuv3Ony7EeKkacgrcVg8CMzu90n777qveu0PBcbZUA7TzyENGtU+qZRuFAkfqgyoQ==" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.6/processing.min.js" integrity="sha512-qs0N4ld6hTj4OctCxV59EzJ6dVXQZIuP0BARqBOlY9bxquJzwwcLuBeEyvC8WqkuKK7zfb0rgZ2PW3IvAXocJw==" crossorigin="anonymous"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -224,8 +225,8 @@
         <div class="d-flex row"><!--Force on a string-->
             <div class="d-flex flex-column col-md-4 text-container">
                 <div class="d-flex flex-column">
-                    <h3 id ="main_heading">Understanding Spring Forces</h1>
-                    <p id="sub_heading" style="text-align:center">Describing the mass element's behavior using symbols</p>
+                    <h3 id ="main_heading">Spring Force</h1>
+                    <p id="sub_heading">Describing the mass element's behavior using symbols</p>
                     <p id = "text_1">\(m_{i}\)'s behavior is affected by the force that the stretched springs exert on it. To capture this behavior using symbols,
                         
                         let's brush up our understanding of spring force. What force would the spring exert on \(m_{i-1}\) if we drag it downwards ?
@@ -235,12 +236,12 @@
                     <span id="p2-force"><p id = "text_1"> 
                     
                     
-                    <i>Drag \(m_{i-1}\) to find that out ! </i></br></br>
+                    <span class ="text-interaction-design"><i>Drag \(m_{i-1}\) to find that out ! </i></span></br></br>
                         
-                        We can see that the force is directly proportional to the compression in the spring. 
+                        We can see that the force is directly proportional to the compression in the spring. This relation can be described using symbols, using the equation:
                         
                         
-                    </br>\( F\) = \(\ -k \)</a>\(( compression\ in\ the\ spring)\) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>where k is a property of the spring</i></br>
+                    </br></br>\( F\) = \(\ -k \)</a>\(( compression\ in\ the\ spring)\) </br><i>where k is a property of the spring</i></br>
                         
                 </br>  The negative sign shows that the force acting on \(m_{i-1}\) is opposite to the direction of compression. Since \(m_{i}\) is also connected
                     to the spring, it shall also experience a spring force. This force, however, will act in the direction of the compression/stretch. </p></span>
@@ -251,30 +252,36 @@
             <div class="d-flex flex-column col-md-8 align-items-center visual-container">
                 <div class="d-flex">
                 <svg id="s-force" width="616" height="899" viewBox="-1000 0 3816 1499" fill="none" xmlns="http://www.w3.org/2000/svg">        
-                    <ellipse id ="c-c" cx="938.499" cy="709.5" rx="166.6" ry="166.6" transform="rotate(1.46708 238.499 249.5)" fill="black" />
-                    <ellipse id ="c-l" cx="168.499" cy="149.5" rx="166.6" ry="166.6" transform="rotate(1.46708 238.499 249.5)" fill="black" stroke="red" stroke-width="0"/>
-                    <ellipse id ="c-r" cx="1638.499" cy="1249.5" rx="166.6" ry="166.6" transform="rotate(1.46708 238.499 249.5)" fill="black" stroke="red" stroke-width="0"/>
-                    <line id="l1" visibility="hidden" x1 ="-920" x2="1440" y1="140" y2="140" fill="black" stroke="black" stroke-width="5"></line> 
-                    <line id="l1-mov" visibility="hidden" x1 ="-920" x2="1440" y1="140" y2="140" fill="black" stroke="black" stroke-width="5"></line> 
-                    <line id="lc-l" visibility="hidden" x1 ="180" x2="180" y1="1400" y2="-700" fill="black" stroke="black" stroke-width="5" stroke-dasharray="15 15"></line>  
+                    <ellipse id ="c-c" cx="938.499" cy="709.5" rx="166.6" ry="166.6" transform="rotate(1.46708 238.499 249.5)" fill="#1D9B22" />
+                    <ellipse id ="c-l" cx="168.499" cy="149.5" rx="166.6" ry="166.6" transform="rotate(1.46708 238.499 249.5)" fill="#1D9B22" stroke="#004B7E" stroke-width="0"/>
+                    <ellipse id ="c-r" cx="1638.499" cy="1249.5" rx="166.6" ry="166.6" transform="rotate(1.46708 238.499 249.5)" fill="#1D9B22" stroke="#004B7E" stroke-width="0"/>
+                    <line id="l1" visibility="hidden" x1 ="-920" x2="1440" y1="140" y2="140" fill="#004B7E" stroke="black" stroke-width="5"></line> 
+                    <line id="l1-mov" visibility="hidden" x1 ="-920" x2="1440" y1="140" y2="140" fill="#004B7E" stroke="black" stroke-width="5"></line> 
+                    <line id="lc-l" visibility="hidden" x1 ="180" x2="180" y1="1400" y2="-700" fill="#004B7E" stroke="black" stroke-width="5" stroke-dasharray="15 15"></line>  
                     <g visibility="" id="content-labels_before-r">      
-                    <text x =80, y=-140 font-size = 5em fill ="black">mi-1</text>
-                    <text x =880, y=440 font-size = 5em fill ="black">mi</text>
-                    <text x =1530, y=980 font-size = 5em fill ="black">mi+1</text></g>
+                    <text x =80, y=-140 font-size = 5em font-weight= bold fill ="#004B7E">mi-1</text>
+                    <g id="labels_drag_springforce">
+                      <rect x="360" y="-120" rx="14.5px" width="380" height="172" fill="#004B7E" fill-opacity="0.86" stroke="black" stroke-width="2"/>
+                      <text x = "450"  y = "-15" font-size = 5em font-weight="bold" fill ="white" fill-opacity="0.9" 
+                      font-family="Nunito">Drag</text>
+                    </g>
+
+                    <text x =880, y=440 font-size = 5em font-weight= bold fill ="#004B7E">mi</text>
+                    <text x =1530, y=980 font-size = 5em font-weight= bold fill ="#004B7E">mi+1</text></g>
 
                 <g visibility="hidden" id="content-labels">    
-                    <text x =-400, y=450 font-size = 4em fill ="black">F</text>
-                    <text x =-930, y=450 font-size = 4em fill ="black">Compression</text></g>
+                    <text x =-400, y=450 font-size = 4em fill ="#004B7E">F</text>
+                    <text x =-930, y=450 font-size = 4em fill ="#004B7E">Compression</text></g>
                 </svg>
                 </div>
                 <div class="d-flex">
                     <svg id="m-eq" width="288" height="56" viewBox="600 -900 2288 1356" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <text x =130, y=80 font-size = 58em fill ="black" >F = -k . </text>
+                        <text x =130, y=80 font-size = 58em font-weight=bold font-family = Nunito fill ="#004B7E" >F = -k . </text>
                         
-                        <text x =3080, y=80 font-size = 58em fill ="black" id="algebraicForce">(0)</text>
+                        <text x =3080, y=80 font-size = 58em font-weight=bold font-family = Nunito fill ="#004B7E" id="algebraicForce">(0)</text>
                       <!--X  <text x =850, y=60 font-size = 3em fill ="black" >Drag RHS </text>-->
     
-                        <rect  id ="equation1" visibility="hidden" x="515" y="-30" width="300" height="172" fill="none" fill-opacity="0.35" stroke="black" stroke-width="3"/>
+                        <rect  id ="equation1" visibility="hidden" x="515" y="-30" width="300" height="172" fill="none" fill-opacity="0.35" stroke="#004B7E" stroke-width="3"/>
        
                     </svg>
                     </div>

@@ -18,3 +18,22 @@ d3.select("#ques").on("mouseover",function(){
     d3.select("#equation1")
       .attr("visibility","hidden");
   })
+
+
+  d3.selectAll("#Image_8").on("click",function(){
+    window.open("1_Idealization.html","_self" ); ;
+  })
+  
+  d3.select("#Group_8593").on("click",function(){
+    window.open("2_StringDynamism.html","_self" ); ;
+  })
+  d3.select("#Group_8586").on("click",function(){
+    window.open("2_StringDynamism.html","_self" ); ;
+  })
+
+d3.select("#Group_8587").on("click",function(){
+  window.open("3_Discretization.html","_self" ); ;
+})
+
+  d3.select("#Group_8588").on("click",function(){
+      window.open("5_Zoom-m.html","_self" );})

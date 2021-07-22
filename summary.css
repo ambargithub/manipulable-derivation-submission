@@ -35,14 +35,14 @@
 
 #slider11{
     position: relative;
-    top: -515px;
-    left:298px;
+    top: -355px;
+    left:93px;
     z-index: 15;
 }
 
 #div_guitar_rope{
     position: relative;
-    left: -280px;
+    left: -270px;
     top: -20px;
     z-index: 15;
 }
@@ -50,8 +50,8 @@
 #labels_summary11{
     position:relative;
     z-index: -1;
-    top:-690px;
-    left: -35px;
+    top:-570px;
+    left: -15px;
     
 }
 
@@ -187,4 +187,32 @@
     transform: rotate(-45deg);
   
 }
+
+#supportingtext_lowersemicircle{
+    z-index: 16;
+    position: relative;
+    left:30px;
+}
+
+
+
+#text_first{
+    visibility: visible;
+}
+#text_reality{
+    visibility: hidden;
+}
+#text_ideal{
+    visibility: hidden;
+}
+#text_dis{
+    visibility: hidden;
+}
+#text_geo{
+    visibility: hidden;
+}
+#text_mat{
+    visibility: hidden;
+}
+
 

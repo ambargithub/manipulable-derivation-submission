@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://d3js.org/d3.v6.min.js"></script>
   <link rel = "stylesheet" href="derivation.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js" integrity="sha512-b/htz6gIyFi3dwSoZ0Uv3cuv3Ony7EeKkacgrcVg8CMzu90n777qveu0PBcbZUA7TzyENGtU+qZRuFAkfqgyoQ==" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.6/processing.min.js" integrity="sha512-qs0N4ld6hTj4OctCxV59EzJ6dVXQZIuP0BARqBOlY9bxquJzwwcLuBeEyvC8WqkuKK7zfb0rgZ2PW3IvAXocJw==" crossorigin="anonymous"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -18,7 +19,7 @@
   #F-rect{
     position:relative;
     top: -332px;
-    left: -70px;
+    left: -110px;
     z-index: 5;
 }
 #R-rect{
@@ -30,7 +31,15 @@
 #final_eq_rect{
   position: relative;
   top:-160px;
-  left:-10px;
+  left:-160px;
+}
+#slider-t_contd{
+    transform: rotate(90deg);
+    position: relative;
+    top:200px;
+    left:-30px;
+    width: 300px;
+    z-index: 15;
 }
 </style>
 </head>
@@ -199,39 +208,41 @@
           <div class="d-flex flex-column col-md-4 text-container">
             <div class="d-flex flex-column">
                 <h3 id ="main_heading">Streamlining</h3>
-                <p id="sub_heading" style="text-align:center">Simplifying the symbolic description</p>
-                <p style="text-align:left">Continuing with the simplification</br>
+                <p id="sub_heading">Simplifying the symbolic description</p>
+                <p id="text_1">Continuing with the simplification</br>
                 </p>
             </div>
-            <div class="d-flex flex-column align-items-center slider-container slider-puremath">
-                        <input id="slider-t_contd" type="range" value="1" step = "1 " min="1" max ="5" style="width:250px"   >
+            <div class="d-flex flex-column align-items-center slider-container slider-puremath slider-font">
                         Drag the slider to see the steps of this simplification. 
             </div>        
                 
           </div>
+          <div class="d-flex flex-column col-md-1 align-items-center visual-container">
+            <input id="slider-t_contd" type="range" value="1" step = "1 " min="1" max ="5" style   >
+          </div>        
 
           <div class="d-flex flex-column col-md-4 align-items-center visual-container">
           </br></br></br>
-             <p id="p1" >\(\ \ \ \ \  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ F =k.\frac{d^{2} y}{dx^{2}} \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ where\ k\ =\  k_{1} \ ( dx)^{2} \   \)  </p>  </br>   
-             <p id="p2" >\(\ \ \ \ \  \ \  m\ \frac{\partial^{2} y}{\partial t^{2}} =k.\frac{\partial ^{2} y}{\partial x^{2}} \ \ \ \ \ \ \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\)  </p>   </br>  
-             <p id="p3" >\(\ \ \ \ \  \ \  \ \frac{\partial^{2} y}{\partial t^{2}} =\frac{k}{m} .\frac{\partial ^{2} y}{\partial x^{2}} \   \)  </p>   </br>  
-             <p id="p4" >\(\ \ \ \ \  \ \ \ \frac{\partial ^{2} y}{\partial t^{2}} =v^{2}\frac{\partial^{2} y}{\partial x^{2}} \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ where\ v\ =\ \sqrt{\frac{k}{m}}   \)  </p>   </br>  
-             <p id="p5" >\(\ \ \ \ \  \ \  \ \ \frac{\partial ^{2} y}{\partial t^{2}} -\ v^{2}\frac{\partial ^{2} y}{\partial x^{2}} \ =\ 0\    \)  </p>   
+             <p id="p1" >\(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ F =k.\frac{d^{2} y}{dx^{2}} \ \ \ \ \ \ \ \ \ \ \ \ \ \ where\ k\ =\  k_{1} \ ( dx)^{2} \ \ \ \ \     \)  </p>  </br>   
+             <p id="p2" >\( m\ \frac{\partial^{2} y}{\partial t^{2}} =k.\frac{\partial ^{2} y}{\partial x^{2}} \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\)  </p>   </br>  
+             <p id="p3" >\(\frac{\partial^{2} y}{\partial t^{2}} =\frac{k}{m} .\frac{\partial ^{2} y}{\partial x^{2}} \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \    \)  </p>   </br>  
+             <p id="p4" >\(\ \ \ \ \  \ \ \ \frac{\partial ^{2} y}{\partial t^{2}} =v^{2}\frac{\partial^{2} y}{\partial x^{2}} \ \ \ \ \ \ \ \ \ \ \ \ \ \ where\ v\ =\ \sqrt{\frac{k}{m}}   \)  </p>   </br>  
+             <p id="p5" >\(\  \frac{\partial ^{2} y}{\partial t^{2}} -\ v^{2}\frac{\partial ^{2} y}{\partial x^{2}} \ =\ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \    \)  </p>   
              
              <svg id ="F-rect" visibility="" width="30" height="48" viewBox="0 0 50 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="50" height="48" fill="#80F2DE" fill-opacity="0.25"/>
               </svg>
           
-            <p id="r-eq" style="visibility:hidden;position:relative; top:-20px;left:20px;text-align: center;">
+            <p id="r-eq" style="visibility:hidden;position:relative; top:-20px;left:-30px;text-align: left;">
               This is the final differential equation which models the behavior of a string tied at two ends
             </p>
 
             <svg visibility="hidden" id="final_eq_rect" width="253" height="54" viewBox="0 0 3903 2214" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="17.5" y="17.5" width="6868" height="2179" stroke="black" stroke-width="35"/>
+              <rect x="7.5" y="17.5" width="6868" height="2179" stroke="black" stroke-width="35"/>
             </svg>
           </div>
 
-          <div class="d-flex flex-column col-md-4 align-items-center visual-container">
+          <div class="d-flex flex-column col-md-3 align-items-center visual-container">
 
             </br></br></br>
             <p id="text_secondlaw" style="visibility:hidden">
