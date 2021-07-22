@@ -42,15 +42,15 @@
 
 #div_guitar_rope{
     position: relative;
-    left: -270px;
-    top: -20px;
+    left: 0px;
+    top: 0px;
     z-index: 15;
 }
 
 #labels_summary11{
     position:relative;
     z-index: -1;
-    top:-570px;
+    top:-1650px;
     left: -15px;
     
 }
@@ -58,8 +58,8 @@
 /*Reality -- Idealization*/
 #guitar1{
     position: relative;
-    left: 50px;
-    top: 90px;
+    left: 340px;
+    top: -900px;
     transform: rotate(-1deg);
 }
 
@@ -70,32 +70,32 @@
 /*Discretization*/
 #discrete11{
     position: relative;
-    left: 118px;
-    top: -173px;
+    left: 405px;
+    top: -1160px;
     z-index: -5;
     transform: rotate(0deg);
 }
 /*Geometric structure*/
 #yaxis{
     position: absolute;
-    left: 130px;
-    top: 20px;
+    left: 440px;
+    top: -920px;
     z-index: 5;
     
 }
 
 #xaxis{
     position: absolute;
-    left: 260px;
-    top: 120px;
+    left: 570px;
+    top: -850px;
     z-index: 5;
     transform: rotate(90deg);
 }
 
 #zoom_into11{
     position: relative;
-    left: 78px;
-    top: -453px;
+    left: 370px;
+    top: -1400px;
     z-index: -5;
     transform: rotate(0deg);
 }
@@ -104,8 +104,8 @@
     position:relative;
     transform: rotate(0deg);
     z-index: -1;
-    left: 288px;
-    top:-600px;
+    top: -1581px;
+    left: 580px;
     
 }
 
@@ -113,8 +113,8 @@
     position:relative;
     transform: rotate(180deg);
     z-index: -1;
-    top:-480px;
-    left: -220px;
+    top: -1480px;
+    left: 498px;
     
 }
 
@@ -122,22 +122,23 @@
 #maths1{
     position:relative;
     z-index: -1;
-    top:-600px;
-    left: 50px;
-    
+    top: -1700px;
+    left: 400px;
 }
+    
+
 #maths2{
     position:relative;
     z-index: -1;
-    top:-680px;
-    left: 50px;
+    top: -1800px;
+    left: 350px;
     
 }
 #maths3{
     position:relative;
     z-index: -1;
-    top:-780px;
-    left: 180px;
+    top: -1900px;
+    left: 470px;
     
 }
 

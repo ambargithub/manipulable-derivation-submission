@@ -273,12 +273,12 @@ else{
 if(i<34 & i>24){
 
 
-   d3.select("#s-l_11")
+   /*d3.select("#s-l_11")
    .attr("height",(60 +(i-33)*7))
-   .style("top",(-480+((33-i)*2.5) ) + "px");
+   .style("top",(-1588+((33-i)*2.5) ) + "px");*/
 
-   d3.select("#cm11")
-   .attr("cy",(249.5 +(33-i)*137))
+   /*d3.select("#cm11")
+   .attr("cy",(249.5 +(33-i)*137))*/
 
    d3.select("#curve")
    .attr("visibility","hidden")
