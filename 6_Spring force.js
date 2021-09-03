@@ -26,18 +26,22 @@ d3.select("#s-l")
 
 d3.select("#force-l")
     .attr("width",10)
-    .attr("height",0.16*(i - 142));
+    .attr("height",0.14*(772-1.1*i))
+    .style("top", (0.16*i + 108) + "px")
+    ;
 
 d3.select("#stretch-l")
-    .attr("width",10)
-    .attr("height",0.16*(i - 142));
+.attr("width",10)
+.attr("height",0.14*(772-1.1*i))
+.style("top", (0.16*i + 108) + "px")
+;
   
 d3.select("#l1-mov")
     .attr("y1",i)
     .attr("y2",i)
   
 d3.select("#algebraicForce")
-    .text("(" + (b1 -1) + ")")
+    .text("(" + (7 - b1) + ")")
     }
 
 })

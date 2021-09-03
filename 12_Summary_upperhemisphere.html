@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>String Derivation_V2</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <link rel = "stylesheet" href="derivation.css">
+  <link rel = "stylesheet" href="summary.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js" integrity="sha512-b/htz6gIyFi3dwSoZ0Uv3cuv3Ony7EeKkacgrcVg8CMzu90n777qveu0PBcbZUA7TzyENGtU+qZRuFAkfqgyoQ==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.6/processing.min.js" integrity="sha512-qs0N4ld6hTj4OctCxV59EzJ6dVXQZIuP0BARqBOlY9bxquJzwwcLuBeEyvC8WqkuKK7zfb0rgZ2PW3IvAXocJw==" crossorigin="anonymous"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+  <!--Round slider Jquery-->
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>                                  
+<link href="https://cdn.jsdelivr.net/npm/round-slider@1.6.1/dist/roundslider.min.css" rel="stylesheet" />                                   
+<script src="https://cdn.jsdelivr.net/npm/round-slider@1.6.1/dist/roundslider.min.js"></script>
+
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<style>
+    #slider11 .rs-range-color {
+    background-color: rgb(174, 188, 250);
+}
+#slider11 .rs-path-color {
+    background-color: #f7fafc;
+}
+#slider11 .rs-handle {
+    background-color: #004B7E;
+}
+#slider11 .rs-bg-color {
+    background-color: #E3DFDD;
+}
+
+#slider11{
+    position: relative;
+    top: -305px;
+    left:93px;
+    z-index: 15;
+}
+#supportingtext_lowersemicircle{
+    z-index: 16;
+    position: relative;
+    left:30px;
+}
+
+</style>
+</head>
+<body id="overflow">
+
+    <div class="container">
+    
+        <div id ="heading_summary" class="d-flex justify-content-center flex-row"> <!--Main Heading-->
+            <div class="d-flex align-items-center justify-content-center col-md-1">
+                <a href="11_Summary.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32.349" height="47.054" viewBox="0 0 42.349 47.054">
+                        <g id="Polygon_3" data-name="Polygon 3" transform="translate(0 47.054) rotate(-90)" fill="rgba(0,75,126,0.4)">
+                        <path d="M 40.25593948364258 40.84859466552734 L 6.79805850982666 40.84859466552734 C 5.902848720550537 40.84859466552734 5.097368717193604 40.38796234130859 4.643378734588623 39.61641311645508 C 4.189398288726807 38.84486389160156 4.177918434143066 37.91703414916992 4.612668514251709 37.13449478149414 L 21.34160804748535 7.022394180297852 C 21.7889289855957 6.217214107513428 22.60589790344238 5.736504077911377 23.52699851989746 5.736504077911377 C 24.44809913635254 5.736504077911377 25.26506805419922 6.217214107513428 25.71238899230957 7.022394180297852 L 42.44132995605469 37.13448333740234 C 42.87607955932617 37.91703414916992 42.86459732055664 38.84486389160156 42.41061782836914 39.61641311645508 C 41.95662689208984 40.38796234130859 41.15114974975586 40.84859466552734 40.25593948364258 40.84859466552734 Z" stroke="none"/>
+                        <path d="M 23.52699851989746 7.236503601074219 C 23.30724906921387 7.236503601074219 22.90146827697754 7.303325653076172 22.6528377532959 7.750865936279297 L 5.923896789550781 37.86295318603516 C 5.682258605957031 38.29790496826172 5.827877044677734 38.67165374755859 5.936187744140625 38.8557243347168 C 6.044498443603516 39.039794921875 6.300487518310547 39.34859466552734 6.798057556152344 39.34859466552734 L 40.25593948364258 39.34859466552734 C 40.75350952148438 39.34859466552734 41.00949859619141 39.039794921875 41.1178092956543 38.855712890625 C 41.22611999511719 38.67164611816406 41.37173843383789 38.29790496826172 41.13009643554688 37.86295318603516 L 24.40115928649902 7.750865936279297 C 24.15252876281738 7.303325653076172 23.74674797058105 7.236503601074219 23.52699851989746 7.236503601074219 M 23.52699851989746 4.236503601074219 C 24.89430809020996 4.236503601074219 26.26161766052246 4.922313690185547 27.02362823486328 6.293933868408203 L 43.75256729125977 36.40602493286133 C 45.23374938964844 39.0721435546875 43.30587005615234 42.34859466552734 40.25593948364258 42.34859466552734 L 6.798057556152344 42.34859466552734 C 3.748119354248047 42.34859466552734 1.820247650146484 39.0721435546875 3.301429748535156 36.40602493286133 L 20.03036880493164 6.293933868408203 C 20.79237937927246 4.922313690185547 22.15968894958496 4.236503601074219 23.52699851989746 4.236503601074219 Z" stroke="none" fill="#004b7e"/>
+                        </g>
+                    </svg>
+                </a>
+            </div>  
+
+            <div id="summary_heading" class="d-flex align-items-center justify-content-center col-md-10">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h1 style="font-family: Nunito;">The experimental track</h1>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-center col-md-1">
+                <a href="13_LoadingCascade.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32.349" height="47.054" viewBox="0 0 42.349 47.054" >
+                        <g id="Polygon_3" data-name="Polygon 3" transform="translate(45 7.054) rotate(90)" fill="rgba(0,75,126,0.4)">
+                        <path d="M 40.25593948364258 40.84859466552734 L 6.79805850982666 40.84859466552734 C 5.902848720550537 40.84859466552734 5.097368717193604 40.38796234130859 4.643378734588623 39.61641311645508 C 4.189398288726807 38.84486389160156 4.177918434143066 37.91703414916992 4.612668514251709 37.13449478149414 L 21.34160804748535 7.022394180297852 C 21.7889289855957 6.217214107513428 22.60589790344238 5.736504077911377 23.52699851989746 5.736504077911377 C 24.44809913635254 5.736504077911377 25.26506805419922 6.217214107513428 25.71238899230957 7.022394180297852 L 42.44132995605469 37.13448333740234 C 42.87607955932617 37.91703414916992 42.86459732055664 38.84486389160156 42.41061782836914 39.61641311645508 C 41.95662689208984 40.38796234130859 41.15114974975586 40.84859466552734 40.25593948364258 40.84859466552734 Z" stroke="none"/>
+                        <path d="M 23.52699851989746 7.236503601074219 C 23.30724906921387 7.236503601074219 22.90146827697754 7.303325653076172 22.6528377532959 7.750865936279297 L 5.923896789550781 37.86295318603516 C 5.682258605957031 38.29790496826172 5.827877044677734 38.67165374755859 5.936187744140625 38.8557243347168 C 6.044498443603516 39.039794921875 6.300487518310547 39.34859466552734 6.798057556152344 39.34859466552734 L 40.25593948364258 39.34859466552734 C 40.75350952148438 39.34859466552734 41.00949859619141 39.039794921875 41.1178092956543 38.855712890625 C 41.22611999511719 38.67164611816406 41.37173843383789 38.29790496826172 41.13009643554688 37.86295318603516 L 24.40115928649902 7.750865936279297 C 24.15252876281738 7.303325653076172 23.74674797058105 7.236503601074219 23.52699851989746 7.236503601074219 M 23.52699851989746 4.236503601074219 C 24.89430809020996 4.236503601074219 26.26161766052246 4.922313690185547 27.02362823486328 6.293933868408203 L 43.75256729125977 36.40602493286133 C 45.23374938964844 39.0721435546875 43.30587005615234 42.34859466552734 40.25593948364258 42.34859466552734 L 6.798057556152344 42.34859466552734 C 3.748119354248047 42.34859466552734 1.820247650146484 39.0721435546875 3.301429748535156 36.40602493286133 L 20.03036880493164 6.293933868408203 C 20.79237937927246 4.922313690185547 22.15968894958496 4.236503601074219 23.52699851989746 4.236503601074219 Z" stroke="none" fill="#004b7e"/>
+                        </g>
+                    </svg>
+                </a>
+            </div>  
+
+        </div>
+
+        <div class="d-flex row">
+            <div class ="col-md-12">
+              <div class ="d-flex">
+                      <svg id ="labels_summary12" width="1552" height="410" viewBox="1400 0 2852 1710" fill="none" xmlns="http://www.w3.org/2000/svg">    
+  
+                              <rect x = "3742" y = "-2390" id="rect_reality" width="53" height="160" fill="#004B7E"/>
+                              <rect x = "3575" y = "-945" id="rect_ideal" width="53" height="160" fill="#004B7E"/>
+                              <rect x = "2875" y = "380" id="rect_dis" width="53" height="160" fill="#004B7E"/>
+                              <rect x = "1710" y = "1320" id="rect_geo" width="53" height="160" fill="#004B7E"/>
+                              <rect x = "300" y = "1720" id="rect_mat" width="53" height="160" fill="#004B7E"/>
+                              <text x="1280," y="850" font-size="5em" fill="black">Reality</text>
+                              <text x="1880," y="380" font-size="5em" fill="black">Calibration</text>
+                              <text x="2750," y="250" font-size="5em" fill="black">Testing</text>
+                              <text x="3580," y="380" font-size="5em" fill="black">Measurement</text>
+                              <text x="4380," y="850" font-size="5em" fill="black">Comparison</text>
+                              <g id="labels_drag_summary">
+                                <rect x="800" y="750" rx="24.5px" width="380" height="172" fill="#004B7E" fill-opacity="0.86" stroke="black" stroke-width="2"/>
+                                <text x = "900"  y = "850" font-size = 5em font-weight="bold" fill ="white" fill-opacity="0.9" 
+                                font-family="Nunito">Drag</text>
+                              </g>
+          
+                      </svg>
+              </div> 
+            </div>
+          </div>
+  
+
+        <div class="d-flex row"> <!--Summary-->
+            <div id="slider11" class="col-md-12">
+                  <svg width="73" height="220" viewBox="0 0 73 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  </svg>
+            </div>
+        </div>
+        
+
+        <div class="d-flex row">
+            <div class ="d-flex col-md-4"></div>
+            <div class ="d-flex col-md-4">
+            <div id ="supportingtext_lowersemicircle" class ="d-flex flex-column align-items-center slider-font">
+              <svg id="supporting_svg_text" style="position:relative;top:-1150px;left:40px" width="300" height="200">
+                <text id="text_first" x="0" y="10" font-size="1em" fill="#004B7E" font-family="Nunito">
+                    Instrument that implements idealised reality:  
+                  <tspan class="em" x="0" dy="0.5cm" > In this step, an experimenter designs  </tspan>  
+                  <tspan class="em" x="0" dy="0.5cm" > and builds an instrument, which replicates  </tspan>
+                  <tspan class="em" x="0" dy="0.5cm">the behavior of the idealised model  </tspan>
+                  <!--<tspan class="em" x="0" dy="0.5cm"> developed in the derivation </tspan>
+                  <tspan class="em" x="0" dy="0.5cm">observed in our dialy life. In this case, a guitar   </tspan>
+                  <tspan class="em" x="0" dy="0.5cm">and a suspension bridge  illustrate </tspan>
+                  <tspan class="em" x="0" dy="0.5cm">the dynamic behavior we are seeking to model. </tspan>--></text>
+
+                  <text id="text_geo" x="0" y="10" font-size="1em" fill="#004B7E" font-family="Nunito">
+                                                        Calibration: To run an experiment, the states                                                                                                                                                                                                                  
+                    <tspan class="em" x="0" dy="0.5cm" > of this instrument needs to be measured. For  </tspan>
+                    <tspan class="em" x="0" dy="0.5cm">this, the states of the instrument need to be set   </tspan>
+                    <tspan class="em" x="0" dy="0.5cm">in alignment with a standard measure. This </tspan>
+                    <tspan class="em" x="0" dy="0.5cm"> step is termed calibration.   </tspan>
+                    </text>
+  
+                    <text id="text_ideal" x="0" y="10" font-size="1em" fill="#004B7E" font-family="Nunito">
+                                                            Experimental measurement:In this step, 
+                      <tspan class="em" x="0" dy="0.5cm" >a set of experiments are conducted carefully, </tspan>
+                      <tspan class="em" x="0" dy="0.5cm">and measurements of the states of the  </tspan>
+                      <tspan class="em" x="0" dy="0.5cm"> instrument recorded systematically. </tspan>
+                      </text>
+
+                    <text id="text_dis" x="0" y="10" font-size="1em" fill="#004B7E" font-family="Nunito">
+                                                        Testing the instrument:This step tests the
+                      <tspan class="em" x="0" dy="0.5cm" > instrument's ability to provide accurate </tspan>
+                      <tspan class="em" x="0" dy="0.5cm">measurements of system behavior. This is </tspan>
+                      <tspan class="em" x="0" dy="0.5cm"> done by generating different states using </tspan>
+                      <tspan class="em" x="0" dy="0.5cm">the instrument and taking measurements. </tspan></text>
+
+                    <text id="text_reality" x="0" y="10" font-size="1em" fill="#004B7E" font-family="Nunito">
+                                                        Comparison: Here the values predicted by the                                
+                    <tspan class="em" x="0" dy="0.5cm" > idealised mathematical model of reality are </tspan>
+                    <tspan class="em" x="0" dy="0.5cm">compared with the measurements collected </tspan>
+                    <tspan class="em" x="0" dy="0.5cm"> using the idealised instrument version of </tspan>
+                    <tspan class="em" x="0" dy="0.5cm"> reality. If the values do not 'fit' each   </tspan>
+                    <tspan class="em" x="0" dy="0.5cm"> other, either the instrument design, or</tspan>
+                    <tspan class="em" x="0" dy="0.5cm">the model design, or both, are revised. </tspan>
+                    </text>
+
+              </svg>
+                <!--
+              <p id="text_ideal" style="visibility:visible;position: relative;top:-1050px;">Idealization: The first modeling step involves identifying the most basic elements involved in the behavior we are modeling. To develop a simple model of the dynamic behavior of the guitar and the bridge, we start by treating the two systems as strings tied at both ends.</p>
+              <p id="text_dis" style="visibility:visible;position: relative;top:-1050px;">Discretization: This step involves a further simplification -- dividing a continuous body into discrete elements. In our derivation, we divided our string into numerous mass points, and we treat the mass points as connected through springs. </p>
+              <p id="text_geo" style="visibility:visible;position: relative;top:-1050px;">Geometric structure: This step involves placing the discretised elements on a coordinate grid. This critical step allows moving towards a mathematical model.</p>
+              <p id="text_mat" style="visibility:visible;position: relative;top:-1050px;">Math equation: Usually the last step in a derivation, this step involves mapping the geometric behavior into an equation, which is a relationship between variables. In our derivation, we summed the total force acting on a mass point, generalized it, and represented it as a differential equation. The solution to this equation captures the behavior of a string tied at two ends.</p>
+            -->
+            </div>           
+          </div>
+          <div class ="d-flex col-md-4"></div>
+        </div>
+
+
+    </div>
+
+
+
+    <script src="12_Summary_UH.js"></script>
+<!--
+    <script>
+            $(document).ready(function(){
+              $('[data-toggle="popover"]').popover();
+            });
+    </script>
+    -->
+        
+</body>
+</html>
+            <!--<div class ="d-flex row"> 
+            <div class ="d-flex flex-column col-md-12">     
+                <svg visibility="" id="exp_arrow" width="1445" height="158" viewBox="0 0 1025 238" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="1022.5" y1="140.994" x2="1023.59" y2="237.993" stroke="#ADAAAA" />
+                  <path d="M1.00002 192C191.435 49.3762 662.443 -150.297 1023 192M1023 192V149.613M1023 192H976.752" stroke="black" stroke-width="3"/>
+                  <line x1="0.499968" y1="136.994" x2="1.58985" y2="233.993" stroke="#ADAAAA"/>
+                  <line x1="328.5" y1="0.993334" x2="329.5" y2="75.9933" stroke="#ADAAAA"/>
+                  <line x1="749.5" y1="1" x2="749.5" y2="76" stroke="#ADAAAA"/>
+                  <text  x="-366" y="160" fill="black" font-size="0.5em" font-weight="bold" font-family="Arial" >Idealized micro-version of reality</text>
+                  <text  x="196" y="19" fill="black" font-size="0.5em" font-weight="bold" font-family="Arial" >Callibration</text>
+                  <text  x="756" y="19" fill="black" font-size="0.5em" font-weight="bold" font-family="Arial" >Measurement</text>
+                  <text  x="1036" y="160" fill="black" font-size="0.5em" font-weight="bold" font-family="Arial" >Comparison</text>
+                  <rect visibility="" id="" x = "1170" y = "0" width="429" height="219" rx="50" fill="#F6FFC1"/>
+                  <text  x="1200" y="40" fill="black" font-size="0.4em" font-weight="" font-family="Arial" >Evaluation
+                    <tspan class="em" x="1200" dy="1.0cm">Lorem ipsum Lorem ipsum Lorem ipsum </tspan>
+                    <tspan class="em" x="1200" dy="1.0cm">Lorem ipsum Lorem ipsum Lorem ipsum </tspan>
+                    <tspan class="em" x="1200" dy="1.0cm">Lorem ipsum Lorem ipsum Lorem ipsum  </tspan>
+                  </text>
+                </svg>
+              </div>
+            </div>      
+        </div>-->
