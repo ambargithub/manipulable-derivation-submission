@@ -170,6 +170,14 @@
     transform: rotate(0deg);
   
 }
+#rect_ins{
+    position:absolute;
+    z-index: -1;
+    top:-880px;
+    left: -170px;
+    transform: rotate(-38deg);
+  
+}
 
 #rect_geo{
     position:absolute;

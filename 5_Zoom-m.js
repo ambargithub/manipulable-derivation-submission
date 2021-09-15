@@ -12,6 +12,14 @@ d3.select("#zoom_rect").call(d3.zoom().on("zoom",function(){
     d3.select("#zoom-m1").transition(1000)
     .attr("stroke-opacity",0.1)
     .attr("fill-opacity",0.1);
+
+    d3.select("#threemasspoints").transition(1000)
+    .attr("stroke-opacity",1)
+    .attr("fill-opacity",1);
+
+    d3.select(this).transition(1000)
+    .attr("stroke-opacity",0.5)
+    .attr("fill-opacity",0.5);
   
     d3.select("#coordinate-1")
       .attr("visibility","")
@@ -82,6 +90,14 @@ d3.select("#zoom_rect").on("click",function(){
       d3.select("#zoom-m1").transition(1000)
       .attr("stroke-opacity",0.1)
       .attr("fill-opacity",0.1);
+
+      d3.select("#threemasspoints").transition(1000)
+      .attr("stroke-opacity",1)
+      .attr("fill-opacity",1);
+
+      d3.select(this).transition(1000)
+      .attr("stroke-opacity",0.5)
+      .attr("fill-opacity",0.5);
     
       d3.select("#coordinate-1")
         .attr("visibility","")
@@ -142,15 +158,16 @@ d3.select("#zoom_rect").on("click",function(){
 
     /*Progress bar*/
     d3.selectAll("#Image_8").on("click",function(){
-      window.open("1_Idealization.html","_self" ); ;
+      window.open("0.7_Reality.html","_self" ); ;
     })
     
     d3.select("#Group_8593").on("click",function(){
-      window.open("2_StringDynamism.html","_self" ); ;
+      window.open("1_Idealization.html","_self" ); ;
     })
     d3.select("#Group_8586").on("click",function(){
-      window.open("2_StringDynamism.html","_self" ); ;
+      window.open("1_Idealization.html","_self" ); ;
     })
+    
     
     d3.select("#Group_8587").on("click",function(){
     window.open("3_Discretization.html","_self" ); ;
