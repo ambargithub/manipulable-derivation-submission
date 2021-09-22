@@ -1,3 +1,7 @@
+/*Mozilla arrangement */
+d3.select("#moz1").attr("y",10.5)
+
+
 for(j=2;j<10;j++){ d3.select("#p"+j)
 .style("visibility","hidden");}
  

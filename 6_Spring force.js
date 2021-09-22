@@ -1,3 +1,27 @@
+/*Mozilla text settings */
+
+  d3.select("#mi_moz1")
+  .attr("x",80);
+
+  d3.select("#mi_moz2")
+  .attr("x",880);
+
+  d3.select("#mi_moz3")
+  .attr("x",1530);
+
+  d3.select("#mi_moz4")
+  .attr("x",-400);
+
+  d3.select("#mi_moz5")
+  .attr("x",-930);
+
+  d3.select("#mi_moz6")
+  .attr("x",130);
+
+  d3.select("#algebraicForce")
+  .attr("x",3080);
+
+
 
 /*Drag-L*/ 
 d3.select("#c-l").call(d3.drag()

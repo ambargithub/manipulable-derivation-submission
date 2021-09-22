@@ -1,6 +1,17 @@
 /*Zoom-m*/
 d3.select("#zoom_rect").call(d3.zoom().on("zoom",function(){
 
+  d3.select("#mi_moz")
+    .attr("x",140)
+  d3.select("#mi_moz1")
+    .attr("x",70)
+  d3.select("#mi_moz2")
+    .attr("x",200)
+  d3.select("#mi_moz3")
+    .attr("x",230)
+  d3.select("#mi_moz4")
+    .attr("x",30)
+
   d3.select("#zoom-design")
     .attr("visibility","156")
 
@@ -29,7 +40,12 @@ d3.select("#zoom_rect").call(d3.zoom().on("zoom",function(){
       .attr("fill","#004B7E");
   
     d3.select("#m1")
-      .attr("visibility","");
+      .attr("visibility","")
+
+      d3.select("#mi_moz6")
+      .attr("x",20);
+
+
   })
   
   d3.select("#cm1").on("mouseout",function(){
@@ -38,6 +54,8 @@ d3.select("#zoom_rect").call(d3.zoom().on("zoom",function(){
   
     d3.select("#m1")
       .attr("visibility","hidden");
+
+
   })
   
   d3.select("#cm2").on("mouseover",function(){
@@ -46,6 +64,9 @@ d3.select("#zoom_rect").call(d3.zoom().on("zoom",function(){
   
     d3.select("#m2")
       .attr("visibility","");
+
+      d3.select("#mi_moz5")
+      .attr("x",100);
   })
   
   d3.select("#cm2").on("mouseout",function(){
@@ -62,6 +83,9 @@ d3.select("#zoom_rect").call(d3.zoom().on("zoom",function(){
   
     d3.select("#m3")
       .attr("visibility","");
+
+      d3.select("#mi_moz7")
+      .attr("x",150);
   })
   
   d3.select("#cm3").on("mouseout",function(){
@@ -78,6 +102,16 @@ d3.select("#zoom_rect").call(d3.zoom().on("zoom",function(){
   }))
 
 d3.select("#zoom_rect").on("click",function(){
+  d3.select("#mi_moz")
+  .attr("x",140)
+d3.select("#mi_moz1")
+  .attr("x",70)
+d3.select("#mi_moz2")
+  .attr("x",200)
+d3.select("#mi_moz3")
+  .attr("x",230)
+d3.select("#mi_moz4")
+  .attr("x",30)
 
     d3.select("#zoom-design")
       .attr("visibility","156")
@@ -108,6 +142,9 @@ d3.select("#zoom_rect").on("click",function(){
     
       d3.select("#m1")
         .attr("visibility","");
+
+        d3.select("#mi_moz6")
+        .attr("x",20);
     })
     
     d3.select("#cm1").on("mouseout",function(){
@@ -124,6 +161,9 @@ d3.select("#zoom_rect").on("click",function(){
     
       d3.select("#m2")
         .attr("visibility","");
+
+        d3.select("#mi_moz5")
+        .attr("x",100);
     })
     
     d3.select("#cm2").on("mouseout",function(){
@@ -140,6 +180,9 @@ d3.select("#zoom_rect").on("click",function(){
     
       d3.select("#m3")
         .attr("visibility","");
+
+        d3.select("#mi_moz7")
+        .attr("x",150);
     })
     
     d3.select("#cm3").on("mouseout",function(){

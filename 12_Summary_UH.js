@@ -30,7 +30,8 @@ d3.select("#st_line")
    var p = (100-i)*13/100
 
 
-
+   d3.select("#labels_drag_summary")
+   .attr("visibility","hidden");
 
 /*if(i==100){
     d3.select("#guitar-body")

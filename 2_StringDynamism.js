@@ -194,7 +194,7 @@ d3.select("#slider-1").on("input",function(){
   .attr("visibility","hidden");
 
   let i = parseInt(d3.select(this).property("value"));
-  var o = (0 + 1.8*i)/100
+  var o = (0 + i)/100
   
   d3.select("#guitar-body")
       .attr("stroke-opacity",o)

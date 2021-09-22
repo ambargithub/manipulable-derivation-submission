@@ -1,3 +1,13 @@
+/*Mozilla coordinates */
+d3.selectAll("#verticesTriangle")
+  .attr("x",460)
+
+d3.selectAll("#Fminus1_final_text1")
+  .attr("x",635)
+
+  d3.selectAll("#Fminus1_final_text2")
+  .attr("x",650)
+
 /*Coordinates with moving curve - Triangle*/
 d3.select("#sliderCurve").on("input",function(){
     let i = parseInt(d3.select(this).property("value"));
@@ -131,7 +141,10 @@ d3.select("#sliderCurve").on("input",function(){
       d3.select("#Fplus1_final_arrow")
         .attr("visibility","");
 
-        d3.selectAll("#Fminus1_final_text")
+        d3.selectAll("#Fminus1_final_text1")
+        .attr("visibility","");
+
+        d3.selectAll("#Fminus1_final_text2")
         .attr("visibility","");
 
 
@@ -140,7 +153,10 @@ d3.select("#sliderCurve").on("input",function(){
       d3.select("#t_yfinal")
       .attr("visibility","hidden");
 
-      d3.selectAll("#Fminus1_final_text")
+      d3.selectAll("#Fminus1_final_text1")
+      .attr("visibility","hidden");
+
+      d3.selectAll("#Fminus1_final_text2")
       .attr("visibility","hidden");
 
     }
